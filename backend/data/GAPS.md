@@ -8,12 +8,11 @@ Research sources used: manufacturer pages (cheerios.com, daveskillerbread.com),
 SmartLabel (Kellogg's, labelinsight), and label reposts (MyFoodDiary, major
 grocery retailers). Accessed 2026-10-16.
 
-## Blocking (affects ranking)
+## Resolved
 
-1. **Dave's Killer Bread Powerseed — saturated fat (g).** Not readable (the
-   manufacturer label is an image). Currently `null`, which correctly makes
-   Dave's `insufficient_data` for the **balanced** priority (it still ranks under
-   fiber/sodium). One number off the package unblocks its balanced rank.
+1. ~~**Dave's Killer Bread Powerseed — saturated fat (g).**~~ ✅ Confirmed from
+   the package by the data owner on 2026-10-16: **0 g** per slice (regular and
+   thin-slice). Dave's now carries complete balanced data and ranks.
 
 ## Confirm (values set, want a second look)
 

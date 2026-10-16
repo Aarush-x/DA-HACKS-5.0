@@ -113,22 +113,18 @@ def test_priority_flip_reorders_cereals():
     assert _rank_of(sodium, frosted) < _rank_of(sodium, hnc)
 
 
-def test_missing_saturated_fat_makes_balanced_insufficient():
-    # Dave's Killer Bread Powerseed has no saturated-fat value yet, so it cannot
-    # receive a complete balanced rank (real missing-data path).
+def test_all_bread_has_complete_balanced_data():
+    # Every seed product now carries all balanced inputs, so all rank.
     products = client.get(
         "/api/v1/products", params={"store_id": "demo-store-a", "category": "bread"}
     ).json()["products"]
+    for p in products:
+        assert p["ranking"]["status"] == "ranked"
+        assert p["ranking"]["internal_index"] is not None
+        assert p["ranking"]["missing_fields"] == []
+    # Dave's Killer Bread Powerseed is the strongest bread on the balanced index.
     daves = next(p for p in products if p["id"] == "bread-daves-powerseed")
-    assert daves["ranking"]["status"] == "insufficient_data"
-    assert "saturated_fat_g" in daves["ranking"]["missing_fields"]
-    # but it still ranks under fiber priority, which does not need saturated fat
-    fiber = client.get(
-        "/api/v1/products",
-        params={"store_id": "demo-store-a", "category": "bread", "priority": "fiber"},
-    ).json()["products"]
-    daves_fiber = next(p for p in fiber if p["id"] == "bread-daves-powerseed")
-    assert daves_fiber["ranking"]["status"] == "ranked"
+    assert daves["ranking"]["rank"] == 1
 
 
 def test_fiber_mode_index_null_components_empty():
