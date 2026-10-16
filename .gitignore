@@ -1,0 +1,29 @@
+# Node / build artifacts
+node_modules/
+dist/
+build/
+coverage/
+.vite/
+.vercel/
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+# Local environment (examples are shareable)
+.env
+.env.*
+!.env.example
+# Local databases
+*.db
+*.db-*
+*.sqlite
+*.sqlite3
+*.sqlite3-*
+# Local files
+.DS_Store
+*.log

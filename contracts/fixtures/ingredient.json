@@ -1,0 +1,14 @@
+{
+  "id": "sample-grain",
+  "name": "Fictional sample grain",
+  "aliases": [],
+  "what_it_is": "Synthetic placeholder for testing the ingredient drawer.",
+  "why_used": "Demonstrates the response structure only.",
+  "evidence_summary": "No evidence has been assessed for this fictional sample.",
+  "practical_guidance": "Use a reviewed product label for actual purchasing decisions.",
+  "evidence_level": "not_assessed",
+  "uncertainty": "This sample is not a real ingredient assessment.",
+  "reviewed_at": null,
+  "sources": [],
+  "content_status": "synthetic"
+}
