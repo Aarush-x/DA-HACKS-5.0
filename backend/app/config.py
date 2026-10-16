@@ -27,7 +27,7 @@ class Settings(BaseSettings):
 
     # Version label surfaced in catalog metadata so the frontend/integration
     # can tell which dataset is live.
-    catalog_version: str = "seed-dev-1"
+    catalog_version: str = "real-unverified-2026-10-16"
 
     # Exact allowed browser origins. Parsed as a JSON array from the
     # CORS_ORIGINS env var, e.g. CORS_ORIGINS='["https://app.vercel.app"]'.

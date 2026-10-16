@@ -55,10 +55,15 @@ shapes, and the error envelope.
 
 - `CATALOG_STORAGE=seed` (default) loads committed JSON from `data/`:
   `stores.json`, `products.json`, `ingredients.json`.
-- The current `data/` records are **synthetic development data** (fictional
-  brands, `label_status: "synthetic"`, empty sources). They exercise the full
-  flow and a real fiber-vs-sodium tradeoff. Real verified product labels and
-  sourced ingredient content are added in milestone B2.
+- The current `data/` records are **real products with sourced (but not yet
+  owner-verified) labels** — `label_status: "unverified"`, each with a `sources`
+  entry and access date. Values come from manufacturer pages, SmartLabel, and
+  retailer/label reposts. They are flipped to `"verified"` (with
+  `label_verified_at`) once the data owner checks them against the physical
+  package. A few fields are still open — see `data/GAPS.md`.
+- Genuine demo tradeoff: Honey Nut Cheerios has more fiber **and** more sodium
+  than Frosted Flakes, so switching between `fiber` and `sodium` priority swaps
+  their order. Original Cheerios leads on both axes among cereals.
 - `CATALOG_STORAGE=postgres` is reserved for the optional managed-database path
   and currently fails fast with a 503 rather than pretending to work.
 

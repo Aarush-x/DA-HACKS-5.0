@@ -36,12 +36,16 @@ def test_products_store_a_returns_full_assortment():
     assert meta["priority"] == "balanced"
     assert meta["supported_categories"] == ["bread", "cereal"]
     assert meta["reference_g_by_category"] == {"bread": 50, "cereal": 40}
-    assert meta["contains_synthetic_labels"] is True
+    # Real (unverified) data — no synthetic labels remain.
+    assert meta["contains_synthetic_labels"] is False
     assert meta["total"] == len(body["products"]) == 6
 
 
 def test_products_grouped_by_category_with_local_ranks():
-    resp = client.get("/api/v1/products", params={"store_id": "demo-store-a"})
+    # Use fiber priority so every product has the data it needs to rank.
+    resp = client.get(
+        "/api/v1/products", params={"store_id": "demo-store-a", "priority": "fiber"}
+    )
     products = resp.json()["products"]
     categories = [p["category"] for p in products]
     # bread group precedes cereal group
@@ -87,18 +91,44 @@ def test_store_b_assortment_is_smaller():
         assert p["availability"]["mode"] == "simulated"
 
 
-def test_priority_flip_changes_top_bread():
+def _rank_of(products, product_id):
+    return next(p for p in products if p["id"] == product_id)["ranking"]["rank"]
+
+
+def test_priority_flip_reorders_cereals():
+    # Honey Nut Cheerios has more fiber but also more sodium than Frosted Flakes,
+    # so the two swap places when the priority changes. This is the genuine,
+    # data-driven tradeoff in the verified catalog.
+    fiber = client.get(
+        "/api/v1/products",
+        params={"store_id": "demo-store-a", "category": "cereal", "priority": "fiber"},
+    ).json()["products"]
+    sodium = client.get(
+        "/api/v1/products",
+        params={"store_id": "demo-store-a", "category": "cereal", "priority": "sodium"},
+    ).json()["products"]
+    hnc, frosted = "cereal-honey-nut-cheerios", "cereal-frosted-flakes"
+    # fiber priority ranks HNC above Frosted; sodium priority reverses them
+    assert _rank_of(fiber, hnc) < _rank_of(fiber, frosted)
+    assert _rank_of(sodium, frosted) < _rank_of(sodium, hnc)
+
+
+def test_missing_saturated_fat_makes_balanced_insufficient():
+    # Dave's Killer Bread Powerseed has no saturated-fat value yet, so it cannot
+    # receive a complete balanced rank (real missing-data path).
+    products = client.get(
+        "/api/v1/products", params={"store_id": "demo-store-a", "category": "bread"}
+    ).json()["products"]
+    daves = next(p for p in products if p["id"] == "bread-daves-powerseed")
+    assert daves["ranking"]["status"] == "insufficient_data"
+    assert "saturated_fat_g" in daves["ranking"]["missing_fields"]
+    # but it still ranks under fiber priority, which does not need saturated fat
     fiber = client.get(
         "/api/v1/products",
         params={"store_id": "demo-store-a", "category": "bread", "priority": "fiber"},
     ).json()["products"]
-    sodium = client.get(
-        "/api/v1/products",
-        params={"store_id": "demo-store-a", "category": "bread", "priority": "sodium"},
-    ).json()["products"]
-    top_fiber = next(p for p in fiber if p["ranking"]["rank"] == 1)
-    top_sodium = next(p for p in sodium if p["ranking"]["rank"] == 1)
-    assert top_fiber["id"] != top_sodium["id"]
+    daves_fiber = next(p for p in fiber if p["id"] == "bread-daves-powerseed")
+    assert daves_fiber["ranking"]["status"] == "ranked"
 
 
 def test_fiber_mode_index_null_components_empty():

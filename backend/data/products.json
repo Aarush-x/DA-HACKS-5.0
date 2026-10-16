@@ -1,209 +1,251 @@
 [
   {
-    "id": "bread-hearth",
-    "name": "Hearthstone Whole Grain Loaf (sample)",
-    "brand": "Hearthstone Sample Bakery",
+    "id": "bread-natures-own-ww",
+    "name": "Nature's Own 100% Whole Wheat Bread",
+    "brand": "Nature's Own",
     "category": "bread",
     "barcode": null,
-    "package_size": null,
+    "package_size": "20 oz loaf",
     "image_url": null,
     "image_credit": null,
     "image_source_url": null,
-    "label_status": "synthetic",
+    "label_status": "unverified",
     "label_verified_at": null,
-    "label_source_id": null,
-    "serving_g": 50,
-    "nutrition_per_serving": {
-      "fiber_g": 6,
-      "protein_g": 6,
-      "added_sugar_g": 2,
-      "total_sugar_g": 3,
-      "sodium_mg": 380,
-      "saturated_fat_g": 0.5
-    },
-    "first_grain_is_whole": true,
-    "ingredients_text": "Whole wheat flour, water, yeast, cane sugar, salt.",
-    "ingredient_refs": [
-      { "id": "whole-grain-wheat", "label": "Whole wheat flour" },
-      { "id": "cane-sugar", "label": "Cane sugar" },
-      { "id": "salt", "label": "Salt" }
-    ],
-    "sources": [],
-    "store_assortment": {
-      "demo-store-a": "in_demo_assortment",
-      "demo-store-b": "in_demo_assortment"
-    }
-  },
-  {
-    "id": "bread-soft",
-    "name": "Cloudloaf Soft White (sample)",
-    "brand": "Cloudloaf Sample Foods",
-    "category": "bread",
-    "barcode": null,
-    "package_size": null,
-    "image_url": null,
-    "image_credit": null,
-    "image_source_url": null,
-    "label_status": "synthetic",
-    "label_verified_at": null,
-    "label_source_id": null,
-    "serving_g": 50,
+    "label_source_id": "src-natures-own",
+    "serving_g": 26,
     "nutrition_per_serving": {
       "fiber_g": 2,
       "protein_g": 4,
-      "added_sugar_g": 3,
-      "total_sugar_g": 4,
-      "sodium_mg": 190,
-      "saturated_fat_g": 0.5
+      "added_sugar_g": 0.5,
+      "total_sugar_g": 0.5,
+      "sodium_mg": 110,
+      "saturated_fat_g": 0
     },
-    "first_grain_is_whole": false,
-    "ingredients_text": "Enriched wheat flour, water, cane sugar, yeast, salt.",
+    "first_grain_is_whole": true,
+    "ingredients_text": "Whole wheat flour, water, yeast, brown sugar, wheat gluten, salt, soybean oil, vinegar, enzymes. Contains wheat, soy.",
     "ingredient_refs": [
-      { "id": "enriched-flour", "label": "Enriched wheat flour" },
-      { "id": "cane-sugar", "label": "Cane sugar" },
+      { "id": "whole-grain-wheat", "label": "Whole wheat flour" },
+      { "id": "cane-sugar", "label": "Brown sugar" },
       { "id": "salt", "label": "Salt" }
     ],
-    "sources": [],
+    "sources": [
+      {
+        "id": "src-natures-own",
+        "title": "Nature's Own 100% Whole Wheat Bread — nutrition label (MyFoodDiary)",
+        "url": "https://www.myfooddiary.com/foods/649503/natures-own-100-percent-whole-wheat-bread",
+        "accessed_at": "2026-10-16"
+      }
+    ],
     "store_assortment": {
       "demo-store-a": "in_demo_assortment",
       "demo-store-b": "in_demo_assortment"
     }
   },
   {
-    "id": "bread-rustic",
-    "name": "Millgate Rustic Wheat (sample)",
-    "brand": "Millgate Sample Co",
+    "id": "bread-daves-powerseed",
+    "name": "Dave's Killer Bread Powerseed Organic",
+    "brand": "Dave's Killer Bread",
     "category": "bread",
     "barcode": null,
-    "package_size": null,
+    "package_size": "25 oz loaf",
     "image_url": null,
     "image_credit": null,
     "image_source_url": null,
-    "label_status": "synthetic",
+    "label_status": "unverified",
     "label_verified_at": null,
-    "label_source_id": null,
-    "serving_g": 50,
+    "label_source_id": "src-daves",
+    "serving_g": 42,
     "nutrition_per_serving": {
       "fiber_g": 4,
       "protein_g": 5,
-      "added_sugar_g": 2,
-      "total_sugar_g": 3,
-      "sodium_mg": 300,
-      "saturated_fat_g": 1.0
-    },
-    "first_grain_is_whole": true,
-    "ingredients_text": "Whole wheat flour, water, yeast, cane sugar, salt.",
-    "ingredient_refs": [
-      { "id": "whole-grain-wheat", "label": "Whole wheat flour" },
-      { "id": "cane-sugar", "label": "Cane sugar" },
-      { "id": "salt", "label": "Salt" }
-    ],
-    "sources": [],
-    "store_assortment": {
-      "demo-store-a": "in_demo_assortment",
-      "demo-store-b": "out_of_demo_assortment"
-    }
-  },
-  {
-    "id": "cereal-oats",
-    "name": "Sunrise Plain Oat Rings (sample)",
-    "brand": "Sunrise Sample Grains",
-    "category": "cereal",
-    "barcode": null,
-    "package_size": null,
-    "image_url": null,
-    "image_credit": null,
-    "image_source_url": null,
-    "label_status": "synthetic",
-    "label_verified_at": null,
-    "label_source_id": null,
-    "serving_g": 40,
-    "nutrition_per_serving": {
-      "fiber_g": 3,
-      "protein_g": 3,
       "added_sugar_g": 1,
       "total_sugar_g": 1,
-      "sodium_mg": 140,
-      "saturated_fat_g": 0.5
+      "sodium_mg": 130,
+      "saturated_fat_g": null
     },
     "first_grain_is_whole": true,
-    "ingredients_text": "Whole grain oats, corn starch, salt.",
+    "ingredients_text": "Organic whole wheat (organic whole wheat flour, organic cracked whole wheat), water, organic grain and seed mix (organic flax, organic rolled oats, organic sunflower seeds, organic tri-color quinoa, organic pumpkin seeds), organic wheat gluten, organic fruit juices (apple, pear, peach), organic oat fiber, yeast, salt. Contains wheat.",
     "ingredient_refs": [
-      { "id": "whole-grain-oats", "label": "Whole grain oats" },
+      { "id": "whole-grain-wheat", "label": "Organic whole wheat flour" },
       { "id": "salt", "label": "Salt" }
     ],
-    "sources": [],
+    "sources": [
+      {
+        "id": "src-daves",
+        "title": "Dave's Killer Bread Powerseed — product page",
+        "url": "https://www.daveskillerbread.com/powerseed",
+        "accessed_at": "2026-10-16"
+      }
+    ],
     "store_assortment": {
       "demo-store-a": "in_demo_assortment",
       "demo-store-b": "in_demo_assortment"
     }
   },
   {
-    "id": "cereal-honey",
-    "name": "Sunrise Honey Oat Rings (sample)",
-    "brand": "Sunrise Sample Grains",
-    "category": "cereal",
+    "id": "bread-sara-lee-white",
+    "name": "Sara Lee Classic White Bread",
+    "brand": "Sara Lee",
+    "category": "bread",
     "barcode": null,
-    "package_size": null,
+    "package_size": "20 oz loaf",
     "image_url": null,
     "image_credit": null,
     "image_source_url": null,
-    "label_status": "synthetic",
+    "label_status": "unverified",
     "label_verified_at": null,
-    "label_source_id": null,
-    "serving_g": 40,
+    "label_source_id": "src-sara-lee",
+    "serving_g": 57,
     "nutrition_per_serving": {
       "fiber_g": 2,
-      "protein_g": 2,
-      "added_sugar_g": 7,
-      "total_sugar_g": 8,
-      "sodium_mg": 150,
-      "saturated_fat_g": 0.3
+      "protein_g": 4,
+      "added_sugar_g": 2,
+      "total_sugar_g": 3,
+      "sodium_mg": 270,
+      "saturated_fat_g": 0
     },
-    "first_grain_is_whole": true,
-    "ingredients_text": "Whole grain oats, cane sugar, honey, salt.",
+    "first_grain_is_whole": false,
+    "ingredients_text": "Enriched bleached flour, water, sugar, yeast, soybean oil, salt, and smaller amounts of dough conditioners and preservatives. Contains wheat, soy, sesame.",
     "ingredient_refs": [
-      { "id": "whole-grain-oats", "label": "Whole grain oats" },
-      { "id": "cane-sugar", "label": "Cane sugar" },
-      { "id": "honey", "label": "Honey" },
+      { "id": "enriched-flour", "label": "Enriched bleached flour" },
+      { "id": "cane-sugar", "label": "Sugar" },
       { "id": "salt", "label": "Salt" }
     ],
-    "sources": [],
+    "sources": [
+      {
+        "id": "src-sara-lee",
+        "title": "Sara Lee Classic White Bread — SmartLabel",
+        "url": "https://smartlabel.labelinsight.com/product/6085863/nutrition",
+        "accessed_at": "2026-10-16"
+      }
+    ],
     "store_assortment": {
       "demo-store-a": "in_demo_assortment",
       "demo-store-b": "out_of_demo_assortment"
     }
   },
   {
-    "id": "cereal-frosted",
-    "name": "Glint Frosted Flakes (sample)",
-    "brand": "Glint Sample Cereal",
+    "id": "cereal-cheerios",
+    "name": "Original Cheerios",
+    "brand": "General Mills",
     "category": "cereal",
     "barcode": null,
     "package_size": null,
     "image_url": null,
     "image_credit": null,
     "image_source_url": null,
-    "label_status": "synthetic",
+    "label_status": "unverified",
     "label_verified_at": null,
-    "label_source_id": null,
+    "label_source_id": "src-cheerios",
     "serving_g": 40,
     "nutrition_per_serving": {
-      "fiber_g": 1,
-      "protein_g": 1,
-      "added_sugar_g": 11,
-      "total_sugar_g": 11,
-      "sodium_mg": 120,
-      "saturated_fat_g": 0.2
+      "fiber_g": 4,
+      "protein_g": 5,
+      "added_sugar_g": 1,
+      "total_sugar_g": 2,
+      "sodium_mg": 190,
+      "saturated_fat_g": 0.5
     },
-    "first_grain_is_whole": false,
-    "ingredients_text": "Milled corn, cane sugar, malt flavor, salt.",
+    "first_grain_is_whole": true,
+    "ingredients_text": "Whole grain oats, corn starch, sugar, salt, tripotassium phosphate. Vitamin E (mixed tocopherols) added to preserve freshness, plus added vitamins and minerals.",
     "ingredient_refs": [
-      { "id": "milled-corn", "label": "Milled corn" },
-      { "id": "cane-sugar", "label": "Cane sugar" },
+      { "id": "whole-grain-oats", "label": "Whole grain oats" },
+      { "id": "cane-sugar", "label": "Sugar" },
       { "id": "salt", "label": "Salt" }
     ],
-    "sources": [],
+    "sources": [
+      {
+        "id": "src-cheerios",
+        "title": "Original Cheerios — Cheerios.com",
+        "url": "https://www.cheerios.com/products/original-cheerios",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "store_assortment": {
+      "demo-store-a": "in_demo_assortment",
+      "demo-store-b": "out_of_demo_assortment"
+    }
+  },
+  {
+    "id": "cereal-honey-nut-cheerios",
+    "name": "Honey Nut Cheerios",
+    "brand": "General Mills",
+    "category": "cereal",
+    "barcode": null,
+    "package_size": null,
+    "image_url": null,
+    "image_credit": null,
+    "image_source_url": null,
+    "label_status": "unverified",
+    "label_verified_at": null,
+    "label_source_id": "src-hnc",
+    "serving_g": 37,
+    "nutrition_per_serving": {
+      "fiber_g": 3,
+      "protein_g": 3,
+      "added_sugar_g": 12,
+      "total_sugar_g": 12,
+      "sodium_mg": 210,
+      "saturated_fat_g": 0
+    },
+    "first_grain_is_whole": true,
+    "ingredients_text": "Whole grain oats, sugar, corn starch, honey, brown sugar syrup, salt, tripotassium phosphate, canola and/or sunflower oil, natural almond flavor, vitamin E added to preserve freshness, plus added vitamins and minerals. Contains almond ingredients.",
+    "ingredient_refs": [
+      { "id": "whole-grain-oats", "label": "Whole grain oats" },
+      { "id": "cane-sugar", "label": "Sugar" },
+      { "id": "honey", "label": "Honey" },
+      { "id": "salt", "label": "Salt" }
+    ],
+    "sources": [
+      {
+        "id": "src-hnc",
+        "title": "Honey Nut Cheerios — Cheerios.com",
+        "url": "https://cheerios.com/products/honey-nut-cheerios",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "store_assortment": {
+      "demo-store-a": "in_demo_assortment",
+      "demo-store-b": "in_demo_assortment"
+    }
+  },
+  {
+    "id": "cereal-frosted-flakes",
+    "name": "Frosted Flakes",
+    "brand": "Kellogg's",
+    "category": "cereal",
+    "barcode": null,
+    "package_size": null,
+    "image_url": null,
+    "image_credit": null,
+    "image_source_url": null,
+    "label_status": "unverified",
+    "label_verified_at": null,
+    "label_source_id": "src-frosted",
+    "serving_g": 37,
+    "nutrition_per_serving": {
+      "fiber_g": 1,
+      "protein_g": 2,
+      "added_sugar_g": 12,
+      "total_sugar_g": 12,
+      "sodium_mg": 190,
+      "saturated_fat_g": 0
+    },
+    "first_grain_is_whole": false,
+    "ingredients_text": "Milled corn, sugar, malt flavor, salt, and added vitamins and minerals (including niacinamide, iron, vitamin B6, vitamin B2, vitamin B1, vitamin A, folic acid, vitamin B12, vitamin D3).",
+    "ingredient_refs": [
+      { "id": "milled-corn", "label": "Milled corn" },
+      { "id": "cane-sugar", "label": "Sugar" },
+      { "id": "salt", "label": "Salt" }
+    ],
+    "sources": [
+      {
+        "id": "src-frosted",
+        "title": "Kellogg's Frosted Flakes — SmartLabel",
+        "url": "https://smartlabel.kelloggs.com/Product/Index/038000124686",
+        "accessed_at": "2026-10-16"
+      }
+    ],
     "store_assortment": {
       "demo-store-a": "in_demo_assortment",
       "demo-store-b": "in_demo_assortment"
