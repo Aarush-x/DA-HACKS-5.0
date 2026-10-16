@@ -77,4 +77,29 @@ describe('shopper flow', () => {
     await screen.findByText('Ingredient explanation unavailable. This does not imply danger.');
     expect(screen.getByRole('button', { name: 'Retry explanation' })).toBeTruthy();
   });
+  it('preserves card elements during a slow priority update and prevents stale actions', async () => {
+    let finish!: (value: Awaited<ReturnType<Api['getProducts']>>) => void;
+    const api = { ...mockApi, getProducts: vi.fn().mockImplementationOnce(mockApi.getProducts).mockImplementationOnce(() => new Promise(resolve => { finish = resolve; })) };
+    const user = userEvent.setup(); render(<App api={api} mode="mock"/>);
+    const original = await screen.findByRole('article', { name: 'Sample Fiber Loaf' });
+    await user.click(screen.getByRole('button', { name: 'Less sodium', exact: true }));
+    expect(original.isConnected).toBe(true);
+    expect(original.parentElement?.hasAttribute('inert')).toBe(true);
+    finish(await mockApi.getProducts({ store_id: 'demo-store-a', category: 'bread', priority: 'sodium' }));
+    await waitFor(() => expect(screen.getAllByRole('article')[0].getAttribute('aria-label')).toBe('Sample Gentle Loaf'));
+    expect(screen.getByRole('article', { name: 'Sample Fiber Loaf' })).toBe(original);
+    expect(original.parentElement?.hasAttribute('inert')).toBe(false);
+  });
+  it('makes comparison reachable and transfers focus only after the explicit shortcut', async () => {
+    const user = userEvent.setup(); render(<App api={mockApi} mode="mock"/>);
+    await screen.findByRole('article', { name: 'Sample Fiber Loaf' });
+    await user.click(screen.getAllByRole('button', { name: '+ Compare' })[0]);
+    await user.click(screen.getAllByRole('button', { name: '+ Compare' })[0]);
+    const shortcut = screen.getByRole('link', { name: 'View comparison ↓' });
+    await user.click(shortcut);
+    expect(document.activeElement).toBe(screen.getByRole('heading', { name: 'Side by side.' }));
+    await user.click(screen.getByRole('button', { name: 'Clear comparison' }));
+    expect(screen.queryByRole('navigation', { name: 'Comparison shortcut' })).toBeNull();
+  });
+
 });

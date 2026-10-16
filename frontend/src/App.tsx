@@ -7,7 +7,7 @@ import type { CatalogResponse, Category, IngredientResponse, Nutrients, Priority
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 const priorities: [Priority, string][] = [['balanced', 'Balanced'], ['fiber', 'More fiber'], ['sodium', 'Less sodium']];
 const metrics: [keyof Nutrients, string, string][] = [['fiber_g', 'Fiber', 'g'], ['protein_g', 'Protein', 'g'], ['added_sugar_g', 'Added sugar', 'g'], ['total_sugar_g', 'Total sugar', 'g'], ['sodium_mg', 'Sodium', 'mg'], ['saturated_fat_g', 'Saturated fat', 'g']];
-export const amount = (value: number | null, unit: string) => value === null ? 'Not provided' : `${new Intl.NumberFormat('en-US', { maximumFractionDigits: 1 }).format(value)} ${unit}`;
+const amount = (value: number | null, unit: string) => value === null ? 'Not provided' : `${new Intl.NumberFormat('en-US', { maximumFractionDigits: 1 }).format(value)} ${unit}`;
 const message = (e: unknown) => e instanceof Error ? e.message : 'Something went wrong. Please retry.';
 const safeUrl = (value: string | null) => { try { const u = new URL(value ?? ''); return ['http:', 'https:'].includes(u.protocol) ? u.href : undefined; } catch { return undefined; } };
 function Sources({ sources }: { sources: IngredientResponse['sources'] }) {
@@ -21,8 +21,9 @@ function IngredientDrawer({ id, api, close, opener }: { id: string; api: Api; cl
   const closing = useRef(false);
   useEffect(() => {
     const returnTo = opener;
-    dialog.current?.showModal();
-    return () => { dialog.current?.close(); returnTo?.focus(); };
+    const element = dialog.current;
+    element?.showModal();
+    return () => { element?.close(); returnTo?.focus({ preventScroll: true }); };
   }, []);
   useEffect(() => {
     const controller = new AbortController(); setData(undefined); setError('');
@@ -75,16 +76,22 @@ export function App({ api, mode }: { api: Api; mode: 'mock' | 'api' }) {
   const [selected, setSelected] = useState<string[]>([]);
   const [ingredientId, setIngredientId] = useState<string>();
   const ingredientOpener = useRef<HTMLElement | null>(null);
+  const previousFilter = useRef('');
+  const revealedSets = useRef(new Set<string>());
   useEffect(() => {
     const c = new AbortController(); setStoreError('');
     api.getStores(c.signal).then(d => { if (!c.signal.aborted) setStores(d); }).catch(e => { if (!c.signal.aborted) setStoreError(message(e)); });
     return () => c.abort();
   }, [api, retry]);
   useEffect(() => {
-    const c = new AbortController(); setLoading(true); setError(''); setCatalog(undefined);
+    const c = new AbortController(); setLoading(true); setError('');
+    const filter = JSON.stringify([store, category, query]);
+    // Keep keyed cards mounted for priority-only updates; other filters get a fresh loading state.
+    if (previousFilter.current !== filter) setCatalog(undefined);
+    previousFilter.current = filter;
     api.getProducts({ store_id: store, category, priority, q: query }, c.signal).then(d => {
       if (!c.signal.aborted) { setCatalog(d); setSelected(ids => ids.filter(id => d.products.some(p => p.id === id))); }
-    }).catch(e => { if (!c.signal.aborted) setError(message(e)); }).finally(() => { if (!c.signal.aborted) setLoading(false); });
+    }).catch(e => { if (!c.signal.aborted) { setError(message(e)); setCatalog(undefined); } }).finally(() => { if (!c.signal.aborted) setLoading(false); });
     return () => c.abort();
   }, [api, store, category, priority, query, retry]);
   useGSAP(() => {
@@ -93,17 +100,20 @@ export function App({ api, mode }: { api: Api; mode: 'mock' | 'api' }) {
   }, { scope: root });
   useGSAP(() => {
     if (!catalog) return;
+    const contentSet = `${store}:${catalog.products.map(p => p.id).sort().join(',')}`;
+    const firstReveal = !revealedSets.current.has(contentSet);
     const mm = gsap.matchMedia(); mm.add('(prefers-reduced-motion: no-preference)', () => {
       gsap.from('.results-summary', { y: 2, opacity: 0.8, duration: 0.18, clearProps: 'all' });
+      if (!firstReveal) return;
       gsap.utils.toArray<HTMLElement>('.product-card', root.current).forEach((card, i) => {
-        gsap.from(card, { y: 10, opacity: 0.85, duration: 0.45, delay: (i % 3) * 0.04, clearProps: 'all', scrollTrigger: { trigger: card, start: 'top 95%', once: true } });
+        gsap.from(card, { y: 10, opacity: 0.85, duration: 0.45, delay: (i % 3) * 0.04, clearProps: 'all', scrollTrigger: { trigger: card, start: 'top 95%', once: true, onEnter: () => { revealedSets.current.add(contentSet); } } });
       });
     }); return () => mm.revert();
   }, { scope: root, dependencies: [catalog], revertOnUpdate: true });
   const compared = (catalog?.products ?? []).filter(p => selected.includes(p.id));
   const toggle = (p: Product) => setSelected(ids => ids.includes(p.id) ? ids.filter(id => id !== p.id) : ids.length < 2 ? [...ids, p.id] : ids);
   const chooseCategory = (next: Category) => { setCategory(next); setSelected([]); setSearch(''); setQuery(''); };
-  return <div ref={root}>
+  return <div ref={root} data-comparing={compared.length > 0}>
     <a className="skip-link" href="#search">Skip to search</a>
     <header className="site-header"><a className="wordmark" href="#">shelf<span>sense</span><span className="wordmark-dot">.</span></a><span className="edition">THE EVERYDAY GROCERY EDIT / 01</span></header>
     <div className="disclosure"><span>{mode === 'mock' || catalog?.meta.contains_synthetic_labels ? 'Sample product data' : 'Product label status shown on each card'}</span><span>Store availability is simulated</span>{mode === 'api' && <span>{catalog && !error ? 'Connected to demo API' : 'Demo API mode'}</span>}</div>
@@ -112,13 +122,15 @@ export function App({ api, mode }: { api: Api; mode: 'mock' | 'api' }) {
     {storeError && <div role="alert"><p>{storeError}</p><button onClick={() => setRetry(n => n + 1)}>Retry stores</button></div>}
     <div className="filter-row"><div className="categories" aria-label="Category">{(['bread', 'cereal'] as const).map(c => <button key={c} aria-pressed={category === c} onClick={() => chooseCategory(c)}>{c === 'bread' ? 'Bread' : 'Cereal'}</button>)}</div><div className="priority"><span id="priority-label">Your priority</span><div role="group" aria-labelledby="priority-label">{priorities.map(([value, label]) => <button key={value} aria-pressed={priority === value} onClick={() => setPriority(value)}>{label}</button>)}</div></div></div></section>
     <section className="results" aria-label="Products" aria-busy={loading}><div className="results-summary"><div><p className="eyebrow">The comparison shelf</p><h2>{category === 'bread' ? 'Bread, considered.' : 'Cereal, considered.'}</h2></div><p role="status">{loading ? 'Finding your options…' : error ? 'Results unavailable' : `${catalog?.meta.total ?? 0} options · per ${category === 'bread' ? '50 g' : '40 g dry cereal'}`}</p></div>
-    <p className="muted comparison-help">Select two products to compare. {selected.length}/2 selected. {selected.length === 2 ? 'Deselect one to choose another.' : 'Rankings reflect your selected priority, not a universal health rating.'}</p>
-    {loading && <div className="loading-state">Loading the assortment…</div>}
+    <p className="muted comparison-help" role="status">Select two to compare · {selected.length}/2 selected{selected.length === 2 ? '. Deselect one to change your choices.' : '.'}</p>
+    {loading && !catalog && <div className="loading-state">Loading the assortment…</div>}
     {error && <div className="empty-state" role="alert"><h3>We couldn’t load the shelf.</h3><p>{error}</p><button onClick={() => setRetry(n => n + 1)}>Retry products</button></div>}
     {!loading && !error && catalog?.products.length === 0 && <div className="empty-state"><h3>No matches on this shelf.</h3><p>Try bread or cereal. The demo includes only these two categories.</p><button onClick={() => { setSearch(''); setQuery(''); }}>Clear search</button></div>}
-    <div className="product-grid">{catalog?.products.map(p => <ProductCard key={p.id} product={p} selected={selected.includes(p.id)} disabled={!selected.includes(p.id) && selected.length >= 2} toggle={() => toggle(p)} ingredient={(id, opener) => { ingredientOpener.current = opener; setIngredientId(id); }}/>)}</div></section>
-    {compared.length > 0 && <section className="comparison" aria-labelledby="compare-title"><div className="section-heading"><div><p className="eyebrow">Look a little closer</p><h2 id="compare-title">Side by side.</h2></div><button onClick={() => setSelected([])}>Clear comparison</button></div>{compared.length < 2 ? <p>Select one more product from this category.</p> : <><p>Equal amounts: per {compared[0].reference_g} g{category === 'cereal' ? ' dry cereal, without milk' : ''}. These are comparison portions, not recommended servings.</p><div className="table-wrap"><table><caption className="sr-only">Nutrition at equal weight</caption><thead><tr><th scope="col">Nutrient</th>{compared.map(p => <th scope="col" key={p.id}>{p.name}</th>)}</tr></thead><tbody>{metrics.map(([key, label, unit]) => <tr key={key}><th scope="row">{label}</th>{compared.map(p => <td key={p.id}>{amount(p.nutrition_per_reference[key], unit)}</td>)}</tr>)}</tbody></table></div>{compared.map(p => <div key={p.id} className="comparison-source"><h3>{p.name}</h3><p>{p.ingredients_text ?? 'Ingredients not provided'}</p><Sources sources={p.sources}/></div>)}</>}</section>}
+    <div className="product-grid" inert={loading}>{catalog?.products.map(p => <ProductCard key={p.id} product={p} selected={selected.includes(p.id)} disabled={!selected.includes(p.id) && selected.length >= 2} toggle={() => toggle(p)} ingredient={(id, opener) => { ingredientOpener.current = opener; setIngredientId(id); }}/>)}</div></section>
+    {compared.length > 0 && <section className="comparison" aria-labelledby="compare-title"><div className="section-heading"><div><p className="eyebrow">Look a little closer</p><h2 id="compare-title" tabIndex={-1}>Side by side.</h2></div><button onClick={() => setSelected([])}>Clear comparison</button></div>{compared.length < 2 ? <p>Select one more product from this category.</p> : <><p>Equal amounts: per {compared[0].reference_g} g{category === 'cereal' ? ' dry cereal, without milk' : ''}. These are comparison portions, not recommended servings.</p><div className="table-wrap"><table><caption className="sr-only">Nutrition at equal weight</caption><thead><tr><th scope="col">Nutrient</th>{compared.map(p => <th scope="col" key={p.id}>{p.name}</th>)}</tr></thead><tbody>{metrics.map(([key, label, unit]) => <tr key={key}><th scope="row">{label}</th>{compared.map(p => <td key={p.id}>{amount(p.nutrition_per_reference[key], unit)}</td>)}</tr>)}</tbody></table></div>{compared.map(p => <div key={p.id} className="comparison-source"><h3>{p.name}</h3><p>{p.ingredients_text ?? 'Ingredients not provided'}</p><Sources sources={p.sources}/></div>)}</>}</section>}
+    <p className="ranking-note">Rankings reflect your selected priority, not a universal health rating.</p>
     <footer><span className="wordmark">shelfsense.</span><p>A small demo for more informed choices.<br/>Fictional sample labels in mock mode. No affiliation with Walmart.</p><span>DA HACKS 5.0</span></footer></main>
+    {compared.length > 0 && !loading && <nav className="compare-tray" aria-label="Comparison shortcut"><div><strong>{compared.length}/2 selected</strong><span>{compared.length === 2 ? 'Your side-by-side comparison is ready.' : 'Choose one more from this category.'}</span></div><a href="#compare-title" onClick={() => { document.getElementById('compare-title')?.focus({ preventScroll: true }); }}>View comparison ↓</a></nav>}
     {ingredientId && <IngredientDrawer key={ingredientId} id={ingredientId} api={api} opener={ingredientOpener.current} close={() => setIngredientId(undefined)}/>}
   </div>;
 }
