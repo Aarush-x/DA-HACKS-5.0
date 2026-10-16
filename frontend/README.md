@@ -26,6 +26,7 @@ npm run preview
 
 - `VITE_DATA_MODE=mock` is the default. Six fictional products, both simulated assortments, precomputed priority order, and a synthetic ingredient card. The sample banner stays visible.
 - `VITE_DATA_MODE=api` uses the HTTP adapter. Set `VITE_API_BASE_URL` to the actual backend origin only (local example: `http://localhost:8000`). No path, credentials, query or hash. `/api/v1` is appended once. No keys or database settings belong in frontend variables.
+- To use Marc's current Render service, copy `api.env.example` to `.env.local`, run `npm run dev -- --host localhost --port 5173`, and open `http://localhost:5173`. The backend's CORS configuration currently allows that exact browser origin.
 - Restart Vite after changing environment settings; rebuild for production. No implicit API-to-mock fallback. Errors and 30-second timeouts have explicit Retry actions.
 - Production deployment is not part of F1. Explicitly choose the data mode for a public build.
 
@@ -37,7 +38,7 @@ The mock adapter filters frontend-owned copies of the shared snapshots and renum
 
 Focused tests cover filtering, store assortments, ranking snapshots, missingness, query validation, ingredient 404, HTTP errors/timeouts/cancellation, stale responses, comparison selection, search, and drawer focus return. Unit interaction tests stub motion; real-browser checks are needed for native dialog focus trapping and GSAP visuals. The interface uses native scrolling, scoped GSAP cleanup, and reduced-motion preferences.
 
-F3 still requires Marc's reachable API, contract-compatible responses, and a browser-origin CORS check. Synthetic fixture success does not establish live API, verified label, database, or deployment success.
+API mode validates successful store, catalog, and ingredient responses before rendering them. A malformed success response appears as a contract error instead of partially rendering unsafe assumptions.
 
 ### F1 verification record
 
@@ -54,3 +55,13 @@ F3 still requires Marc's reachable API, contract-compatible responses, and a bro
 - 15 focused tests, strict TypeScript, and the production build pass. Browser screenshots were inspected at 375, 768, and 1440 px, with no document horizontal overflow. Browser checks covered rapid priority changes, store filtering, comparison navigation, native keyboard scrolling, drawer opening/closing/Escape/focus return, and deliberate API failure/retry without mock fallback.
 - Development-only browser scenarios are available at `/tests/visual.html?motion=reduce` and `/tests/visual.html?scenario=error` while Vite runs. They are excluded from `dist/`. The motion scenario simulates the JavaScript media preference before loading the app; card transforms were absent and the nonanimated drawer close path worked. It does not change OS preferences or emulate the browser's CSS media engine.
 - Physical touch scrolling and native OS reduced-motion settings were not tested. Native scrolling is retained with no scroll interception. Live API/CORS verification remains F3; Kluster review was unavailable.
+
+### F3 live API verification
+
+- Connected API mode to `https://shelfsense-api-oxkg.onrender.com` through the committed `api.env.example`. Mock mode remains the default in `.env.example` and never activates automatically after an API error.
+- The HTTP adapter now validates successful store, catalog, and ingredient responses against the v1 fields used by the frontend. Contract violations produce an explicit 502-style frontend error rather than partial rendering.
+- Direct HTTPS checks passed for `/healthz`, stores, both categories, both store assortments, all three priorities, unsupported search, ingredient success, ingredient 404, unknown-store 404, and invalid-priority 422. Responses reported `storage_mode=seed`, simulated inventory, and unverified product labels.
+- Browser-to-API checks passed from the exact allowed origin `http://localhost:5173`: CORS, bread/cereal switching, rapid priority changes, store B filtering, empty search, two-product equal-weight comparison, and ingredient loading. The production build made successful Render requests with no browser console messages.
+- “Less sodium” changes the live cereal order: Original Cheerios, Frosted Flakes, then Honey Nut Cheerios. The bread order happens to be unchanged across the current priorities because its fiber and sodium values favor the same order.
+- Fixed API-mode footer copy that incorrectly described live responses as fictional mock labels. The UI now keeps label verification separate from connectivity and continues to disclose simulated store availability.
+- The Render catalog is still marked unverified. Ingredient cards are draft content with empty reference lists, so the UI truthfully shows “Sources not yet reviewed.” This integration does not establish manual label/content verification, PostgreSQL use, Vercel deployment, or production Vercel-to-Render CORS.

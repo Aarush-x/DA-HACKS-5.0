@@ -58,6 +58,8 @@ describe('shopper flow', () => {
     await screen.findByText('Catalog unavailable'); expect(screen.queryByRole('article')).toBeNull();
     await user.click(screen.getByRole('button', { name: 'Retry products' }));
     await screen.findByRole('article', { name: 'Sample Fiber Loaf' });
+    expect(screen.getByText(/API catalog includes synthetic labels/)).toBeTruthy();
+    expect(screen.queryByText(/Fictional sample labels in mock mode/)).toBeNull();
   });
   it('ignores a slower stale request even if its adapter ignores abort', async () => {
     let resolveOld!: (value: Awaited<ReturnType<Api['getProducts']>>) => void;

@@ -42,9 +42,14 @@ describe('HTTP boundary', () => {
     expect(() => configure('false')).toThrow();
   });
   it('encodes the query and appends the version prefix once', async () => {
-    const fetcher = vi.fn().mockResolvedValue(new Response(JSON.stringify({ products: [] })));
+    const catalog = await mockApi.getProducts({ store_id: 'demo-store-a', q: 'a & b', priority: 'fiber' });
+    const fetcher = vi.fn().mockResolvedValue(new Response(JSON.stringify(catalog)));
     await httpApi('https://api.test/', fetcher).getProducts({ store_id: 'demo-store-a', q: 'a & b', priority: 'fiber' });
     expect(fetcher.mock.calls[0][0]).toBe('https://api.test/api/v1/products?store_id=demo-store-a&q=a+%26+b&priority=fiber');
+  });
+  it('rejects a successful response that violates the shared shape', async () => {
+    const fetcher = vi.fn().mockResolvedValue(new Response(JSON.stringify({ products: [] })));
+    await expect(httpApi('https://api.test', fetcher).getProducts({ store_id: 'demo-store-a' })).rejects.toMatchObject({ status: 502, code: 'invalid_response' });
   });
   it('preserves server errors and never substitutes fixtures', async () => {
     const fetcher = vi.fn().mockResolvedValue(new Response(JSON.stringify({ error: { code: 'unavailable', message: 'Catalog offline', request_id: 'request-1' } }), { status: 503 }));
