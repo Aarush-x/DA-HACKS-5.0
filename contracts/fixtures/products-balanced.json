@@ -15,7 +15,15 @@
     },
     "priority": "balanced",
     "store_id": "demo-store-a",
-    "total": 6
+    "total": 6,
+    "fda_daily_values": {
+      "calories_kcal": 2000,
+      "fiber_g": 28,
+      "protein_g": 50,
+      "added_sugar_g": 50,
+      "sodium_mg": 2300,
+      "saturated_fat_g": 20
+    }
   },
   "products": [
     {
@@ -33,6 +41,7 @@
       "label_source_id": null,
       "serving_g": 50,
       "nutrition_per_serving": {
+        "calories_kcal": 120,
         "fiber_g": 5,
         "protein_g": 5,
         "added_sugar_g": 1,
@@ -41,6 +50,7 @@
         "saturated_fat_g": 0.5
       },
       "nutrition_per_100g": {
+        "calories_kcal": 240.0,
         "fiber_g": 10.0,
         "protein_g": 10.0,
         "added_sugar_g": 2.0,
@@ -50,6 +60,7 @@
       },
       "reference_g": 50,
       "nutrition_per_reference": {
+        "calories_kcal": 120.0,
         "fiber_g": 5,
         "protein_g": 5,
         "added_sugar_g": 1,
@@ -117,7 +128,8 @@
             "contribution": 4.375
           }
         ]
-      }
+      },
+      "retailer_search_url": "https://www.walmart.com/search?q=Fictional+Sample+Kitchen+Sample+Fiber+Loaf"
     },
     {
       "id": "bread-02",
@@ -134,6 +146,7 @@
       "label_source_id": null,
       "serving_g": 50,
       "nutrition_per_serving": {
+        "calories_kcal": 120,
         "fiber_g": 2,
         "protein_g": 4,
         "added_sugar_g": 2,
@@ -142,6 +155,7 @@
         "saturated_fat_g": 0.5
       },
       "nutrition_per_100g": {
+        "calories_kcal": 240.0,
         "fiber_g": 4.0,
         "protein_g": 8.0,
         "added_sugar_g": 4.0,
@@ -151,6 +165,7 @@
       },
       "reference_g": 50,
       "nutrition_per_reference": {
+        "calories_kcal": 120.0,
         "fiber_g": 2,
         "protein_g": 4,
         "added_sugar_g": 2,
@@ -210,7 +225,8 @@
             "contribution": 4.375
           }
         ]
-      }
+      },
+      "retailer_search_url": "https://www.walmart.com/search?q=Fictional+Sample+Kitchen+Sample+Gentle+Loaf"
     },
     {
       "id": "bread-03",
@@ -227,6 +243,7 @@
       "label_source_id": null,
       "serving_g": 50,
       "nutrition_per_serving": {
+        "calories_kcal": 120,
         "fiber_g": 1,
         "protein_g": 3,
         "added_sugar_g": 3,
@@ -235,6 +252,7 @@
         "saturated_fat_g": 1
       },
       "nutrition_per_100g": {
+        "calories_kcal": 240.0,
         "fiber_g": 2.0,
         "protein_g": 6.0,
         "added_sugar_g": 6.0,
@@ -244,6 +262,7 @@
       },
       "reference_g": 50,
       "nutrition_per_reference": {
+        "calories_kcal": 120.0,
         "fiber_g": 1,
         "protein_g": 3,
         "added_sugar_g": 3,
@@ -303,7 +322,8 @@
             "contribution": 3.75
           }
         ]
-      }
+      },
+      "retailer_search_url": "https://www.walmart.com/search?q=Fictional+Sample+Kitchen+Sample+Plain+Loaf"
     },
     {
       "id": "cereal-01",
@@ -320,6 +340,7 @@
       "label_source_id": null,
       "serving_g": 40,
       "nutrition_per_serving": {
+        "calories_kcal": 140,
         "fiber_g": 6,
         "protein_g": 4,
         "added_sugar_g": 2,
@@ -328,6 +349,7 @@
         "saturated_fat_g": 0.5
       },
       "nutrition_per_100g": {
+        "calories_kcal": 350.0,
         "fiber_g": 15.0,
         "protein_g": 10.0,
         "added_sugar_g": 5.0,
@@ -337,6 +359,7 @@
       },
       "reference_g": 40,
       "nutrition_per_reference": {
+        "calories_kcal": 140.0,
         "fiber_g": 6,
         "protein_g": 4,
         "added_sugar_g": 2,
@@ -404,7 +427,8 @@
             "contribution": 8.75
           }
         ]
-      }
+      },
+      "retailer_search_url": "https://www.walmart.com/search?q=Fictional+Sample+Kitchen+Sample+Fiber+Squares"
     },
     {
       "id": "cereal-02",
@@ -421,6 +445,7 @@
       "label_source_id": null,
       "serving_g": 40,
       "nutrition_per_serving": {
+        "calories_kcal": 140,
         "fiber_g": 2,
         "protein_g": 3,
         "added_sugar_g": 5,
@@ -429,6 +454,7 @@
         "saturated_fat_g": 0.5
       },
       "nutrition_per_100g": {
+        "calories_kcal": 350.0,
         "fiber_g": 5.0,
         "protein_g": 7.5,
         "added_sugar_g": 12.5,
@@ -438,6 +464,7 @@
       },
       "reference_g": 40,
       "nutrition_per_reference": {
+        "calories_kcal": 140.0,
         "fiber_g": 2,
         "protein_g": 3,
         "added_sugar_g": 5,
@@ -497,7 +524,8 @@
             "contribution": 8.75
           }
         ]
-      }
+      },
+      "retailer_search_url": "https://www.walmart.com/search?q=Fictional+Sample+Kitchen+Sample+Gentle+Flakes"
     },
     {
       "id": "cereal-03",
@@ -514,6 +542,7 @@
       "label_source_id": null,
       "serving_g": 40,
       "nutrition_per_serving": {
+        "calories_kcal": 140,
         "fiber_g": 1,
         "protein_g": 2,
         "added_sugar_g": null,
@@ -522,6 +551,7 @@
         "saturated_fat_g": 0
       },
       "nutrition_per_100g": {
+        "calories_kcal": 350.0,
         "fiber_g": 2.5,
         "protein_g": 5.0,
         "added_sugar_g": null,
@@ -531,6 +561,7 @@
       },
       "reference_g": 40,
       "nutrition_per_reference": {
+        "calories_kcal": 140.0,
         "fiber_g": 1,
         "protein_g": 2,
         "added_sugar_g": null,
@@ -596,7 +627,8 @@
             "contribution": 10.0
           }
         ]
-      }
+      },
+      "retailer_search_url": "https://www.walmart.com/search?q=Fictional+Sample+Kitchen+Sample+Mystery+Puffs"
     }
   ]
 }

@@ -19,6 +19,7 @@ from app.schemas import Category, Nutrients
 REFERENCE_G_BY_CATEGORY: dict[Category, float] = {"bread": 50.0, "cereal": 40.0}
 
 NUTRIENT_FIELDS = (
+    "calories_kcal",
     "fiber_g",
     "protein_g",
     "added_sugar_g",
@@ -39,14 +40,7 @@ def _scale(value: Optional[float], factor: float) -> Optional[float]:
 
 
 def _null_nutrients() -> Nutrients:
-    return Nutrients(
-        fiber_g=None,
-        protein_g=None,
-        added_sugar_g=None,
-        total_sugar_g=None,
-        sodium_mg=None,
-        saturated_fat_g=None,
-    )
+    return Nutrients(**{field: None for field in NUTRIENT_FIELDS})
 
 
 def to_per_100g(per_serving: Nutrients, serving_g: Optional[float]) -> Nutrients:

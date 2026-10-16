@@ -11,7 +11,15 @@ from typing import List, Literal, Optional
 from pydantic import BaseModel
 
 Category = Literal["bread", "cereal"]
-Priority = Literal["balanced", "fiber", "sodium"]
+Priority = Literal[
+    "balanced",
+    "fiber",
+    "sodium",
+    "protein",
+    "low_calorie",
+    "low_sugar",
+    "low_sat_fat",
+]
 LabelStatus = Literal["verified", "unverified", "synthetic"]
 
 
@@ -23,6 +31,7 @@ class Source(BaseModel):
 
 
 class Nutrients(BaseModel):
+    calories_kcal: Optional[float]
     fiber_g: Optional[float]
     protein_g: Optional[float]
     added_sugar_g: Optional[float]
@@ -84,6 +93,7 @@ class Product(BaseModel):
     ingredients_text: Optional[str]
     ingredient_refs: List[IngredientRef]
     sources: List[Source]
+    retailer_search_url: Optional[str]  # Walmart SEARCH url; not a stock/price claim
     availability: Availability
     ranking: Ranking
 
@@ -91,6 +101,18 @@ class Product(BaseModel):
 class ReferenceByCategory(BaseModel):
     bread: Literal[50] = 50
     cereal: Literal[40] = 40
+
+
+class DailyValues(BaseModel):
+    """General FDA reference amounts for a 2,000 kcal diet. These are a neutral
+    reference for %DV context only — not personalized or medical advice."""
+
+    calories_kcal: float = 2000
+    fiber_g: float = 28
+    protein_g: float = 50
+    added_sugar_g: float = 50
+    sodium_mg: float = 2300
+    saturated_fat_g: float = 20
 
 
 class CatalogMeta(BaseModel):
@@ -101,6 +123,7 @@ class CatalogMeta(BaseModel):
     contains_synthetic_labels: bool
     supported_categories: List[Category]
     reference_g_by_category: ReferenceByCategory = ReferenceByCategory()
+    fda_daily_values: DailyValues = DailyValues()
     priority: Priority
     store_id: str
     total: int

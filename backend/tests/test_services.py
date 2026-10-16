@@ -8,6 +8,7 @@ from app.services.ranking import RankInput, rank
 
 def _nutrients(**kwargs) -> Nutrients:
     base = dict(
+        calories_kcal=None,
         fiber_g=None,
         protein_g=None,
         added_sugar_g=None,
@@ -53,6 +54,59 @@ def test_normalize_missing_serving_mass_yields_null():
 def test_cereal_reference_is_40g():
     assert normalize.reference_g_for("cereal") == 40
     assert normalize.reference_g_for("bread") == 50
+
+
+def test_calories_normalize_like_other_nutrients():
+    per_serving = _nutrients(calories_kcal=100)
+    per_100g, per_reference, _ = normalize.normalize(per_serving, 25, "bread")
+    assert per_100g.calories_kcal == 400  # 100 per 25 g -> 400 per 100 g
+    assert per_reference.calories_kcal == 200  # -> 200 per 50 g reference
+
+
+# --------------------------------------------------------------------------- #
+# v2 single-metric priority modes
+# --------------------------------------------------------------------------- #
+def _bread_metric(id_, **kw) -> RankInput:
+    return RankInput(
+        id=id_,
+        category="bread",
+        per_reference=_nutrients(**kw),
+        first_grain_is_whole=True,
+        serving_g=50,
+    )
+
+
+def test_protein_mode_sorts_descending():
+    a = _bread_metric("a", protein_g=3, sodium_mg=200)
+    b = _bread_metric("b", protein_g=8, sodium_mg=200)
+    c = _bread_metric("c", protein_g=5, sodium_mg=200)
+    result = rank([a, b, c], "protein")
+    assert [k for k in sorted(result, key=lambda k: result[k].rank)] == ["b", "c", "a"]
+
+
+def test_low_calorie_mode_sorts_ascending_and_flags_missing():
+    a = _bread_metric("a", calories_kcal=120, protein_g=5)
+    b = _bread_metric("b", calories_kcal=70, protein_g=5)
+    none = _bread_metric("none", calories_kcal=None, protein_g=5)
+    result = rank([a, b, none], "low_calorie")
+    assert result["b"].rank == 1
+    assert result["a"].rank == 2
+    assert result["none"].status == "insufficient_data"
+    assert "calories_kcal" in result["none"].missing_fields
+
+
+def test_low_sugar_mode_sorts_ascending():
+    a = _bread_metric("a", added_sugar_g=6)
+    b = _bread_metric("b", added_sugar_g=1)
+    result = rank([a, b], "low_sugar")
+    assert result["b"].rank == 1
+
+
+def test_low_sat_fat_mode_sorts_ascending():
+    a = _bread_metric("a", saturated_fat_g=3)
+    b = _bread_metric("b", saturated_fat_g=0.5)
+    result = rank([a, b], "low_sat_fat")
+    assert result["b"].rank == 1
 
 
 # --------------------------------------------------------------------------- #

@@ -24,7 +24,7 @@ No compare endpoint is necessary. Each product response includes the metrics nee
 | `store_id` | Required. `demo-store-a` or `demo-store-b` |
 | `category` | Optional. `bread` or `cereal` |
 | `q` | Optional. Trimmed case-insensitive search across category, product name, and brand. Maximum 100 characters |
-| `priority` | Optional. `balanced`, `fiber`, or `sodium`; defaults to `balanced` |
+| `priority` | Optional. `balanced`, `fiber`, `sodium`, `protein`, `low_calorie`, `low_sugar`, or `low_sat_fat`; defaults to `balanced` |
 
 `q=bread` must match bread products through their category even if their names do not contain the word. If both category and query are supplied, apply both filters. If both are absent, return both categories, ordered in separate category groups with category-local ranks. Never compare a cereal score to a bread score.
 
@@ -36,7 +36,14 @@ The following type notation specifies JSON shapes; these are planning definition
 
 ```typescript
 type Category = "bread" | "cereal";
-type Priority = "balanced" | "fiber" | "sodium";
+type Priority =
+  | "balanced"
+  | "fiber"
+  | "sodium"
+  | "protein"      // v2: most protein at equal weight
+  | "low_calorie"  // v2: fewest calories at equal weight
+  | "low_sugar"    // v2: least added sugar at equal weight
+  | "low_sat_fat"; // v2: least saturated fat at equal weight
 type LabelStatus = "verified" | "unverified" | "synthetic";
 
 type Source = {
@@ -47,6 +54,7 @@ type Source = {
 };
 
 type Nutrients = {
+  calories_kcal: number | null; // v2
   fiber_g: number | null;
   protein_g: number | null;
   added_sugar_g: number | null;
@@ -77,6 +85,7 @@ type Product = {
   ingredients_text: string | null;
   ingredient_refs: { id: string; label: string }[];
   sources: Source[];
+  retailer_search_url: string | null; // v2: Walmart SEARCH url; not a stock/price claim
   availability: {
     store_id: string;
     status: "in_demo_assortment" | "out_of_demo_assortment" | "unknown";
@@ -102,6 +111,12 @@ type CatalogResponse = {
     contains_synthetic_labels: boolean;
     supported_categories: Category[];
     reference_g_by_category: { bread: 50; cereal: 40 };
+    // v2: general FDA reference amounts (2,000 kcal diet) for %DV context only —
+    // a neutral reference, not personalized or medical advice.
+    fda_daily_values: {
+      calories_kcal: 2000; fiber_g: 28; protein_g: 50;
+      added_sugar_g: 50; sodium_mg: 2300; saturated_fat_g: 20;
+    };
     priority: Priority;
     store_id: string;
     total: number;
@@ -217,6 +232,17 @@ Only compare indices within the same category. Test modest weight changes and av
 
 - `fiber`: sort descending by fiber at equal weight; break ties by lower sodium when known, then stable ID. Require valid normalized fiber, not all balanced fields. Index can remain null; ranking status is ranked when this mode has its required data.
 - `sodium`: sort ascending by sodium at equal weight; break ties by higher fiber when known, then stable ID. Require valid normalized sodium.
+#### v2 single-metric modes
+
+Same mechanics as `fiber`/`sodium` — sort on one normalized field at the
+reference quantity, place products missing that field after ranked ones with a
+null rank and an explanation, `internal_index` stays null, `components` is empty.
+
+- `protein`: most protein first; ties -> lower sodium, then stable ID. Requires normalized protein.
+- `low_calorie`: fewest calories first; ties -> more protein. Requires normalized calories.
+- `low_sugar`: least added sugar first; ties -> more fiber. Requires normalized added sugar.
+- `low_sat_fat`: least saturated fat first; ties -> more fiber. Requires normalized saturated fat.
+
 - Place products lacking the selected mode's required data after ranked products, with null ranks and an explanation. For secondary tie-breaks, unknown values follow known values.
 - In all modes, return concrete strengths and tradeoffs derived from the record and current same-category comparison. If no valid comparator exists, state factual metrics instead of claiming an improvement.
 - UI copy uses `Recommended for your selected priority` or `More fiber at the same weight`, not universal claims about the healthiest food.

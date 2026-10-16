@@ -18,7 +18,7 @@ all normalization and ranking; the frontend only renders what it returns.
 - `store_id` **(required)** — `demo-store-a` or `demo-store-b`
 - `category` *(optional)* — `bread` or `cereal`
 - `q` *(optional)* — case-insensitive search over category/name/brand, max 100 chars
-- `priority` *(optional)* — `balanced` (default), `fiber`, or `sodium`
+- `priority` *(optional)* — `balanced` (default), `fiber`, `sodium`, `protein`, `low_calorie`, `low_sugar`, `low_sat_fat`
 
 An invalid enum or over-long `q` returns `422`; an unknown well-formed
 `store_id` returns `404`; all errors use the shared envelope

@@ -224,11 +224,27 @@ def rank(items: list[RankInput], priority: Priority) -> dict[str, Ranking]:
     for category, group in by_category.items():
         if priority == "balanced":
             result.update(_rank_balanced(group))
-        elif priority == "fiber":
-            result.update(_rank_fiber(group))
         else:
-            result.update(_rank_sodium(group))
+            result.update(_rank_single_metric(group, priority, **_SINGLE_METRIC[priority]))
     return result
+
+
+# Single-metric priority modes: which reference-quantity field they sort on, the
+# direction, and the secondary tie-break. Unknown tie-break values sort last.
+_SINGLE_METRIC: dict[str, dict] = {
+    # most fiber first; ties -> lower sodium, then stable id
+    "fiber": dict(field="fiber_g", descending=True, tiebreak_field="sodium_mg", tiebreak_descending=False),
+    # least sodium first; ties -> higher fiber
+    "sodium": dict(field="sodium_mg", descending=False, tiebreak_field="fiber_g", tiebreak_descending=True),
+    # most protein first; ties -> lower sodium
+    "protein": dict(field="protein_g", descending=True, tiebreak_field="sodium_mg", tiebreak_descending=False),
+    # fewest calories first; ties -> more protein
+    "low_calorie": dict(field="calories_kcal", descending=False, tiebreak_field="protein_g", tiebreak_descending=True),
+    # least added sugar first; ties -> more fiber
+    "low_sugar": dict(field="added_sugar_g", descending=False, tiebreak_field="fiber_g", tiebreak_descending=True),
+    # least saturated fat first; ties -> more fiber
+    "low_sat_fat": dict(field="saturated_fat_g", descending=False, tiebreak_field="fiber_g", tiebreak_descending=True),
+}
 
 
 def _rank_balanced(group: list[RankInput]) -> dict[str, Ranking]:
@@ -342,27 +358,3 @@ def _rank_single_metric(
             components=[],
         )
     return result
-
-
-def _rank_fiber(group: list[RankInput]) -> dict[str, Ranking]:
-    # Most fiber first; ties broken by lower sodium, then stable id.
-    return _rank_single_metric(
-        group,
-        priority="fiber",
-        field="fiber_g",
-        descending=True,
-        tiebreak_field="sodium_mg",
-        tiebreak_descending=False,
-    )
-
-
-def _rank_sodium(group: list[RankInput]) -> dict[str, Ranking]:
-    # Least sodium first; ties broken by higher fiber, then stable id.
-    return _rank_single_metric(
-        group,
-        priority="sodium",
-        field="sodium_mg",
-        descending=False,
-        tiebreak_field="fiber_g",
-        tiebreak_descending=True,
-    )

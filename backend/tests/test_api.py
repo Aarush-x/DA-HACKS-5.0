@@ -127,6 +127,47 @@ def test_all_bread_has_complete_balanced_data():
     assert top["first_grain_is_whole"] is True
 
 
+def test_meta_has_fda_daily_values():
+    body = client.get("/api/v1/products", params={"store_id": "demo-store-a"}).json()
+    dv = body["meta"]["fda_daily_values"]
+    assert dv["sodium_mg"] == 2300
+    assert dv["added_sugar_g"] == 50
+    assert dv["calories_kcal"] == 2000
+    assert dv["saturated_fat_g"] == 20
+    assert dv["fiber_g"] == 28
+    assert dv["protein_g"] == 50
+
+
+def test_products_carry_calories_and_walmart_search_url():
+    products = client.get(
+        "/api/v1/products", params={"store_id": "demo-store-a"}
+    ).json()["products"]
+    for p in products:
+        assert p["nutrition_per_reference"]["calories_kcal"] is not None
+        url = p["retailer_search_url"]
+        assert url.startswith("https://www.walmart.com/search?q=")
+
+
+def test_new_priority_modes_rank():
+    for priority, field, ascending in [
+        ("protein", "protein_g", False),
+        ("low_calorie", "calories_kcal", True),
+        ("low_sugar", "added_sugar_g", True),
+        ("low_sat_fat", "saturated_fat_g", True),
+    ]:
+        products = client.get(
+            "/api/v1/products",
+            params={"store_id": "demo-store-a", "category": "cereal", "priority": priority},
+        ).json()["products"]
+        ranked = [p for p in products if p["ranking"]["rank"] is not None]
+        assert ranked, f"{priority} produced no ranked products"
+        # rank 1's metric is the best (min for ascending modes, max for protein)
+        vals = [p["nutrition_per_reference"][field] for p in ranked]
+        top = next(p for p in ranked if p["ranking"]["rank"] == 1)
+        top_val = top["nutrition_per_reference"][field]
+        assert top_val == (min(vals) if ascending else max(vals))
+
+
 def test_fiber_mode_index_null_components_empty():
     products = client.get(
         "/api/v1/products", params={"store_id": "demo-store-a", "priority": "fiber"}
