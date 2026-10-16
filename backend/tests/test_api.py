@@ -38,7 +38,7 @@ def test_products_store_a_returns_full_assortment():
     assert meta["reference_g_by_category"] == {"bread": 50, "cereal": 40}
     # Real (unverified) data — no synthetic labels remain.
     assert meta["contains_synthetic_labels"] is False
-    assert meta["total"] == len(body["products"]) == 6
+    assert meta["total"] == len(body["products"]) == 24
 
 
 def test_products_grouped_by_category_with_local_ranks():
@@ -51,7 +51,7 @@ def test_products_grouped_by_category_with_local_ranks():
     # bread group precedes cereal group
     assert categories == sorted(categories, key=lambda c: 0 if c == "bread" else 1)
     bread_ranks = [p["ranking"]["rank"] for p in products if p["category"] == "bread"]
-    assert sorted(bread_ranks) == [1, 2, 3]
+    assert sorted(bread_ranks) == list(range(1, 13))  # 12 breads, contiguous
 
 
 def test_category_filter_returns_only_that_category():
@@ -65,7 +65,7 @@ def test_category_filter_returns_only_that_category():
 def test_query_matches_category_even_without_name_match():
     resp = client.get("/api/v1/products", params={"store_id": "demo-store-a", "q": "bread"})
     products = resp.json()["products"]
-    assert len(products) == 3
+    assert len(products) == 12
     assert all(p["category"] == "bread" for p in products)
 
 
@@ -122,9 +122,9 @@ def test_all_bread_has_complete_balanced_data():
         assert p["ranking"]["status"] == "ranked"
         assert p["ranking"]["internal_index"] is not None
         assert p["ranking"]["missing_fields"] == []
-    # Dave's Killer Bread Powerseed is the strongest bread on the balanced index.
-    daves = next(p for p in products if p["id"] == "bread-daves-powerseed")
-    assert daves["ranking"]["rank"] == 1
+    # A whole-grain, higher-fiber bread should lead the balanced index.
+    top = next(p for p in products if p["ranking"]["rank"] == 1)
+    assert top["first_grain_is_whole"] is True
 
 
 def test_fiber_mode_index_null_components_empty():
