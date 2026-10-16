@@ -1,0 +1,4 @@
+[
+  { "id": "demo-store-a", "name": "Walmart demo branch A", "inventory_mode": "simulated" },
+  { "id": "demo-store-b", "name": "Walmart demo branch B", "inventory_mode": "simulated" }
+]

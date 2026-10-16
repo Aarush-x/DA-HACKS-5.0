@@ -1,0 +1,212 @@
+[
+  {
+    "id": "bread-hearth",
+    "name": "Hearthstone Whole Grain Loaf (sample)",
+    "brand": "Hearthstone Sample Bakery",
+    "category": "bread",
+    "barcode": null,
+    "package_size": null,
+    "image_url": null,
+    "image_credit": null,
+    "image_source_url": null,
+    "label_status": "synthetic",
+    "label_verified_at": null,
+    "label_source_id": null,
+    "serving_g": 50,
+    "nutrition_per_serving": {
+      "fiber_g": 6,
+      "protein_g": 6,
+      "added_sugar_g": 2,
+      "total_sugar_g": 3,
+      "sodium_mg": 380,
+      "saturated_fat_g": 0.5
+    },
+    "first_grain_is_whole": true,
+    "ingredients_text": "Whole wheat flour, water, yeast, cane sugar, salt.",
+    "ingredient_refs": [
+      { "id": "whole-grain-wheat", "label": "Whole wheat flour" },
+      { "id": "cane-sugar", "label": "Cane sugar" },
+      { "id": "salt", "label": "Salt" }
+    ],
+    "sources": [],
+    "store_assortment": {
+      "demo-store-a": "in_demo_assortment",
+      "demo-store-b": "in_demo_assortment"
+    }
+  },
+  {
+    "id": "bread-soft",
+    "name": "Cloudloaf Soft White (sample)",
+    "brand": "Cloudloaf Sample Foods",
+    "category": "bread",
+    "barcode": null,
+    "package_size": null,
+    "image_url": null,
+    "image_credit": null,
+    "image_source_url": null,
+    "label_status": "synthetic",
+    "label_verified_at": null,
+    "label_source_id": null,
+    "serving_g": 50,
+    "nutrition_per_serving": {
+      "fiber_g": 2,
+      "protein_g": 4,
+      "added_sugar_g": 3,
+      "total_sugar_g": 4,
+      "sodium_mg": 190,
+      "saturated_fat_g": 0.5
+    },
+    "first_grain_is_whole": false,
+    "ingredients_text": "Enriched wheat flour, water, cane sugar, yeast, salt.",
+    "ingredient_refs": [
+      { "id": "enriched-flour", "label": "Enriched wheat flour" },
+      { "id": "cane-sugar", "label": "Cane sugar" },
+      { "id": "salt", "label": "Salt" }
+    ],
+    "sources": [],
+    "store_assortment": {
+      "demo-store-a": "in_demo_assortment",
+      "demo-store-b": "in_demo_assortment"
+    }
+  },
+  {
+    "id": "bread-rustic",
+    "name": "Millgate Rustic Wheat (sample)",
+    "brand": "Millgate Sample Co",
+    "category": "bread",
+    "barcode": null,
+    "package_size": null,
+    "image_url": null,
+    "image_credit": null,
+    "image_source_url": null,
+    "label_status": "synthetic",
+    "label_verified_at": null,
+    "label_source_id": null,
+    "serving_g": 50,
+    "nutrition_per_serving": {
+      "fiber_g": 4,
+      "protein_g": 5,
+      "added_sugar_g": 2,
+      "total_sugar_g": 3,
+      "sodium_mg": 300,
+      "saturated_fat_g": 1.0
+    },
+    "first_grain_is_whole": true,
+    "ingredients_text": "Whole wheat flour, water, yeast, cane sugar, salt.",
+    "ingredient_refs": [
+      { "id": "whole-grain-wheat", "label": "Whole wheat flour" },
+      { "id": "cane-sugar", "label": "Cane sugar" },
+      { "id": "salt", "label": "Salt" }
+    ],
+    "sources": [],
+    "store_assortment": {
+      "demo-store-a": "in_demo_assortment",
+      "demo-store-b": "out_of_demo_assortment"
+    }
+  },
+  {
+    "id": "cereal-oats",
+    "name": "Sunrise Plain Oat Rings (sample)",
+    "brand": "Sunrise Sample Grains",
+    "category": "cereal",
+    "barcode": null,
+    "package_size": null,
+    "image_url": null,
+    "image_credit": null,
+    "image_source_url": null,
+    "label_status": "synthetic",
+    "label_verified_at": null,
+    "label_source_id": null,
+    "serving_g": 40,
+    "nutrition_per_serving": {
+      "fiber_g": 3,
+      "protein_g": 3,
+      "added_sugar_g": 1,
+      "total_sugar_g": 1,
+      "sodium_mg": 140,
+      "saturated_fat_g": 0.5
+    },
+    "first_grain_is_whole": true,
+    "ingredients_text": "Whole grain oats, corn starch, salt.",
+    "ingredient_refs": [
+      { "id": "whole-grain-oats", "label": "Whole grain oats" },
+      { "id": "salt", "label": "Salt" }
+    ],
+    "sources": [],
+    "store_assortment": {
+      "demo-store-a": "in_demo_assortment",
+      "demo-store-b": "in_demo_assortment"
+    }
+  },
+  {
+    "id": "cereal-honey",
+    "name": "Sunrise Honey Oat Rings (sample)",
+    "brand": "Sunrise Sample Grains",
+    "category": "cereal",
+    "barcode": null,
+    "package_size": null,
+    "image_url": null,
+    "image_credit": null,
+    "image_source_url": null,
+    "label_status": "synthetic",
+    "label_verified_at": null,
+    "label_source_id": null,
+    "serving_g": 40,
+    "nutrition_per_serving": {
+      "fiber_g": 2,
+      "protein_g": 2,
+      "added_sugar_g": 7,
+      "total_sugar_g": 8,
+      "sodium_mg": 150,
+      "saturated_fat_g": 0.3
+    },
+    "first_grain_is_whole": true,
+    "ingredients_text": "Whole grain oats, cane sugar, honey, salt.",
+    "ingredient_refs": [
+      { "id": "whole-grain-oats", "label": "Whole grain oats" },
+      { "id": "cane-sugar", "label": "Cane sugar" },
+      { "id": "honey", "label": "Honey" },
+      { "id": "salt", "label": "Salt" }
+    ],
+    "sources": [],
+    "store_assortment": {
+      "demo-store-a": "in_demo_assortment",
+      "demo-store-b": "out_of_demo_assortment"
+    }
+  },
+  {
+    "id": "cereal-frosted",
+    "name": "Glint Frosted Flakes (sample)",
+    "brand": "Glint Sample Cereal",
+    "category": "cereal",
+    "barcode": null,
+    "package_size": null,
+    "image_url": null,
+    "image_credit": null,
+    "image_source_url": null,
+    "label_status": "synthetic",
+    "label_verified_at": null,
+    "label_source_id": null,
+    "serving_g": 40,
+    "nutrition_per_serving": {
+      "fiber_g": 1,
+      "protein_g": 1,
+      "added_sugar_g": 11,
+      "total_sugar_g": 11,
+      "sodium_mg": 120,
+      "saturated_fat_g": 0.2
+    },
+    "first_grain_is_whole": false,
+    "ingredients_text": "Milled corn, cane sugar, malt flavor, salt.",
+    "ingredient_refs": [
+      { "id": "milled-corn", "label": "Milled corn" },
+      { "id": "cane-sugar", "label": "Cane sugar" },
+      { "id": "salt", "label": "Salt" }
+    ],
+    "sources": [],
+    "store_assortment": {
+      "demo-store-a": "in_demo_assortment",
+      "demo-store-b": "in_demo_assortment"
+    }
+  }
+]
