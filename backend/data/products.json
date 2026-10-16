@@ -24,9 +24,18 @@
     "first_grain_is_whole": true,
     "ingredients_text": "Whole wheat flour, water, yeast, brown sugar, wheat gluten, salt, soybean oil, vinegar, enzymes. Contains wheat, soy.",
     "ingredient_refs": [
-      { "id": "whole-grain-wheat", "label": "Whole wheat flour" },
-      { "id": "cane-sugar", "label": "Brown sugar" },
-      { "id": "salt", "label": "Salt" }
+      {
+        "id": "whole-grain-wheat",
+        "label": "Whole wheat flour"
+      },
+      {
+        "id": "cane-sugar",
+        "label": "Brown sugar"
+      },
+      {
+        "id": "salt",
+        "label": "Salt"
+      }
     ],
     "sources": [
       {
@@ -64,10 +73,16 @@
       "saturated_fat_g": 0
     },
     "first_grain_is_whole": true,
-    "ingredients_text": "Organic whole wheat (organic whole wheat flour, organic cracked whole wheat), water, organic grain and seed mix (organic flax, organic rolled oats, organic sunflower seeds, organic tri-color quinoa, organic pumpkin seeds), organic wheat gluten, organic fruit juices (apple, pear, peach), organic oat fiber, yeast, salt. Contains wheat.",
+    "ingredients_text": "Organic whole wheat (organic whole wheat flour, organic cracked whole wheat), water, organic grain and seed mix (flax, sunflower, quinoa, pumpkin seeds), organic wheat gluten, organic fruit juices, organic oat fiber, yeast, salt. Contains wheat.",
     "ingredient_refs": [
-      { "id": "whole-grain-wheat", "label": "Organic whole wheat flour" },
-      { "id": "salt", "label": "Salt" }
+      {
+        "id": "whole-grain-wheat",
+        "label": "Whole wheat flour"
+      },
+      {
+        "id": "salt",
+        "label": "Salt"
+      }
     ],
     "sources": [
       {
@@ -105,17 +120,501 @@
       "saturated_fat_g": 0
     },
     "first_grain_is_whole": false,
-    "ingredients_text": "Enriched bleached flour, water, sugar, yeast, soybean oil, salt, and smaller amounts of dough conditioners and preservatives. Contains wheat, soy, sesame.",
+    "ingredients_text": "Enriched bleached flour, water, sugar, yeast, soybean oil, salt, dough conditioners, preservatives. Contains wheat, soy, sesame.",
     "ingredient_refs": [
-      { "id": "enriched-flour", "label": "Enriched bleached flour" },
-      { "id": "cane-sugar", "label": "Sugar" },
-      { "id": "salt", "label": "Salt" }
+      {
+        "id": "enriched-flour",
+        "label": "Enriched wheat flour"
+      },
+      {
+        "id": "cane-sugar",
+        "label": "Sugar"
+      },
+      {
+        "id": "salt",
+        "label": "Salt"
+      }
     ],
     "sources": [
       {
         "id": "src-sara-lee",
         "title": "Sara Lee Classic White Bread — SmartLabel",
         "url": "https://smartlabel.labelinsight.com/product/6085863/nutrition",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "store_assortment": {
+      "demo-store-a": "in_demo_assortment",
+      "demo-store-b": "out_of_demo_assortment"
+    }
+  },
+  {
+    "id": "bread-wonder-white",
+    "name": "Wonder Classic White Bread",
+    "brand": "Wonder",
+    "category": "bread",
+    "barcode": null,
+    "package_size": "20 oz loaf",
+    "image_url": null,
+    "image_credit": null,
+    "image_source_url": null,
+    "label_status": "unverified",
+    "label_verified_at": null,
+    "label_source_id": "src-wonder",
+    "serving_g": 57,
+    "nutrition_per_serving": {
+      "fiber_g": 3,
+      "protein_g": 5,
+      "added_sugar_g": 5,
+      "total_sugar_g": 5,
+      "sodium_mg": 180,
+      "saturated_fat_g": 0
+    },
+    "first_grain_is_whole": false,
+    "ingredients_text": "Enriched wheat flour, water, sugar, yeast, salt, soybean oil, calcium carbonate, calcium propionate (preservative). Contains wheat, soy.",
+    "ingredient_refs": [
+      {
+        "id": "enriched-flour",
+        "label": "Enriched wheat flour"
+      },
+      {
+        "id": "cane-sugar",
+        "label": "Sugar"
+      },
+      {
+        "id": "salt",
+        "label": "Salt"
+      }
+    ],
+    "sources": [
+      {
+        "id": "src-wonder",
+        "title": "Wonder Classic White Bread — retailer label (Giant Food)",
+        "url": "https://giantfoodstores.com/groceries/product/wonder-classic-white-bread-sliced-20-oz-pkg/35923",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "store_assortment": {
+      "demo-store-a": "in_demo_assortment",
+      "demo-store-b": "in_demo_assortment"
+    }
+  },
+  {
+    "id": "bread-arnold-ww",
+    "name": "Arnold Whole Grains 100% Whole Wheat Bread",
+    "brand": "Arnold",
+    "category": "bread",
+    "barcode": null,
+    "package_size": "24 oz loaf",
+    "image_url": null,
+    "image_credit": null,
+    "image_source_url": null,
+    "label_status": "unverified",
+    "label_verified_at": null,
+    "label_source_id": "src-arnold",
+    "serving_g": 43,
+    "nutrition_per_serving": {
+      "fiber_g": 3,
+      "protein_g": 4,
+      "added_sugar_g": 2,
+      "total_sugar_g": 3,
+      "sodium_mg": 170,
+      "saturated_fat_g": 0
+    },
+    "first_grain_is_whole": true,
+    "ingredients_text": "Whole wheat flour, water, bulgur wheat, sugar, soybean oil, wheat gluten, honey, yeast, salt, cultured wheat flour, vinegar, soy lecithin, natural flavor, citric acid. Contains wheat, soy.",
+    "ingredient_refs": [
+      {
+        "id": "whole-grain-wheat",
+        "label": "Whole wheat flour"
+      },
+      {
+        "id": "cane-sugar",
+        "label": "Sugar"
+      },
+      {
+        "id": "honey",
+        "label": "Honey"
+      },
+      {
+        "id": "salt",
+        "label": "Salt"
+      }
+    ],
+    "sources": [
+      {
+        "id": "src-arnold",
+        "title": "Arnold Whole Grains 100% Whole Wheat — SmartLabel",
+        "url": "https://smartlabel.labelinsight.com/product/6707997/nutrition",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "store_assortment": {
+      "demo-store-a": "in_demo_assortment",
+      "demo-store-b": "in_demo_assortment"
+    }
+  },
+  {
+    "id": "bread-daves-21",
+    "name": "Dave's Killer Bread 21 Whole Grains & Seeds Organic",
+    "brand": "Dave's Killer Bread",
+    "category": "bread",
+    "barcode": null,
+    "package_size": "27 oz loaf",
+    "image_url": null,
+    "image_credit": null,
+    "image_source_url": null,
+    "label_status": "unverified",
+    "label_verified_at": null,
+    "label_source_id": "src-daves21",
+    "serving_g": 45,
+    "nutrition_per_serving": {
+      "fiber_g": 4,
+      "protein_g": 6,
+      "added_sugar_g": 4,
+      "total_sugar_g": 4,
+      "sodium_mg": 170,
+      "saturated_fat_g": 0
+    },
+    "first_grain_is_whole": true,
+    "ingredients_text": "Organic whole wheat flour, water, organic cracked whole wheat, organic 21 whole grain and seed mix, organic cane sugar, organic wheat gluten, yeast, sea salt. Contains wheat.",
+    "ingredient_refs": [
+      {
+        "id": "whole-grain-wheat",
+        "label": "Whole wheat flour"
+      },
+      {
+        "id": "salt",
+        "label": "Salt"
+      }
+    ],
+    "sources": [
+      {
+        "id": "src-daves21",
+        "title": "Dave's Killer Bread 21 Whole Grains & Seeds — retailer label (Food Lion)",
+        "url": "https://foodlion.com/groceries/bread-bakery/sandwich-bread/daves-killer-bread-organic-21-whole-grains-seeds-sliced-bread-27-oz-pkg.html",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "store_assortment": {
+      "demo-store-a": "in_demo_assortment",
+      "demo-store-b": "out_of_demo_assortment"
+    }
+  },
+  {
+    "id": "bread-natures-own-honey-wheat",
+    "name": "Nature's Own Honey Wheat Bread",
+    "brand": "Nature's Own",
+    "category": "bread",
+    "barcode": null,
+    "package_size": "20 oz loaf",
+    "image_url": null,
+    "image_credit": null,
+    "image_source_url": null,
+    "label_status": "unverified",
+    "label_verified_at": null,
+    "label_source_id": "src-natures-honey",
+    "serving_g": 31,
+    "nutrition_per_serving": {
+      "fiber_g": 1,
+      "protein_g": 3,
+      "added_sugar_g": 2,
+      "total_sugar_g": 2,
+      "sodium_mg": 110,
+      "saturated_fat_g": 0
+    },
+    "first_grain_is_whole": false,
+    "ingredients_text": "Enriched wheat flour, water, whole wheat flour, yeast, honey, sugar, wheat gluten, wheat bran, soybean oil, salt, cultured wheat flour, vinegar. Contains wheat, soy.",
+    "ingredient_refs": [
+      {
+        "id": "enriched-flour",
+        "label": "Enriched wheat flour"
+      },
+      {
+        "id": "honey",
+        "label": "Honey"
+      },
+      {
+        "id": "cane-sugar",
+        "label": "Sugar"
+      },
+      {
+        "id": "salt",
+        "label": "Salt"
+      }
+    ],
+    "sources": [
+      {
+        "id": "src-natures-honey",
+        "title": "Nature's Own Honey Wheat — ingredient/label (Whole Foods Market)",
+        "url": "https://www.wholefoodsmarket.com/product/natures-own-honey-wheat-bread-b000lr4xj6",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "store_assortment": {
+      "demo-store-a": "in_demo_assortment",
+      "demo-store-b": "out_of_demo_assortment"
+    }
+  },
+  {
+    "id": "bread-great-value-white",
+    "name": "Great Value White Bread",
+    "brand": "Great Value",
+    "category": "bread",
+    "barcode": null,
+    "package_size": "20 oz loaf",
+    "image_url": null,
+    "image_credit": null,
+    "image_source_url": null,
+    "label_status": "unverified",
+    "label_verified_at": null,
+    "label_source_id": "src-gv",
+    "serving_g": 26,
+    "nutrition_per_serving": {
+      "fiber_g": 0,
+      "protein_g": 2,
+      "added_sugar_g": 1,
+      "total_sugar_g": 1,
+      "sodium_mg": 150,
+      "saturated_fat_g": 0
+    },
+    "first_grain_is_whole": false,
+    "ingredients_text": "Enriched flour (wheat flour, malted barley flour, reduced iron, niacin, thiamine mononitrate [vitamin B1], riboflavin [vitamin B2], folic acid), water, sugar, yeast, vegetable oil (soybean oil), salt, wheat gluten, grain vinegar, monoglycerides, DATEM, soy lecithin, potassium iodate, calcium sulfate, monocalcium phosphate, calcium propionate. Contains wheat, soy.",
+    "ingredient_refs": [
+      {
+        "id": "enriched-flour",
+        "label": "Enriched wheat flour"
+      },
+      {
+        "id": "malted-barley",
+        "label": "Malted barley flour"
+      },
+      {
+        "id": "cane-sugar",
+        "label": "Sugar"
+      },
+      {
+        "id": "salt",
+        "label": "Salt"
+      }
+    ],
+    "sources": [
+      {
+        "id": "src-gv",
+        "title": "Great Value White Bread — package label (owner-verified)",
+        "url": "https://www.walmart.com/ip/Great-Value-White-Bread-20-oz/37858875",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "store_assortment": {
+      "demo-store-a": "in_demo_assortment",
+      "demo-store-b": "in_demo_assortment"
+    }
+  },
+  {
+    "id": "bread-pepperidge-hearty-white",
+    "name": "Pepperidge Farm Farmhouse Hearty White Bread",
+    "brand": "Pepperidge Farm",
+    "category": "bread",
+    "barcode": null,
+    "package_size": "24 oz loaf",
+    "image_url": null,
+    "image_credit": null,
+    "image_source_url": null,
+    "label_status": "unverified",
+    "label_verified_at": null,
+    "label_source_id": "src-pf",
+    "serving_g": 49,
+    "nutrition_per_serving": {
+      "fiber_g": 1,
+      "protein_g": 4,
+      "added_sugar_g": 4,
+      "total_sugar_g": 4,
+      "sodium_mg": 230,
+      "saturated_fat_g": 0
+    },
+    "first_grain_is_whole": false,
+    "ingredients_text": "Enriched wheat flour, water, sugar, yeast, soybean oil, salt, malted barley flour, whey, soy lecithin, wheat gluten. Contains wheat, milk, soy.",
+    "ingredient_refs": [
+      {
+        "id": "enriched-flour",
+        "label": "Enriched wheat flour"
+      },
+      {
+        "id": "cane-sugar",
+        "label": "Sugar"
+      },
+      {
+        "id": "salt",
+        "label": "Salt"
+      }
+    ],
+    "sources": [
+      {
+        "id": "src-pf",
+        "title": "Pepperidge Farm Farmhouse Hearty White — retailer label (Stop & Shop)",
+        "url": "https://stopandshop.com/groceries/bread-bakery/sandwich-bread/pepperidge-farm-farmhouse-hearty-white-bread-sliced-24-oz-pkg.html",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "store_assortment": {
+      "demo-store-a": "in_demo_assortment",
+      "demo-store-b": "in_demo_assortment"
+    }
+  },
+  {
+    "id": "bread-sara-lee-whole-grain-white",
+    "name": "Sara Lee Whole Grain White Bread",
+    "brand": "Sara Lee",
+    "category": "bread",
+    "barcode": null,
+    "package_size": "20 oz loaf",
+    "image_url": null,
+    "image_credit": null,
+    "image_source_url": null,
+    "label_status": "unverified",
+    "label_verified_at": null,
+    "label_source_id": "src-sl-wg",
+    "serving_g": 57,
+    "nutrition_per_serving": {
+      "fiber_g": 3,
+      "protein_g": 5,
+      "added_sugar_g": 2,
+      "total_sugar_g": 3,
+      "sodium_mg": 290,
+      "saturated_fat_g": 0
+    },
+    "first_grain_is_whole": false,
+    "ingredients_text": "Enriched wheat flour, water, whole wheat flour, sugar, yeast, wheat gluten, salt, soybean oil, preservatives, vitamin D3. Contains wheat, soy.",
+    "ingredient_refs": [
+      {
+        "id": "enriched-flour",
+        "label": "Enriched wheat flour"
+      },
+      {
+        "id": "whole-grain-wheat",
+        "label": "Whole wheat flour"
+      },
+      {
+        "id": "cane-sugar",
+        "label": "Sugar"
+      },
+      {
+        "id": "salt",
+        "label": "Salt"
+      }
+    ],
+    "sources": [
+      {
+        "id": "src-sl-wg",
+        "title": "Sara Lee Whole Grain White — retailer label (Food Lion)",
+        "url": "https://foodlion.com/groceries/bread-bakery/sandwich-bread/sara-lee-whole-grain-white-bread-sliced-20-oz-pkg.html",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "store_assortment": {
+      "demo-store-a": "in_demo_assortment",
+      "demo-store-b": "in_demo_assortment"
+    }
+  },
+  {
+    "id": "bread-oroweat-ww",
+    "name": "Oroweat / Brownberry Whole Grains 100% Whole Wheat Bread",
+    "brand": "Oroweat",
+    "category": "bread",
+    "barcode": null,
+    "package_size": "24 oz loaf",
+    "image_url": null,
+    "image_credit": null,
+    "image_source_url": null,
+    "label_status": "unverified",
+    "label_verified_at": null,
+    "label_source_id": "src-oroweat",
+    "serving_g": 43,
+    "nutrition_per_serving": {
+      "fiber_g": 3,
+      "protein_g": 4,
+      "added_sugar_g": 3,
+      "total_sugar_g": 3,
+      "sodium_mg": 160,
+      "saturated_fat_g": 0
+    },
+    "first_grain_is_whole": true,
+    "ingredients_text": "Whole wheat flour, water, bulgur wheat, sugar, soybean oil, wheat gluten, honey, yeast, cultured wheat flour, salt, soy lecithin, vinegar, natural flavors, citric acid. Contains wheat, soy, milk.",
+    "ingredient_refs": [
+      {
+        "id": "whole-grain-wheat",
+        "label": "Whole wheat flour"
+      },
+      {
+        "id": "cane-sugar",
+        "label": "Sugar"
+      },
+      {
+        "id": "honey",
+        "label": "Honey"
+      },
+      {
+        "id": "salt",
+        "label": "Salt"
+      }
+    ],
+    "sources": [
+      {
+        "id": "src-oroweat",
+        "title": "Oroweat/Brownberry Whole Grains 100% Whole Wheat — SmartLabel",
+        "url": "https://smartlabel.labelinsight.com/product/5031793/nutrition",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "store_assortment": {
+      "demo-store-a": "in_demo_assortment",
+      "demo-store-b": "in_demo_assortment"
+    }
+  },
+  {
+    "id": "bread-martins-potato",
+    "name": "Martin's Potato Bread",
+    "brand": "Martin's",
+    "category": "bread",
+    "barcode": null,
+    "package_size": "18 oz loaf",
+    "image_url": null,
+    "image_credit": null,
+    "image_source_url": null,
+    "label_status": "unverified",
+    "label_verified_at": null,
+    "label_source_id": "src-martins",
+    "serving_g": 32,
+    "nutrition_per_serving": {
+      "fiber_g": 1,
+      "protein_g": 3,
+      "added_sugar_g": 2,
+      "total_sugar_g": 3,
+      "sodium_mg": 105,
+      "saturated_fat_g": 0
+    },
+    "first_grain_is_whole": false,
+    "ingredients_text": "Unbleached enriched wheat flour, nonfat milk, reconstituted potatoes (potato flour), yeast, sugar, cane sugar syrup, wheat gluten, sunflower oil, salt, butter, dough conditioners, sesame seeds. Contains wheat, milk, soy, sesame.",
+    "ingredient_refs": [
+      {
+        "id": "enriched-flour",
+        "label": "Enriched wheat flour"
+      },
+      {
+        "id": "cane-sugar",
+        "label": "Sugar"
+      },
+      {
+        "id": "salt",
+        "label": "Salt"
+      }
+    ],
+    "sources": [
+      {
+        "id": "src-martins",
+        "title": "Martin's Potato Bread — retailer label (Giant Food)",
+        "url": "https://giantfoodstores.com/groceries/bread-bakery/martins-potato-sliced-bread-18-oz-pkg.html",
         "accessed_at": "2026-10-16"
       }
     ],
@@ -137,7 +636,7 @@
     "label_status": "unverified",
     "label_verified_at": null,
     "label_source_id": "src-cheerios",
-    "serving_g": 40,
+    "serving_g": 39,
     "nutrition_per_serving": {
       "fiber_g": 4,
       "protein_g": 5,
@@ -147,11 +646,20 @@
       "saturated_fat_g": 0.5
     },
     "first_grain_is_whole": true,
-    "ingredients_text": "Whole grain oats, corn starch, sugar, salt, tripotassium phosphate. Vitamin E (mixed tocopherols) added to preserve freshness, plus added vitamins and minerals.",
+    "ingredients_text": "Whole grain oats, corn starch, sugar, salt, tripotassium phosphate, vitamin E added to preserve freshness, plus added vitamins and minerals.",
     "ingredient_refs": [
-      { "id": "whole-grain-oats", "label": "Whole grain oats" },
-      { "id": "cane-sugar", "label": "Sugar" },
-      { "id": "salt", "label": "Salt" }
+      {
+        "id": "whole-grain-oats",
+        "label": "Whole grain oats"
+      },
+      {
+        "id": "cane-sugar",
+        "label": "Sugar"
+      },
+      {
+        "id": "salt",
+        "label": "Salt"
+      }
     ],
     "sources": [
       {
@@ -163,7 +671,7 @@
     ],
     "store_assortment": {
       "demo-store-a": "in_demo_assortment",
-      "demo-store-b": "out_of_demo_assortment"
+      "demo-store-b": "in_demo_assortment"
     }
   },
   {
@@ -189,12 +697,24 @@
       "saturated_fat_g": 0
     },
     "first_grain_is_whole": true,
-    "ingredients_text": "Whole grain oats, sugar, corn starch, honey, brown sugar syrup, salt, tripotassium phosphate, canola and/or sunflower oil, natural almond flavor, vitamin E added to preserve freshness, plus added vitamins and minerals. Contains almond ingredients.",
+    "ingredients_text": "Whole grain oats, sugar, corn starch, honey, brown sugar syrup, salt, tripotassium phosphate, canola and/or sunflower oil, natural almond flavor, vitamin E, plus added vitamins and minerals. Contains almond ingredients.",
     "ingredient_refs": [
-      { "id": "whole-grain-oats", "label": "Whole grain oats" },
-      { "id": "cane-sugar", "label": "Sugar" },
-      { "id": "honey", "label": "Honey" },
-      { "id": "salt", "label": "Salt" }
+      {
+        "id": "whole-grain-oats",
+        "label": "Whole grain oats"
+      },
+      {
+        "id": "cane-sugar",
+        "label": "Sugar"
+      },
+      {
+        "id": "honey",
+        "label": "Honey"
+      },
+      {
+        "id": "salt",
+        "label": "Salt"
+      }
     ],
     "sources": [
       {
@@ -232,17 +752,505 @@
       "saturated_fat_g": 0
     },
     "first_grain_is_whole": false,
-    "ingredients_text": "Milled corn, sugar, malt flavor, salt, and added vitamins and minerals (including niacinamide, iron, vitamin B6, vitamin B2, vitamin B1, vitamin A, folic acid, vitamin B12, vitamin D3).",
+    "ingredients_text": "Milled corn, sugar, malt flavor, salt, and added vitamins and minerals.",
     "ingredient_refs": [
-      { "id": "milled-corn", "label": "Milled corn" },
-      { "id": "cane-sugar", "label": "Sugar" },
-      { "id": "salt", "label": "Salt" }
+      {
+        "id": "milled-corn",
+        "label": "Milled corn"
+      },
+      {
+        "id": "cane-sugar",
+        "label": "Sugar"
+      },
+      {
+        "id": "salt",
+        "label": "Salt"
+      }
     ],
     "sources": [
       {
         "id": "src-frosted",
         "title": "Kellogg's Frosted Flakes — SmartLabel",
         "url": "https://smartlabel.kelloggs.com/Product/Index/038000124686",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "store_assortment": {
+      "demo-store-a": "in_demo_assortment",
+      "demo-store-b": "in_demo_assortment"
+    }
+  },
+  {
+    "id": "cereal-corn-flakes",
+    "name": "Corn Flakes",
+    "brand": "Kellogg's",
+    "category": "cereal",
+    "barcode": null,
+    "package_size": null,
+    "image_url": null,
+    "image_credit": null,
+    "image_source_url": null,
+    "label_status": "unverified",
+    "label_verified_at": null,
+    "label_source_id": "src-cornflakes",
+    "serving_g": 42,
+    "nutrition_per_serving": {
+      "fiber_g": 1,
+      "protein_g": 3,
+      "added_sugar_g": 4,
+      "total_sugar_g": 4,
+      "sodium_mg": 300,
+      "saturated_fat_g": 0
+    },
+    "first_grain_is_whole": false,
+    "ingredients_text": "Milled corn, sugar, malt flavor, salt, and added vitamins and minerals.",
+    "ingredient_refs": [
+      {
+        "id": "milled-corn",
+        "label": "Milled corn"
+      },
+      {
+        "id": "cane-sugar",
+        "label": "Sugar"
+      },
+      {
+        "id": "salt",
+        "label": "Salt"
+      },
+      {
+        "id": "malted-barley",
+        "label": "Malted barley flour"
+      }
+    ],
+    "sources": [
+      {
+        "id": "src-cornflakes",
+        "title": "Kellogg's Corn Flakes — SmartLabel",
+        "url": "https://smartlabel.kelloggs.com/Product/Index/038000001956",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "store_assortment": {
+      "demo-store-a": "in_demo_assortment",
+      "demo-store-b": "in_demo_assortment"
+    }
+  },
+  {
+    "id": "cereal-special-k",
+    "name": "Special K Original",
+    "brand": "Kellogg's",
+    "category": "cereal",
+    "barcode": null,
+    "package_size": null,
+    "image_url": null,
+    "image_credit": null,
+    "image_source_url": null,
+    "label_status": "unverified",
+    "label_verified_at": null,
+    "label_source_id": "src-specialk",
+    "serving_g": 39,
+    "nutrition_per_serving": {
+      "fiber_g": 0,
+      "protein_g": 7,
+      "added_sugar_g": 4,
+      "total_sugar_g": 5,
+      "sodium_mg": 270,
+      "saturated_fat_g": 0
+    },
+    "first_grain_is_whole": false,
+    "ingredients_text": "Rice, wheat gluten, sugar, defatted wheat germ, salt, malt flavor, and added vitamins and minerals. Contains wheat.",
+    "ingredient_refs": [
+      {
+        "id": "rice",
+        "label": "Rice"
+      },
+      {
+        "id": "cane-sugar",
+        "label": "Sugar"
+      },
+      {
+        "id": "salt",
+        "label": "Salt"
+      }
+    ],
+    "sources": [
+      {
+        "id": "src-specialk",
+        "title": "Kellogg's Special K Original — SmartLabel",
+        "url": "https://smartlabel.kelloggs.com/Product/Index/038000992001",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "store_assortment": {
+      "demo-store-a": "in_demo_assortment",
+      "demo-store-b": "out_of_demo_assortment"
+    }
+  },
+  {
+    "id": "cereal-raisin-bran",
+    "name": "Raisin Bran",
+    "brand": "Kellogg's",
+    "category": "cereal",
+    "barcode": null,
+    "package_size": null,
+    "image_url": null,
+    "image_credit": null,
+    "image_source_url": null,
+    "label_status": "unverified",
+    "label_verified_at": null,
+    "label_source_id": "src-raisinbran",
+    "serving_g": 59,
+    "nutrition_per_serving": {
+      "fiber_g": 7,
+      "protein_g": 5,
+      "added_sugar_g": 9,
+      "total_sugar_g": 18,
+      "sodium_mg": 210,
+      "saturated_fat_g": 0
+    },
+    "first_grain_is_whole": true,
+    "ingredients_text": "Whole grain wheat, raisins, wheat bran, sugar, brown sugar syrup, malt flavor, salt, and added vitamins and minerals. Contains wheat.",
+    "ingredient_refs": [
+      {
+        "id": "whole-grain-wheat",
+        "label": "Whole wheat flour"
+      },
+      {
+        "id": "raisins",
+        "label": "Raisins"
+      },
+      {
+        "id": "cane-sugar",
+        "label": "Sugar"
+      },
+      {
+        "id": "salt",
+        "label": "Salt"
+      }
+    ],
+    "sources": [
+      {
+        "id": "src-raisinbran",
+        "title": "Kellogg's Raisin Bran — SmartLabel",
+        "url": "https://smartlabel.kelloggs.com/Product/Index/00038000199837",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "store_assortment": {
+      "demo-store-a": "in_demo_assortment",
+      "demo-store-b": "in_demo_assortment"
+    }
+  },
+  {
+    "id": "cereal-honey-bunches-oats",
+    "name": "Honey Bunches of Oats, Honey Roasted",
+    "brand": "Post",
+    "category": "cereal",
+    "barcode": null,
+    "package_size": null,
+    "image_url": null,
+    "image_credit": null,
+    "image_source_url": null,
+    "label_status": "unverified",
+    "label_verified_at": null,
+    "label_source_id": "src-hbo",
+    "serving_g": 41,
+    "nutrition_per_serving": {
+      "fiber_g": 2,
+      "protein_g": 3,
+      "added_sugar_g": 8,
+      "total_sugar_g": 9,
+      "sodium_mg": 190,
+      "saturated_fat_g": 0.5
+    },
+    "first_grain_is_whole": false,
+    "ingredients_text": "Corn, whole grain wheat, sugar, whole grain rolled oats, rice, canola and/or soybean oil, corn syrup, salt, barley malt extract, molasses, cinnamon, honey, caramel color, natural flavor. Contains wheat.",
+    "ingredient_refs": [
+      {
+        "id": "milled-corn",
+        "label": "Milled corn"
+      },
+      {
+        "id": "whole-grain-wheat",
+        "label": "Whole wheat flour"
+      },
+      {
+        "id": "cane-sugar",
+        "label": "Sugar"
+      },
+      {
+        "id": "salt",
+        "label": "Salt"
+      }
+    ],
+    "sources": [
+      {
+        "id": "src-hbo",
+        "title": "Post Honey Bunches of Oats, Honey Roasted — retailer label (H-E-B)",
+        "url": "https://www.heb.com/product-detail/post-honey-bunches-of-oats-honey-roasted-cereal-mega-size/2179867",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "store_assortment": {
+      "demo-store-a": "in_demo_assortment",
+      "demo-store-b": "out_of_demo_assortment"
+    }
+  },
+  {
+    "id": "cereal-cinnamon-toast-crunch",
+    "name": "Cinnamon Toast Crunch",
+    "brand": "General Mills",
+    "category": "cereal",
+    "barcode": null,
+    "package_size": null,
+    "image_url": null,
+    "image_credit": null,
+    "image_source_url": null,
+    "label_status": "unverified",
+    "label_verified_at": null,
+    "label_source_id": "src-ctc",
+    "serving_g": 31,
+    "nutrition_per_serving": {
+      "fiber_g": 2,
+      "protein_g": 2,
+      "added_sugar_g": 8,
+      "total_sugar_g": 9,
+      "sodium_mg": 176,
+      "saturated_fat_g": 0
+    },
+    "first_grain_is_whole": true,
+    "ingredients_text": "Whole grain wheat, sugar, rice flour, canola and/or sunflower oil, fructose, maltodextrin, dextrose, salt, cinnamon, trisodium phosphate, soy lecithin, caramel color. Contains wheat, soy.",
+    "ingredient_refs": [
+      {
+        "id": "whole-grain-wheat",
+        "label": "Whole wheat flour"
+      },
+      {
+        "id": "rice",
+        "label": "Rice"
+      },
+      {
+        "id": "cane-sugar",
+        "label": "Sugar"
+      },
+      {
+        "id": "salt",
+        "label": "Salt"
+      }
+    ],
+    "sources": [
+      {
+        "id": "src-ctc",
+        "title": "Cinnamon Toast Crunch — retailer label (Giant Food)",
+        "url": "https://giantfoodstores.com/groceries/product/cinnamon-toast-crunch-cinnamon-cereal-large-size-16-8-oz-box/17675",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "store_assortment": {
+      "demo-store-a": "in_demo_assortment",
+      "demo-store-b": "in_demo_assortment"
+    }
+  },
+  {
+    "id": "cereal-froot-loops",
+    "name": "Froot Loops",
+    "brand": "Kellogg's",
+    "category": "cereal",
+    "barcode": null,
+    "package_size": null,
+    "image_url": null,
+    "image_credit": null,
+    "image_source_url": null,
+    "label_status": "unverified",
+    "label_verified_at": null,
+    "label_source_id": "src-frootloops",
+    "serving_g": 39,
+    "nutrition_per_serving": {
+      "fiber_g": 2,
+      "protein_g": 2,
+      "added_sugar_g": 12,
+      "total_sugar_g": 12,
+      "sodium_mg": 210,
+      "saturated_fat_g": 0.5
+    },
+    "first_grain_is_whole": true,
+    "ingredients_text": "Whole grain corn flour, sugar, wheat flour, whole grain oat flour, modified food starch, vegetable oil, salt, natural flavor, colors, and added vitamins and minerals. Contains wheat.",
+    "ingredient_refs": [
+      {
+        "id": "whole-grain-corn",
+        "label": "Whole grain corn"
+      },
+      {
+        "id": "cane-sugar",
+        "label": "Sugar"
+      },
+      {
+        "id": "salt",
+        "label": "Salt"
+      }
+    ],
+    "sources": [
+      {
+        "id": "src-frootloops",
+        "title": "Kellogg's Froot Loops — SmartLabel",
+        "url": "https://smartlabel.kelloggs.com/Product/Index/038000017919",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "store_assortment": {
+      "demo-store-a": "in_demo_assortment",
+      "demo-store-b": "out_of_demo_assortment"
+    }
+  },
+  {
+    "id": "cereal-rice-krispies",
+    "name": "Rice Krispies",
+    "brand": "Kellogg's",
+    "category": "cereal",
+    "barcode": null,
+    "package_size": null,
+    "image_url": null,
+    "image_credit": null,
+    "image_source_url": null,
+    "label_status": "unverified",
+    "label_verified_at": null,
+    "label_source_id": "src-ricekrispies",
+    "serving_g": 40,
+    "nutrition_per_serving": {
+      "fiber_g": 0,
+      "protein_g": 3,
+      "added_sugar_g": 4,
+      "total_sugar_g": 4,
+      "sodium_mg": 200,
+      "saturated_fat_g": 0
+    },
+    "first_grain_is_whole": false,
+    "ingredients_text": "Rice, sugar, salt, malt flavor, and added vitamins and minerals.",
+    "ingredient_refs": [
+      {
+        "id": "rice",
+        "label": "Rice"
+      },
+      {
+        "id": "cane-sugar",
+        "label": "Sugar"
+      },
+      {
+        "id": "salt",
+        "label": "Salt"
+      },
+      {
+        "id": "malted-barley",
+        "label": "Malted barley flour"
+      }
+    ],
+    "sources": [
+      {
+        "id": "src-ricekrispies",
+        "title": "Kellogg's Rice Krispies — SmartLabel",
+        "url": "https://smartlabel.kelloggs.com/Product/Index/038000086366",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "store_assortment": {
+      "demo-store-a": "in_demo_assortment",
+      "demo-store-b": "in_demo_assortment"
+    }
+  },
+  {
+    "id": "cereal-lucky-charms",
+    "name": "Lucky Charms",
+    "brand": "General Mills",
+    "category": "cereal",
+    "barcode": null,
+    "package_size": null,
+    "image_url": null,
+    "image_credit": null,
+    "image_source_url": null,
+    "label_status": "unverified",
+    "label_verified_at": null,
+    "label_source_id": "src-luckycharms",
+    "serving_g": 36,
+    "nutrition_per_serving": {
+      "fiber_g": 2,
+      "protein_g": 3,
+      "added_sugar_g": 12,
+      "total_sugar_g": 12,
+      "sodium_mg": 220,
+      "saturated_fat_g": 0
+    },
+    "first_grain_is_whole": true,
+    "ingredients_text": "Whole grain oats, sugar, corn syrup, modified corn starch, corn starch, salt, gelatin, colors, natural and artificial flavor, and added vitamins and minerals.",
+    "ingredient_refs": [
+      {
+        "id": "whole-grain-oats",
+        "label": "Whole grain oats"
+      },
+      {
+        "id": "cane-sugar",
+        "label": "Sugar"
+      },
+      {
+        "id": "salt",
+        "label": "Salt"
+      }
+    ],
+    "sources": [
+      {
+        "id": "src-luckycharms",
+        "title": "Lucky Charms — retailer label (H-E-B)",
+        "url": "https://www.heb.com/product-detail/general-mills-lucky-charms-cereal-family-size/32034",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "store_assortment": {
+      "demo-store-a": "in_demo_assortment",
+      "demo-store-b": "out_of_demo_assortment"
+    }
+  },
+  {
+    "id": "cereal-grape-nuts",
+    "name": "Grape-Nuts",
+    "brand": "Post",
+    "category": "cereal",
+    "barcode": null,
+    "package_size": null,
+    "image_url": null,
+    "image_credit": null,
+    "image_source_url": null,
+    "label_status": "unverified",
+    "label_verified_at": null,
+    "label_source_id": "src-grapenuts",
+    "serving_g": 58,
+    "nutrition_per_serving": {
+      "fiber_g": 7,
+      "protein_g": 6,
+      "added_sugar_g": 0,
+      "total_sugar_g": 5,
+      "sodium_mg": 270,
+      "saturated_fat_g": 0
+    },
+    "first_grain_is_whole": true,
+    "ingredients_text": "Whole grain wheat flour, malted barley flour, salt, dried yeast, and added vitamins and minerals. Contains wheat.",
+    "ingredient_refs": [
+      {
+        "id": "whole-grain-wheat",
+        "label": "Whole wheat flour"
+      },
+      {
+        "id": "malted-barley",
+        "label": "Malted barley flour"
+      },
+      {
+        "id": "salt",
+        "label": "Salt"
+      }
+    ],
+    "sources": [
+      {
+        "id": "src-grapenuts",
+        "title": "Post Grape-Nuts — retailer label (Giant Food)",
+        "url": "https://giantfoodstores.com/groceries/product/post-grape-nuts-original-fiber-whole-grain-cereal-family-size-29-oz-box/357214",
         "accessed_at": "2026-10-16"
       }
     ],

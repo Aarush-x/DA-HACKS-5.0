@@ -1,46 +1,25 @@
-# B2 data gaps — fields to confirm from the physical packages
+# Data status — 24-product catalog
 
-All six products are real and sourced, but marked `label_status: "unverified"`
-until the data owner checks them against the package. Confirming the items below
-lets us flip each record to `"verified"` and set `label_verified_at`.
+The seed now holds **24 real products** (12 bread + 12 cereal), each with a
+source and access date, `label_status: "unverified"` until checked against a
+physical package. Store A carries all 24; Store B carries 16 (8 + 8) to show
+filtering.
 
-Research sources used: manufacturer pages (cheerios.com, daveskillerbread.com),
-SmartLabel (Kellogg's, labelinsight), and label reposts (MyFoodDiary, major
-grocery retailers). Accessed 2026-10-16.
+## Owner-confirmed from packages (2026-10-16)
+- Dave's Powerseed serving 42 g · Dave's 21 serving 45 g · Martin's Potato 32 g
+- Original Cheerios serving 39 g · Honey Bunches of Oats 41 g / 190 mg sodium
+- Lucky Charms serving 36 g
+- Nature's Own Honey Wheat fiber 1 g · Special K fiber 0 g
+- Raisin Bran sat fat 0 g · Cinnamon Toast Crunch sat fat 0 g · Froot Loops sat fat 0.5 g
+- Great Value White ingredient list (no HFCS; enriched flour + sugar)
 
-## Resolved
+## Still optional (non-blocking)
+- **Barcodes (UPC)** — all `null`; add 12-digit UPCs if we want them.
+- **Saturated fat** on Honey Bunches of Oats is a best estimate (0.5 g) — confirm if handy.
+- **Ingredient card sources** — the 11 cards in `ingredients.json` are factual
+  but `content_status: "draft"` with empty `sources`; add references to mark `reviewed`.
+- Flip each record `unverified` → `verified` (+ `label_verified_at`) as packages are checked.
 
-1. ~~**Dave's Killer Bread Powerseed — saturated fat (g).**~~ ✅ Confirmed from
-   the package by the data owner on 2026-10-16: **0 g** per slice (regular and
-   thin-slice). Dave's now carries complete balanced data and ranks.
-
-## Confirm (values set, want a second look)
-
-2. **Original Cheerios — serving size in grams.** Set to `40` g for the
-   1½-cup serving; the manufacturer page lists only "1 1/2 cup". Confirm the gram
-   weight on the box.
-3. **Dave's Powerseed — serving size in grams.** Set to `42` g (1 slice) from an
-   Amazon listing; confirm against the loaf.
-4. **Sara Lee Classic White — sodium / protein.** Used SmartLabel (manufacturer):
-   sodium `270` mg, protein `4` g per 57 g (2 slices). Retailer reposts show
-   `290` mg / `5` g. Package wins.
-5. **Honey Nut Cheerios — serving grams.** Set to `37` g (1 cup), the current
-   retail listing; an older label used ¾ cup (28 g). Confirm.
-
-## Optional / nice-to-have
-
-6. **Barcodes (UPC).** All `null`. Add the 12-digit UPC from each package if we
-   want them (string, preserve leading zeroes).
-7. **Full ingredient tails.** Leading ingredients are captured and correct; the
-   vitamin/mineral tails are summarized. Paste exact lists if we want them verbatim.
-8. **Ingredient cards (`ingredients.json`).** Seven cards are written and factual
-   but `content_status: "draft"` with empty `sources`. Add 1–2 references each to
-   move them to `"reviewed"`.
-9. **Product images.** None included (plain cards). Only add images with permitted
-   use + attribution; otherwise the handoff allows plain cards.
-
-## How to apply a confirmation
-
-Edit `backend/data/products.json` for the product, then for a fully checked
-record set `"label_status": "verified"` and `"label_verified_at": "2026-10-..."`.
-Re-run `pytest -q` and the live check.
+## Provenance
+Full per-product source URLs live in each record's `sources` array. A human-readable
+candidate table (with per-field sourcing) is in `CANDIDATES.md`.

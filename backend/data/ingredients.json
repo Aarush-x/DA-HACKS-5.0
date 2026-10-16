@@ -96,5 +96,61 @@
     "reviewed_at": null,
     "sources": [],
     "content_status": "draft"
+  },
+  {
+    "id": "rice",
+    "name": "Rice",
+    "aliases": ["milled rice", "white rice"],
+    "what_it_is": "Milled rice used as the main grain in many crisp cereals; usually refined (bran and germ removed).",
+    "why_used": "Gives a light, crisp texture as the grain base.",
+    "evidence_summary": "Refined milled rice is not a whole grain and generally contributes little dietary fiber.",
+    "practical_guidance": "A refined-rice base usually pairs with low fiber; check the fiber line at equal weight.",
+    "evidence_level": "established",
+    "uncertainty": "Some products use brown (whole grain) rice; the label states which.",
+    "reviewed_at": null,
+    "sources": [],
+    "content_status": "draft"
+  },
+  {
+    "id": "raisins",
+    "name": "Raisins",
+    "aliases": ["dried grapes"],
+    "what_it_is": "Dried grapes added to cereals for sweetness and texture.",
+    "why_used": "Add natural sweetness, chew, and some fiber.",
+    "evidence_summary": "Raisins contribute naturally occurring sugar (counted in total sugar) rather than added sugar, though many raisin cereals also add sugar separately.",
+    "practical_guidance": "Total sugar can look high partly from the fruit; check the separate added sugar line.",
+    "evidence_level": "established",
+    "uncertainty": "Naturally occurring and added sugars are listed separately on the US label.",
+    "reviewed_at": null,
+    "sources": [],
+    "content_status": "draft"
+  },
+  {
+    "id": "malted-barley",
+    "name": "Malted barley flour",
+    "aliases": ["malt", "malt flavor", "barley malt"],
+    "what_it_is": "Flour from sprouted (malted) barley, used in small amounts for flavor and browning.",
+    "why_used": "Adds a mild malt flavor and supports color and texture.",
+    "evidence_summary": "Used in small quantities for flavor; not a major source of nutrients at those amounts. Contains gluten.",
+    "practical_guidance": "A flavor ingredient, not a meaningful change to the fiber or sugar comparison.",
+    "evidence_level": "established",
+    "uncertainty": "Barley contains gluten, relevant for gluten avoidance.",
+    "reviewed_at": null,
+    "sources": [],
+    "content_status": "draft"
+  },
+  {
+    "id": "whole-grain-corn",
+    "name": "Whole grain corn",
+    "aliases": ["whole grain corn flour", "whole grain yellow corn flour"],
+    "what_it_is": "Corn flour that retains the whole kernel, used as a whole-grain cereal base.",
+    "why_used": "Provides the grain base while keeping the bran and germ.",
+    "evidence_summary": "As a whole grain, it retains more fiber than degerminated milled corn, though a sweetened product can still be high in added sugar.",
+    "practical_guidance": "Whole grain first is a plus, but still compare the added sugar line at equal weight.",
+    "evidence_level": "established",
+    "uncertainty": "Whole-grain base does not offset a high added-sugar formulation.",
+    "reviewed_at": null,
+    "sources": [],
+    "content_status": "draft"
   }
 ]
