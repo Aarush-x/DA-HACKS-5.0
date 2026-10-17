@@ -17,6 +17,21 @@ const metrics: [keyof Nutrients, string, string][] = [
   ['total_sugar_g', 'Total sugar', 'g'], ['added_sugar_g', 'Added sugar', 'g'],
   ['saturated_fat_g', 'Saturated fat', 'g'], ['sodium_mg', 'Sodium', 'mg'],
 ];
+const nutrientGuidance: Record<keyof Nutrients, string> = {
+  calories_kcal: 'Depends on your needs',
+  protein_g: 'More is generally helpful',
+  fiber_g: 'More is generally helpful',
+  total_sugar_g: 'Lower can help; includes natural and added sugar',
+  added_sugar_g: 'Less is generally preferable',
+  saturated_fat_g: 'Less is generally preferable',
+  sodium_mg: 'Less is generally preferable',
+};
+const moreIsHelpful = new Set<keyof Nutrients>(['protein_g', 'fiber_g']);
+const lessIsHelpful = new Set<keyof Nutrients>(['total_sugar_g', 'added_sugar_g', 'saturated_fat_g', 'sodium_mg']);
+const preferredLabels: Partial<Record<keyof Nutrients, string>> = {
+  protein_g: 'More protein', fiber_g: 'Better for fiber', total_sugar_g: 'Less total sugar',
+  added_sugar_g: 'Less added sugar', saturated_fat_g: 'Less saturated fat', sodium_mg: 'Less sodium',
+};
 const storeNames: Record<string, string> = { 'demo-store-a': 'Walmart San Jose', 'demo-store-b': 'Walmart Mountain View' };
 const amount = (value: number | null, unit: string) => value === null ? 'Not provided' : `${new Intl.NumberFormat('en-US', { maximumFractionDigits: unit === 'mg' ? 0 : 1 }).format(value)} ${unit}`;
 const message = (error: unknown) => error instanceof Error ? error.message : 'Something went wrong. Please retry.';
@@ -95,16 +110,27 @@ function SearchForm({ search, setSearch, store, setStore, stores, storeError, su
   </div>;
 }
 
-function comparisonLabel(key: keyof Nutrients, value: number | null, other: number | null) {
-  if (value === null || other === null || value === other) return '';
-  if (key === 'fiber_g' || key === 'protein_g') return value > other ? 'Higher' : 'Lower';
-  return value < other ? 'Lower' : 'Higher';
+function comparisonDetail(key: keyof Nutrients, value: number | null, other: number | null, unit: string) {
+  if (value === null || other === null) return undefined;
+  if (value === other) return { difference: 'Same amount', preferred: false };
+  const difference = new Intl.NumberFormat('en-US', { maximumFractionDigits: unit === 'mg' ? 0 : 1 }).format(Math.abs(value - other));
+  const direction = value > other ? 'more' : 'less';
+  return {
+    difference: `${difference} ${unit} ${direction}`,
+    preferred: moreIsHelpful.has(key) ? value > other : lessIsHelpful.has(key) ? value < other : false,
+  };
 }
 
-function dailyValue(value: number | null, key: keyof Nutrients, values: CatalogResponse['meta']['fda_daily_values']) {
-  if (value === null) return 'Not provided';
-  if (key === 'total_sugar_g') return 'No FDA Daily Value';
-  return `${Math.round((value / values[key]) * 100)}% DV`;
+function comparisonSummary(product: Product, other: Product) {
+  const advantages = metrics.flatMap(([key, label]) => {
+    if (!moreIsHelpful.has(key) && !lessIsHelpful.has(key)) return [];
+    const value = product.nutrition_per_reference[key];
+    const otherValue = other.nutrition_per_reference[key];
+    if (value === null || otherValue === null || value === otherValue) return [];
+    const preferred = moreIsHelpful.has(key) ? value > otherValue : value < otherValue;
+    return preferred ? [`${moreIsHelpful.has(key) ? 'more' : 'less'} ${label.toLowerCase()}`] : [];
+  });
+  return advantages.length ? new Intl.ListFormat('en-US', { style: 'long', type: 'conjunction' }).format(advantages) : 'No clear edge on the guidance-based rows shown';
 }
 
 export function App({ api, mode }: { api: Api; mode: 'mock' | 'api' }) {
@@ -122,7 +148,9 @@ export function App({ api, mode }: { api: Api; mode: 'mock' | 'api' }) {
   const [retryStores, setRetryStores] = useState(0);
   const [selected, setSelected] = useState<string[]>([]);
   const [ingredientSelection, setIngredientSelection] = useState<{ product: Product }>();
+  const [comparisonVisible, setComparisonVisible] = useState(false);
   const ingredientOpener = useRef<HTMLElement | null>(null);
+  const comparisonRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const controller = new AbortController(); setStoreError('');
@@ -150,6 +178,14 @@ export function App({ api, mode }: { api: Api; mode: 'mock' | 'api' }) {
   }, { scope: root, dependencies: [catalog, loading], revertOnUpdate: true });
 
   const compared = useMemo(() => (catalog?.products ?? []).filter(product => selected.includes(product.id)), [catalog, selected]);
+  useEffect(() => {
+    if (compared.length !== 2) { setComparisonVisible(false); return; }
+    const element = comparisonRef.current;
+    if (!element || !('IntersectionObserver' in window)) return;
+    const observer = new IntersectionObserver(([entry]) => setComparisonVisible(entry.isIntersecting), { threshold: 0.12 });
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, [compared.length]);
   const submitSearch = () => { const query = search.trim(); if (!query) return; setSelected([]); setCatalog(undefined); setSubmitted(query); };
   const chooseStore = (next: string) => { setStoreState(next); setSelected([]); if (submitted !== null) setCatalog(undefined); };
   const resetHome = () => { setSubmitted(null); setSearch(''); setCatalog(undefined); setError(''); setSelected([]); setPriority('balanced'); };
@@ -175,12 +211,12 @@ export function App({ api, mode }: { api: Api; mode: 'mock' | 'api' }) {
           {!loading && !error && catalog?.products.length === 0 && <div className="empty-state"><h3>No products found.</h3><p>The current catalog is limited to a small selection of bread and cereal. Try another search.</p><button onClick={() => document.getElementById('search-results')?.focus()}>Edit search</button></div>}
           <div className="product-grid" inert={loading}>{catalog?.products.map(product => { const chosen = compared[0]; const disabled = !selected.includes(product.id) && (selected.length >= 2 || Boolean(chosen && chosen.category !== product.category)); return <ProductCard key={product.id} product={product} selected={selected.includes(product.id)} disabled={disabled} toggle={() => toggle(product)} ingredient={opener => openIngredient(product, opener)}/>; })}</div>
         </section>
-        {compared.length === 2 && catalog && <section className="comparison" aria-labelledby="compare-title"><div className="comparison-heading"><div><p className="kicker">Equal-weight comparison</p><h2 id="compare-title" tabIndex={-1}>Compare products</h2></div><button onClick={() => setSelected([])}>Clear both</button></div><p>Per {compared[0].reference_g} g{compared[0].category === 'cereal' ? ' dry cereal, without milk' : ''}. %DV uses general FDA Daily Values for a 2,000 calorie diet as neutral context, not personal or medical advice.</p><div className="table-wrap"><table><caption className="sr-only">Nutrition comparison at equal weight with general FDA Daily Value context</caption><thead><tr><th scope="col">Metric</th>{compared.map(product => <th scope="col" key={product.id}><span>{product.name}</span><button onClick={() => toggle(product)}>Remove</button></th>)}</tr></thead><tbody>{metrics.map(([key, label, unit]) => <tr key={key}><th scope="row">{label}</th>{compared.map((product, index) => { const value = product.nutrition_per_reference[key]; const other = compared[index === 0 ? 1 : 0].nutrition_per_reference[key]; const difference = comparisonLabel(key, value, other); return <td key={product.id}><strong>{amount(value, unit)}</strong><small>{dailyValue(value, key, catalog.meta.fda_daily_values)}</small>{difference && <span className="difference">{difference}</span>}</td>; })}</tr>)}</tbody></table></div><div className="tradeoff-summary"><strong>Main tradeoff</strong><p>{compared.flatMap(product => product.ranking.reasons).find(reason => reason.kind === 'tradeoff')?.text ?? 'These products differ across the listed nutrients. Choose based on the priority that matters to you.'}</p></div></section>}
+        {compared.length === 2 && catalog && <section ref={comparisonRef} className="comparison" aria-labelledby="compare-title"><div className="comparison-heading"><div><p className="kicker">Equal-weight comparison</p><h2 id="compare-title" tabIndex={-1}>Compare products</h2></div><button onClick={() => setSelected([])}>Clear both</button></div><p className="comparison-intro">Both products are shown at the same {compared[0].reference_g} g{compared[0].category === 'cereal' ? ' amount of dry cereal' : ' amount'}, so the numbers are directly comparable.</p><section className="comparison-summary" aria-labelledby="quick-read-title"><div className="comparison-summary-heading"><p className="kicker">Quick read</p><h3 id="quick-read-title">The clearest differences</h3></div><div className="comparison-summary-products">{compared.map((product, index) => <div key={product.id}><strong>{product.name}</strong><p>{comparisonSummary(product, compared[index === 0 ? 1 : 0])}.</p></div>)}</div><p className="comparison-summary-note">Calories are not marked better or worse because people’s needs differ.</p></section><div className="table-wrap"><table><caption className="sr-only">Plain-language nutrition comparison at equal weight</caption><thead><tr><th scope="col">Nutrient</th>{compared.map(product => <th scope="col" key={product.id}><span>{product.name}</span><button onClick={() => toggle(product)}>Remove</button></th>)}</tr></thead><tbody>{metrics.map(([key, label, unit]) => <tr key={key}><th scope="row"><span>{label}</span><small>{nutrientGuidance[key]}</small></th>{compared.map((product, index) => { const value = product.nutrition_per_reference[key]; const detail = comparisonDetail(key, value, compared[index === 0 ? 1 : 0].nutrition_per_reference[key], unit); return <td key={product.id}><strong>{amount(value, unit)}</strong>{detail && <span className="comparison-delta">{detail.difference}</span>}{detail?.preferred && <span className="comparison-preferred">{preferredLabels[key]}</span>}</td>; })}</tr>)}</tbody></table></div><div className="tradeoff-summary"><strong>Main tradeoff</strong><p>{compared.flatMap(product => product.ranking.reasons).find(reason => reason.kind === 'tradeoff')?.text ?? 'These products differ across the listed nutrients. Choose based on the priority that matters to you.'}</p></div></section>}
         <p className="ranking-note">Rankings reflect your selected priority, not a universal health rating.</p>
       </>}
     </main>
     <footer className="site-footer"><div><span className="footer-mark">barelabel.</span><details id="about-data"><summary>About the data</summary><div><p>Store availability is simulated and does not represent live Walmart inventory. Product information may be unverified or incomplete.</p><p>{mode === 'mock' ? 'This build uses fictional sample product data.' : catalog?.meta.contains_synthetic_labels ? 'This API response includes synthetic labels.' : 'This build uses the demo API.'} barelabel is not affiliated with Walmart.</p></div></details></div></footer>
-    {compared.length > 0 && submitted !== null && !loading && <aside className="selection-tray" aria-label="Selected products"><div className="tray-slots">{[0, 1].map(index => <div key={index} className={compared[index] ? 'filled' : ''}><span>{index + 1}</span>{compared[index] ? <><strong>{compared[index].name}</strong><button onClick={() => toggle(compared[index])} aria-label={`Remove ${compared[index].name}`}>×</button></> : <em>Select one more product</em>}</div>)}</div>{compared.length === 2 && <button className="primary" onClick={goToComparison}>Compare products</button>}</aside>}
+    {compared.length > 0 && submitted !== null && !loading && !comparisonVisible && <aside className="selection-tray" aria-label="Selected products"><div className="tray-slots">{[0, 1].map(index => <div key={index} className={compared[index] ? 'filled' : ''}><span>{index + 1}</span>{compared[index] ? <><strong>{compared[index].name}</strong><button onClick={() => toggle(compared[index])} aria-label={`Remove ${compared[index].name}`}>×</button></> : <em>Select one more product</em>}</div>)}</div>{compared.length === 2 && <button className="primary" onClick={goToComparison}>Compare products</button>}</aside>}
     {ingredientSelection && <IngredientDrawer key={ingredientSelection.product.id} product={ingredientSelection.product} opener={ingredientOpener.current} close={() => setIngredientSelection(undefined)}/>}
   </div>;
 }
