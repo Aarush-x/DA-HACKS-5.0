@@ -22,6 +22,17 @@ describe('fixture adapter', () => {
     fiber.products[0].name = 'mutated';
     expect((await mockApi.getProducts({ store_id: 'demo-store-a', priority: 'fiber' })).products[0].name).not.toBe('mutated');
   });
+  it('supports every v2 priority using backend-generated snapshots', async () => {
+    for (const priority of ['balanced', 'fiber', 'sodium', 'protein', 'low_calorie', 'low_sugar', 'low_sat_fat'] as const) {
+      const result = await mockApi.getProducts({ store_id: 'demo-store-a', category: 'cereal', priority });
+      expect(result.meta.priority).toBe(priority);
+      expect(result.products.every(product => product.ranking.priority === priority)).toBe(true);
+      expect(result.meta.fda_daily_values).toMatchObject({ calories_kcal: 2000, protein_g: 50, saturated_fat_g: 20 });
+    }
+    const lowSatFat = await mockApi.getProducts({ store_id: 'demo-store-a', category: 'cereal', priority: 'low_sat_fat' });
+    expect(lowSatFat.products.map(product => product.id)).toEqual(['cereal-03', 'cereal-01', 'cereal-02']);
+    expect(lowSatFat.products[0].retailer_search_url).toMatch(/^https:\/\/www\.walmart\.com\/search\?/);
+  });
   it('reranks filtered results and removes unsupported comparative claims', async () => {
     const d = await mockApi.getProducts({ store_id: 'demo-store-a', q: 'Fiber Loaf' });
     expect(d.products[0].ranking.rank).toBe(1);
