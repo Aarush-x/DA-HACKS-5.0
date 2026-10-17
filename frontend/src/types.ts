@@ -1,5 +1,5 @@
 export type Category = "bread" | "cereal";
-export type Priority = "balanced" | "fiber" | "sodium";
+export type Priority = "balanced" | "fiber" | "sodium" | "protein" | "low_calorie" | "low_sugar" | "low_sat_fat";
 export type LabelStatus = "verified" | "unverified" | "synthetic";
 
 export type Source = {
@@ -10,6 +10,7 @@ export type Source = {
 };
 
 export type Nutrients = {
+  calories_kcal: number | null;
   fiber_g: number | null;
   protein_g: number | null;
   added_sugar_g: number | null;
@@ -40,6 +41,7 @@ export type Product = {
   ingredients_text: string | null;
   ingredient_refs: { id: string; label: string }[];
   sources: Source[];
+  retailer_search_url: string | null;
   availability: {
     store_id: string;
     status: "in_demo_assortment" | "out_of_demo_assortment" | "unknown";
@@ -65,6 +67,14 @@ export type CatalogResponse = {
     contains_synthetic_labels: boolean;
     supported_categories: Category[];
     reference_g_by_category: { bread: 50; cereal: 40 };
+    fda_daily_values: {
+      calories_kcal: number;
+      fiber_g: number;
+      protein_g: number;
+      added_sugar_g: number;
+      sodium_mg: number;
+      saturated_fat_g: number;
+    };
     priority: Priority;
     store_id: string;
     total: number;

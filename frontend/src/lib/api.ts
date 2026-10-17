@@ -2,6 +2,10 @@ import type { CatalogResponse, Category, Priority, StoresResponse, IngredientRes
 import balanced from '../mocks/products-balanced.json';
 import fiber from '../mocks/products-fiber.json';
 import sodium from '../mocks/products-sodium.json';
+import protein from '../mocks/products-protein.json';
+import lowCalorie from '../mocks/products-low-calorie.json';
+import lowSugar from '../mocks/products-low-sugar.json';
+import lowSatFat from '../mocks/products-low-sat-fat.json';
 import stores from '../mocks/stores.json';
 import ingredient from '../mocks/ingredient.json';
 
@@ -20,7 +24,8 @@ const isString = (value: unknown): value is string => typeof value === 'string';
 const isNullableString = (value: unknown) => value === null || isString(value);
 const isNullableNumber = (value: unknown) => value === null || typeof value === 'number';
 const isNullableBoolean = (value: unknown) => value === null || typeof value === 'boolean';
-const nutrientKeys = ['fiber_g', 'protein_g', 'added_sugar_g', 'total_sugar_g', 'sodium_mg', 'saturated_fat_g'] as const;
+const priorities = ['balanced', 'fiber', 'sodium', 'protein', 'low_calorie', 'low_sugar', 'low_sat_fat'] as const;
+const nutrientKeys = ['calories_kcal', 'fiber_g', 'protein_g', 'added_sugar_g', 'total_sugar_g', 'sodium_mg', 'saturated_fat_g'] as const;
 const hasNutrients = (value: unknown) => isRecord(value) && nutrientKeys.every(key => isNullableNumber(value[key]));
 const hasSources = (value: unknown) => Array.isArray(value) && value.every(source => isRecord(source) && isString(source.id) && isString(source.title) && isString(source.url) && isString(source.accessed_at));
 const invalidResponse = () => { throw new ApiError(502, 'The demo API returned data that does not match the shared contract.', 'invalid_response'); };
@@ -30,11 +35,12 @@ function parseStores(value: unknown): StoresResponse {
 }
 function parseCatalog(value: unknown): CatalogResponse {
   const validProduct = (product: unknown) => {
-    if (!isRecord(product) || !isString(product.id) || !isString(product.name) || !isString(product.brand) || !['bread', 'cereal'].includes(String(product.category)) || !['verified', 'unverified', 'synthetic'].includes(String(product.label_status)) || !isNullableString(product.barcode) || !isNullableString(product.package_size) || !isNullableString(product.image_url) || !isNullableString(product.image_credit) || !isNullableString(product.image_source_url) || !isNullableString(product.label_verified_at) || !isNullableString(product.label_source_id) || !isNullableNumber(product.serving_g) || typeof product.reference_g !== 'number' || !hasNutrients(product.nutrition_per_serving) || !hasNutrients(product.nutrition_per_100g) || !hasNutrients(product.nutrition_per_reference) || !isNullableBoolean(product.first_grain_is_whole) || !isNullableString(product.ingredients_text) || !Array.isArray(product.ingredient_refs) || !product.ingredient_refs.every(ref => isRecord(ref) && isString(ref.id) && isString(ref.label)) || !hasSources(product.sources) || !isRecord(product.availability) || !isString(product.availability.store_id) || !['in_demo_assortment', 'out_of_demo_assortment', 'unknown'].includes(String(product.availability.status)) || product.availability.mode !== 'simulated' || !isRecord(product.ranking)) return false;
+    if (!isRecord(product) || !isString(product.id) || !isString(product.name) || !isString(product.brand) || !['bread', 'cereal'].includes(String(product.category)) || !['verified', 'unverified', 'synthetic'].includes(String(product.label_status)) || !isNullableString(product.barcode) || !isNullableString(product.package_size) || !isNullableString(product.image_url) || !isNullableString(product.image_credit) || !isNullableString(product.image_source_url) || !isNullableString(product.label_verified_at) || !isNullableString(product.label_source_id) || !isNullableNumber(product.serving_g) || typeof product.reference_g !== 'number' || !hasNutrients(product.nutrition_per_serving) || !hasNutrients(product.nutrition_per_100g) || !hasNutrients(product.nutrition_per_reference) || !isNullableBoolean(product.first_grain_is_whole) || !isNullableString(product.ingredients_text) || !Array.isArray(product.ingredient_refs) || !product.ingredient_refs.every(ref => isRecord(ref) && isString(ref.id) && isString(ref.label)) || !hasSources(product.sources) || !isNullableString(product.retailer_search_url) || !isRecord(product.availability) || !isString(product.availability.store_id) || !['in_demo_assortment', 'out_of_demo_assortment', 'unknown'].includes(String(product.availability.status)) || product.availability.mode !== 'simulated' || !isRecord(product.ranking)) return false;
     const ranking = product.ranking;
-    return ['balanced', 'fiber', 'sodium'].includes(String(ranking.priority)) && ['ranked', 'insufficient_data'].includes(String(ranking.status)) && isNullableNumber(ranking.rank) && isNullableNumber(ranking.internal_index) && Array.isArray(ranking.reasons) && ranking.reasons.every(reason => isRecord(reason) && ['strength', 'tradeoff', 'note'].includes(String(reason.kind)) && isString(reason.text)) && Array.isArray(ranking.missing_fields) && ranking.missing_fields.every(isString) && Array.isArray(ranking.components) && ranking.components.every(component => isRecord(component) && isString(component.key) && isNullableNumber(component.contribution));
+    return priorities.includes(ranking.priority as typeof priorities[number]) && ['ranked', 'insufficient_data'].includes(String(ranking.status)) && isNullableNumber(ranking.rank) && isNullableNumber(ranking.internal_index) && Array.isArray(ranking.reasons) && ranking.reasons.every(reason => isRecord(reason) && ['strength', 'tradeoff', 'note'].includes(String(reason.kind)) && isString(reason.text)) && Array.isArray(ranking.missing_fields) && ranking.missing_fields.every(isString) && Array.isArray(ranking.components) && ranking.components.every(component => isRecord(component) && isString(component.key) && isNullableNumber(component.contribution));
   };
-  if (!isRecord(value) || !isRecord(value.meta) || value.meta.api_version !== '1' || !isString(value.meta.catalog_version) || value.meta.inventory_mode !== 'simulated' || !['seed', 'postgres', 'fixture'].includes(String(value.meta.storage_mode)) || typeof value.meta.contains_synthetic_labels !== 'boolean' || !Array.isArray(value.meta.supported_categories) || !value.meta.supported_categories.every(category => ['bread', 'cereal'].includes(String(category))) || !isRecord(value.meta.reference_g_by_category) || value.meta.reference_g_by_category.bread !== 50 || value.meta.reference_g_by_category.cereal !== 40 || !['balanced', 'fiber', 'sodium'].includes(String(value.meta.priority)) || !isString(value.meta.store_id) || typeof value.meta.total !== 'number' || !Array.isArray(value.products) || !value.products.every(validProduct) || value.meta.total !== value.products.length) invalidResponse();
+  const dailyValues = value && isRecord(value) && isRecord(value.meta) ? value.meta.fda_daily_values : null;
+  if (!isRecord(value) || !isRecord(value.meta) || value.meta.api_version !== '1' || !isString(value.meta.catalog_version) || value.meta.inventory_mode !== 'simulated' || !['seed', 'postgres', 'fixture'].includes(String(value.meta.storage_mode)) || typeof value.meta.contains_synthetic_labels !== 'boolean' || !Array.isArray(value.meta.supported_categories) || !value.meta.supported_categories.every(category => ['bread', 'cereal'].includes(String(category))) || !isRecord(value.meta.reference_g_by_category) || value.meta.reference_g_by_category.bread !== 50 || value.meta.reference_g_by_category.cereal !== 40 || !isRecord(dailyValues) || !['calories_kcal', 'fiber_g', 'protein_g', 'added_sugar_g', 'sodium_mg', 'saturated_fat_g'].every(key => typeof dailyValues[key] === 'number') || !priorities.includes(value.meta.priority as typeof priorities[number]) || !isString(value.meta.store_id) || typeof value.meta.total !== 'number' || !Array.isArray(value.products) || !value.products.every(validProduct) || value.meta.total !== value.products.length) invalidResponse();
   return value as unknown as CatalogResponse;
 }
 function parseIngredient(value: unknown): IngredientResponse {
@@ -47,9 +53,9 @@ export const mockApi: Api = {
   async getProducts(query, signal) {
     signal?.throwIfAborted();
     const priority = query.priority ?? 'balanced';
-    if (!query.store_id || !['balanced', 'fiber', 'sodium'].includes(priority) || (query.category !== undefined && !['bread', 'cereal'].includes(query.category)) || (query.q?.length ?? 0) > 100) fail(422, 'Check the store, category, search length and priority.');
+    if (!query.store_id || !priorities.includes(priority) || (query.category !== undefined && !['bread', 'cereal'].includes(query.category)) || (query.q?.length ?? 0) > 100) fail(422, 'Check the store, category, search length and priority.');
     if (!['demo-store-a', 'demo-store-b'].includes(query.store_id)) fail(404, 'Demo store not found.');
-    const data = structuredClone(({ balanced, fiber, sodium })[priority]) as CatalogResponse;
+    const data = structuredClone(({ balanced, fiber, sodium, protein, low_calorie: lowCalorie, low_sugar: lowSugar, low_sat_fat: lowSatFat })[priority]) as CatalogResponse;
     const q = query.q?.trim().toLowerCase() ?? '';
     data.products = data.products.filter(p => (query.store_id === 'demo-store-a' || !p.id.endsWith('03')) && (!query.category || p.category === query.category) && [p.category, p.name, p.brand].some(s => s.toLowerCase().includes(q)));
     const ranks = { bread: 0, cereal: 0 };

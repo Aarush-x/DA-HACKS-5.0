@@ -73,17 +73,27 @@ describe('search-first shopper flow', () => {
     await screen.findByRole('article', { name: 'Sample Fiber Loaf' });
   });
 
-  it('renders one Ingredients action per card and keeps explanations in one drawer', async () => {
+  it('shows the full nutrient set, product sources, retailer search, and ingredient evidence', async () => {
     const user = await searchForAfterRender('bread');
     const cards = await screen.findAllByRole('article');
     const firstCard = cards[0];
-    expect(within(firstCard).getAllByRole('button', { name: /Ingredients/ })).toHaveLength(1);
-    const trigger = within(firstCard).getByRole('button', { name: /Ingredients/ });
+    for (const label of ['Calories', 'Protein', 'Fiber', 'Total sugar', 'Added sugar', 'Saturated fat', 'Sodium']) {
+      expect(within(firstCard).getByText(label)).toBeTruthy();
+    }
+    await user.click(within(firstCard).getByText('Ingredients and sources'));
+    expect(within(firstCard).getByText('Sources not yet reviewed.')).toBeTruthy();
+    const walmart = within(firstCard).getByRole('link', { name: /Search for Sample Fiber Loaf on Walmart/ });
+    expect(walmart.getAttribute('href')).toMatch(/^https:\/\/www\.walmart\.com\/search\?/);
+    expect(walmart.getAttribute('target')).toBe('_blank');
+    const trigger = within(firstCard).getByRole('button', { name: 'Fictional sample grain' });
     await user.click(trigger);
     const dialog = await screen.findByRole('dialog');
     expect(within(dialog).getByRole('heading', { name: 'Sample Fiber Loaf' })).toBeTruthy();
     expect(within(dialog).getByRole('heading', { name: 'Full ingredient list' })).toBeTruthy();
-    await within(dialog).findByText('References are not available for this item.');
+    expect(within(dialog).getByText('not assessed evidence')).toBeTruthy();
+    expect(within(dialog).getByText('What it is')).toBeTruthy();
+    expect(within(dialog).getByText('Uncertainty')).toBeTruthy();
+    expect(within(dialog).getAllByText('Sources not yet reviewed.')).toHaveLength(1);
     await user.click(within(dialog).getByRole('button', { name: 'Close ingredients' }));
     expect(screen.queryByRole('dialog')).toBeNull();
     expect(document.activeElement).toBe(trigger);
@@ -97,10 +107,33 @@ describe('search-first shopper flow', () => {
     expect(within(tray).getByText('Select one more product')).toBeTruthy();
     await user.click(within(cards[1]).getByRole('button', { name: 'Compare' }));
     expect(within(tray).getByRole('button', { name: 'Compare products' })).toBeTruthy();
-    const table = screen.getByRole('table', { name: 'Nutrition comparison at equal weight' });
+    const table = screen.getByRole('table', { name: 'Nutrition comparison at equal weight with general FDA Daily Value context' });
+    expect(within(table).getByRole('rowheader', { name: 'Calories' })).toBeTruthy();
+    expect(within(table).getByRole('rowheader', { name: 'Protein' })).toBeTruthy();
     expect(within(table).getByRole('rowheader', { name: 'Fiber' })).toBeTruthy();
+    expect(within(table).getByRole('rowheader', { name: 'Total sugar' })).toBeTruthy();
+    expect(within(table).getByRole('rowheader', { name: 'Added sugar' })).toBeTruthy();
     expect(within(table).getByRole('rowheader', { name: 'Saturated fat' })).toBeTruthy();
+    expect(within(table).getByRole('rowheader', { name: 'Sodium' })).toBeTruthy();
+    expect(within(table).getAllByText('No FDA Daily Value')).toHaveLength(2);
+    expect(screen.getByText(/general FDA Daily Values for a 2,000 calorie diet/)).toBeTruthy();
     expect(within(table).getAllByRole('button', { name: 'Remove' })).toHaveLength(2);
+  });
+
+  it('requests every v2 ranking priority and renders the returned order', async () => {
+    const user = userEvent.setup();
+    const api = { ...mockApi, getProducts: vi.fn(mockApi.getProducts) };
+    render(<App api={api} mode="mock"/>);
+    await user.type(screen.getByLabelText('Search the catalog'), 'cereal');
+    await user.keyboard('{Enter}');
+    await screen.findByRole('article', { name: 'Sample Fiber Squares' });
+    for (const [label, priority] of [
+      ['High protein', 'protein'], ['Low calorie', 'low_calorie'], ['Low sugar', 'low_sugar'], ['Low saturated fat', 'low_sat_fat'],
+    ] as const) {
+      await user.click(screen.getByRole('button', { name: label }));
+      await waitFor(() => expect(api.getProducts).toHaveBeenLastCalledWith(expect.objectContaining({ priority }), expect.any(AbortSignal)));
+    }
+    await waitFor(() => expect(screen.getAllByRole('article')[0].getAttribute('aria-label')).toBe('Sample Mystery Puffs'));
   });
 
   it('ignores a stale search even if an adapter ignores abort', async () => {
