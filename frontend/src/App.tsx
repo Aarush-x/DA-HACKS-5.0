@@ -68,8 +68,10 @@ function IngredientDrawer({ product, initialId, api, close, opener }: { product:
     <div className="drawer-head"><p>Ingredients</p><button className="icon-button" onClick={dismiss} aria-label="Close ingredients">×</button></div>
     <h2 id="ingredient-title">{product.name}</h2>
     <section className="full-ingredients" aria-labelledby="full-list-title"><h3 id="full-list-title">Full ingredient list</h3><p>{product.ingredients_text ?? 'The full ingredient list was not provided.'}</p></section>
+    <section className="product-sources" aria-labelledby="product-sources-title"><h3 id="product-sources-title">Product sources</h3><Sources sources={product.sources}/></section>
     {product.ingredient_refs.length > 0 ? <>
       <h3>Ingredient explanations</h3>
+      <p className="ingredient-guidance">Ingredients are not universally good or bad. Review the potential benefits, tradeoffs, and evidence for each highlighted ingredient.</p>
       <div className="ingredient-tabs" role="group" aria-label="Choose an ingredient">{product.ingredient_refs.map(ref => <button key={ref.id} aria-pressed={ingredientId === ref.id} onClick={() => setIngredientId(ref.id)}>{ref.label}</button>)}</div>
       <div className="ingredient-detail" aria-live="polite">
         {!data && !error && <p role="status">Loading explanation…</p>}
@@ -78,10 +80,10 @@ function IngredientDrawer({ product, initialId, api, close, opener }: { product:
           <div className="ingredient-detail-heading"><h3>{data.name}</h3><span>{data.evidence_level.replaceAll('_', ' ')} evidence</span></div>
           <dl className="explanation-list">
             <div><dt>What it is</dt><dd>{data.what_it_is}</dd></div><div><dt>Why it is used</dt><dd>{data.why_used}</dd></div>
-            <div><dt>Evidence</dt><dd>{data.evidence_summary}</dd></div><div><dt>Practical context</dt><dd>{data.practical_guidance}</dd></div>
-            <div><dt>Uncertainty</dt><dd>{data.uncertainty}</dd></div>
+            <div><dt>Potential benefits and tradeoffs</dt><dd>{data.evidence_summary}</dd></div><div><dt>What to consider</dt><dd>{data.practical_guidance}</dd></div>
+            <div><dt>Limits and uncertainty</dt><dd>{data.uncertainty}</dd></div>
           </dl>
-          <h3>References</h3><Sources sources={data.sources}/><p className="muted">Reviewed: {data.reviewed_at ?? 'Not yet reviewed'} · {data.content_status} content</p>
+          <h3>Ingredient references</h3><Sources sources={data.sources}/>
         </>}
       </div>
     </> : <p className="empty-copy">Detailed ingredient explanations are not available for this product.</p>}
@@ -99,7 +101,7 @@ function ProductCard({ product, selected, disabled, toggle, ingredient }: { prod
     <div className="card-heading"><p className="brand">{product.brand}</p><h3>{product.name}</h3>{product.ranking.rank === 1 && <p className="recommendation">Recommended for this priority</p>}{product.ranking.status === 'insufficient_data' && <p className="recommendation">Missing data for this priority</p>}</div>
     <div className="card-metrics"><p className="portion">Equal-weight view · per {product.reference_g} g{product.category === 'cereal' ? ' dry cereal' : ''}</p><dl className="nutrients">{metrics.map(([key, label, unit]) => <div key={key}><dt>{label}</dt><dd>{amount(product.nutrition_per_reference[key], unit)}</dd></div>)}</dl></div>
     <div className="card-explanation">{featuredReasons.map((reason, index) => <p key={index} className={reason.kind}>{reason.kind === 'tradeoff' ? 'Tradeoff: ' : ''}{reason.text}</p>)}{product.ranking.missing_fields.length > 0 && <p className="muted">Not provided: {product.ranking.missing_fields.map(key => key.replaceAll('_', ' ')).join(', ')}</p>}</div>
-    <details className="product-details"><summary>Ingredients and sources</summary><div><p className="ingredient-copy">{product.ingredients_text ?? 'Full ingredient list not provided.'}</p>{product.ingredient_refs.length > 0 ? <div className="ingredient-links" aria-label={`Ingredient explanations for ${product.name}`}>{product.ingredient_refs.map(ref => <button key={ref.id} onClick={event => ingredient(ref.id, event.currentTarget)}>{ref.label}</button>)}</div> : <p className="muted">Ingredient explanations are not available.</p>}<h4>Product sources</h4><Sources sources={product.sources}/></div></details>
+    <button className="ingredients-button" onClick={event => ingredient(product.ingredient_refs[0]?.id ?? '', event.currentTarget)}><span>Ingredients and sources</span><span aria-hidden="true">→</span></button>
     <div className="card-actions"><button className={selected ? 'primary' : ''} aria-pressed={selected} disabled={disabled} onClick={toggle}>{selected ? 'Selected' : 'Compare'}</button>{retailerUrl ? <a className="retailer-link" href={retailerUrl} target="_blank" rel="noreferrer" aria-label={`Search for ${product.name} on Walmart`}>Search on Walmart</a> : <span className="retailer-unavailable">Walmart search unavailable</span>}</div>
   </article>;
 }
