@@ -73,27 +73,41 @@ describe('search-first shopper flow', () => {
     await screen.findByRole('article', { name: 'Sample Fiber Loaf' });
   });
 
-  it('shows the full nutrient set, product sources, retailer search, and ingredient evidence', async () => {
-    const user = await searchForAfterRender('bread');
+  it('opens ingredients and product sources in the evidence drawer', async () => {
+    const api = {
+      ...mockApi,
+      async getProducts(query: Parameters<Api['getProducts']>[0], signal?: AbortSignal) {
+        const response = await mockApi.getProducts(query, signal);
+        response.products[0].sources = [{ id: 'product-label', title: 'Sample product label', url: 'https://example.com/product-label', accessed_at: '2026-10-16' }];
+        return response;
+      },
+    };
+    render(<App api={api} mode="mock"/>);
+    const user = await searchFor('bread');
     const cards = await screen.findAllByRole('article');
     const firstCard = cards[0];
     for (const label of ['Calories', 'Protein', 'Fiber', 'Total sugar', 'Added sugar', 'Saturated fat', 'Sodium']) {
       expect(within(firstCard).getByText(label)).toBeTruthy();
     }
-    await user.click(within(firstCard).getByText('Ingredients and sources'));
-    expect(within(firstCard).getByText('Sources not yet reviewed.')).toBeTruthy();
+    const trigger = within(firstCard).getByRole('button', { name: 'Ingredients and sources' });
+    await user.click(trigger);
+    expect(within(firstCard).queryByText('Sources not yet reviewed.')).toBeNull();
     const walmart = within(firstCard).getByRole('link', { name: /Search for Sample Fiber Loaf on Walmart/ });
     expect(walmart.getAttribute('href')).toMatch(/^https:\/\/www\.walmart\.com\/search\?/);
     expect(walmart.getAttribute('target')).toBe('_blank');
-    const trigger = within(firstCard).getByRole('button', { name: 'Fictional sample grain' });
-    await user.click(trigger);
     const dialog = await screen.findByRole('dialog');
     expect(within(dialog).getByRole('heading', { name: 'Sample Fiber Loaf' })).toBeTruthy();
     expect(within(dialog).getByRole('heading', { name: 'Full ingredient list' })).toBeTruthy();
+    expect(within(dialog).getByRole('heading', { name: 'Product sources' })).toBeTruthy();
+    const productSource = within(dialog).getByRole('link', { name: 'Sample product label' });
+    expect(productSource.getAttribute('href')).toBe('https://example.com/product-label');
     expect(within(dialog).getByText('not assessed evidence')).toBeTruthy();
     expect(within(dialog).getByText('What it is')).toBeTruthy();
-    expect(within(dialog).getByText('Uncertainty')).toBeTruthy();
+    expect(within(dialog).getByText('Potential benefits and tradeoffs')).toBeTruthy();
+    expect(within(dialog).getByText('What to consider')).toBeTruthy();
+    expect(within(dialog).getByText('Limits and uncertainty')).toBeTruthy();
     expect(within(dialog).getAllByText('Sources not yet reviewed.')).toHaveLength(1);
+    expect(within(dialog).queryByText(/Reviewed:/)).toBeNull();
     await user.click(within(dialog).getByRole('button', { name: 'Close ingredients' }));
     expect(screen.queryByRole('dialog')).toBeNull();
     expect(document.activeElement).toBe(trigger);
