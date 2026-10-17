@@ -214,3 +214,20 @@ for the specific claim where marked ✔.
 - **Rating to decide:** given the phase-out announcement, artificial colors could reasonably move from Neutral to Limit.
 - **No source yet ("—"):** basic functional facts (yeast, water, enzymes, vinegar, cinnamon, gelatin, potato, acerola, cultured flour, potassium iodate, maltodextrin, corn starch, soluble corn fiber). Fine as plain descriptions; avoid health claims on these unless a source is added.
 - **Access limits:** NIH ODS, EFSA, and eCFR block automated fetching, so those were confirmed through search indexes and the Cornell LII mirror instead of a direct page read.
+
+## Update 2026-10-17: direct sources
+
+Broad links were replaced with pages about the exact ingredient. The live data
+in `backend/data/ingredients.json` is the source of truth.
+
+- **Grains:** the Dietary Guidelines PDF now opens at page 45 (the Grains section: at least half whole grains, choose enriched grains, folic acid).
+- **Whole foods:** each links to its own USDA FoodData Central page instead of the database homepage:
+  [wheat bran](https://fdc.nal.usda.gov/food-details/169722/nutrients),
+  [wheat germ](https://fdc.nal.usda.gov/food-details/168892/nutrients),
+  [sunflower seeds](https://fdc.nal.usda.gov/food-details/170562/nutrients),
+  [quinoa](https://fdc.nal.usda.gov/food-details/168874/nutrients),
+  [pumpkin seeds](https://fdc.nal.usda.gov/food-details/170556/nutrients),
+  [flaxseed](https://fdc.nal.usda.gov/food-details/169414/nutrients),
+  [raisins](https://fdc.nal.usda.gov/food-details/2758980/nutrients).
+- **Vitamins and minerals:** split into 12 entries, each linking to its own NIH fact sheet (iron, zinc, thiamin, riboflavin, niacin, B6, folate, B12, D, A, C, E).
+- **Oat fiber:** USDA has no exact entry for oat fiber (oat bran is a different product), so it now shows no source instead of an indirect one.
