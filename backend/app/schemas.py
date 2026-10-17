@@ -165,6 +165,10 @@ class IngredientResponse(BaseModel):
     content_status: Literal["reviewed", "draft", "synthetic"]
 
 
+class IngredientListResponse(BaseModel):
+    ingredients: List[IngredientResponse]
+
+
 class ErrorBody(BaseModel):
     code: str
     message: str

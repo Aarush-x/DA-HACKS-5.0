@@ -82,6 +82,9 @@ class CatalogStore:
     def ingredient(self, ingredient_id: str) -> Optional[IngredientResponse]:
         raise NotImplementedError
 
+    def ingredients(self) -> list[IngredientResponse]:
+        raise NotImplementedError
+
     def store_exists(self, store_id: str) -> bool:
         return any(s.id == store_id for s in self.stores())
 
@@ -117,6 +120,9 @@ class SeedCatalogStore(CatalogStore):
 
     def ingredient(self, ingredient_id: str) -> Optional[IngredientResponse]:
         return self._ingredients.get(ingredient_id)
+
+    def ingredients(self) -> list[IngredientResponse]:
+        return list(self._ingredients.values())
 
 
 class PostgresCatalogStore(CatalogStore):

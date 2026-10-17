@@ -2,155 +2,1689 @@
   {
     "id": "whole-grain-wheat",
     "name": "Whole wheat flour",
-    "aliases": ["whole grain wheat flour", "whole wheat"],
-    "what_it_is": "Flour milled from the entire wheat kernel, including the bran, germ, and endosperm.",
-    "why_used": "Provides structure and flavor in bread while retaining the bran and germ that refined flour removes.",
-    "evidence_summary": "Whole grains as a food group are associated in human studies with higher fiber intake; this card describes the ingredient, not a health claim about any specific product.",
-    "practical_guidance": "When it is the first grain listed, more of the grain content is whole grain, though the ingredient order alone does not give an exact percentage.",
+    "aliases": [
+      "100% stone ground whole wheat flour",
+      "cracked whole wheat",
+      "organic cracked whole wheat",
+      "organic whole wheat",
+      "organic whole wheat flour",
+      "whole grain wheat",
+      "whole grain wheat flour",
+      "whole wheat",
+      "whole wheat flour"
+    ],
+    "what_it_is": "The whole wheat kernel — bran, germ and endosperm.",
+    "why_used": "Main grain; brings fiber.",
+    "evidence_summary": "Dietary guidelines advise making at least half your grains whole.",
+    "practical_guidance": "",
     "evidence_level": "established",
-    "uncertainty": "Ingredient order indicates relative quantity but not the precise whole-grain share of the product.",
-    "reviewed_at": null,
-    "sources": [],
-    "content_status": "draft"
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
+    "sources": [
+      {
+        "id": "S4",
+        "title": "USDA/HHS — Dietary Guidelines for Americans, 2020–2025",
+        "url": "https://www.dietaryguidelines.gov/sites/default/files/2020-12/Dietary_Guidelines_for_Americans_2020-2025.pdf",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "content_status": "reviewed"
   },
   {
     "id": "enriched-flour",
     "name": "Enriched wheat flour",
-    "aliases": ["enriched flour", "refined wheat flour"],
-    "what_it_is": "Refined wheat flour with the bran and germ removed, then enriched with specific B vitamins and iron.",
-    "why_used": "Gives a soft, light crumb and consistent baking performance.",
-    "evidence_summary": "Enrichment restores selected nutrients lost in refining; refined flour contains less fiber than whole grain flour.",
-    "practical_guidance": "A product built mainly on enriched flour typically has less fiber than a comparable whole grain option.",
+    "aliases": [
+      "enriched bleached flour",
+      "enriched flour",
+      "enriched wheat flour",
+      "flour",
+      "unbleached enriched wheat flour",
+      "wheat flour"
+    ],
+    "what_it_is": "Refined flour with iron and B vitamins added back.",
+    "why_used": "Soft, light texture.",
+    "evidence_summary": "Less fiber than whole wheat; guidelines say refined grains should be at most half.",
+    "practical_guidance": "",
     "evidence_level": "established",
-    "uncertainty": "Enrichment adds specific nutrients but does not replace the fiber of the whole grain.",
-    "reviewed_at": null,
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
+    "sources": [
+      {
+        "id": "S4",
+        "title": "USDA/HHS — Dietary Guidelines for Americans, 2020–2025",
+        "url": "https://www.dietaryguidelines.gov/sites/default/files/2020-12/Dietary_Guidelines_for_Americans_2020-2025.pdf",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "content_status": "reviewed"
+  },
+  {
+    "id": "bulgur-wheat",
+    "name": "Bulgur wheat",
+    "aliases": [
+      "bulgur",
+      "bulgur wheat"
+    ],
+    "what_it_is": "Cracked, par-cooked whole wheat.",
+    "why_used": "Texture and fiber.",
+    "evidence_summary": "Counts as a whole grain.",
+    "practical_guidance": "",
+    "evidence_level": "established",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
+    "sources": [
+      {
+        "id": "S4",
+        "title": "USDA/HHS — Dietary Guidelines for Americans, 2020–2025",
+        "url": "https://www.dietaryguidelines.gov/sites/default/files/2020-12/Dietary_Guidelines_for_Americans_2020-2025.pdf",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "content_status": "reviewed"
+  },
+  {
+    "id": "wheat-bran",
+    "name": "Wheat bran",
+    "aliases": [
+      "wheat bran"
+    ],
+    "what_it_is": "The fiber-rich outer layer of wheat.",
+    "why_used": "Adds fiber.",
+    "evidence_summary": "Raises the product's fiber.",
+    "practical_guidance": "",
+    "evidence_level": "established",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
+    "sources": [
+      {
+        "id": "S29",
+        "title": "USDA — FoodData Central",
+        "url": "https://fdc.nal.usda.gov/",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "content_status": "reviewed"
+  },
+  {
+    "id": "wheat-gluten",
+    "name": "Wheat gluten",
+    "aliases": [
+      "organic wheat gluten",
+      "wheat gluten"
+    ],
+    "what_it_is": "Concentrated wheat protein.",
+    "why_used": "Gives bread its chewy structure.",
+    "evidence_summary": "Fine for most people; must be avoided with celiac disease.",
+    "practical_guidance": "",
+    "evidence_level": "established",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
+    "sources": [
+      {
+        "id": "S8",
+        "title": "NIH NIDDK — Celiac Disease",
+        "url": "https://www.niddk.nih.gov/health-information/digestive-diseases/celiac-disease",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "content_status": "reviewed"
+  },
+  {
+    "id": "cultured-wheat-flour",
+    "name": "Cultured wheat flour",
+    "aliases": [
+      "cultured wheat flour",
+      "cultured wheat starch"
+    ],
+    "what_it_is": "Fermented flour.",
+    "why_used": "Natural mold inhibitor.",
+    "evidence_summary": "A functional ingredient used in small amounts.",
+    "practical_guidance": "",
+    "evidence_level": "not_assessed",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
     "sources": [],
     "content_status": "draft"
   },
   {
-    "id": "cane-sugar",
-    "name": "Cane sugar",
-    "aliases": ["sugar", "sucrose"],
-    "what_it_is": "Sucrose refined from sugar cane.",
-    "why_used": "Adds sweetness, supports yeast fermentation, and contributes browning.",
-    "evidence_summary": "Sugar added during processing counts as added sugar on the US label and is reported separately from naturally occurring total sugar.",
-    "practical_guidance": "Compare the added sugar line at an equal weight rather than total sugar, which can include naturally present sugars.",
+    "id": "defatted-wheat-germ",
+    "name": "Defatted wheat germ",
+    "aliases": [
+      "defatted wheat germ",
+      "wheat germ"
+    ],
+    "what_it_is": "The kernel's germ with the fat removed.",
+    "why_used": "Adds protein.",
+    "evidence_summary": "A small nutrition boost.",
+    "practical_guidance": "",
+    "evidence_level": "limited",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
+    "sources": [
+      {
+        "id": "S29",
+        "title": "USDA — FoodData Central",
+        "url": "https://fdc.nal.usda.gov/",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "content_status": "reviewed"
+  },
+  {
+    "id": "malted-barley",
+    "name": "Malted barley",
+    "aliases": [
+      "barley malt extract",
+      "malt",
+      "malt flavor",
+      "malted barley flour"
+    ],
+    "what_it_is": "Sprouted barley used in small amounts.",
+    "why_used": "Flavor and browning.",
+    "evidence_summary": "Barley contains gluten.",
+    "practical_guidance": "",
     "evidence_level": "established",
-    "uncertainty": "Added sugar and total sugar are different measures and should not be substituted for one another.",
-    "reviewed_at": null,
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
+    "sources": [
+      {
+        "id": "S8",
+        "title": "NIH NIDDK — Celiac Disease",
+        "url": "https://www.niddk.nih.gov/health-information/digestive-diseases/celiac-disease",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "content_status": "reviewed"
+  },
+  {
+    "id": "whole-grain-oats",
+    "name": "Whole grain oats",
+    "aliases": [
+      "oat flour",
+      "oats",
+      "rolled oats",
+      "whole grain oat flour",
+      "whole grain oats",
+      "whole grain rolled oats"
+    ],
+    "what_it_is": "Whole oats with beta-glucan, a soluble fiber.",
+    "why_used": "Main grain.",
+    "evidence_summary": "FDA allows a claim that oat soluble fiber may lower heart-disease risk.",
+    "practical_guidance": "",
+    "evidence_level": "established",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
+    "sources": [
+      {
+        "id": "S7",
+        "title": "21 CFR 101.81 — Soluble fiber and risk of coronary heart disease",
+        "url": "https://www.law.cornell.edu/cfr/text/21/101.81",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "content_status": "reviewed"
+  },
+  {
+    "id": "oat-fiber",
+    "name": "Oat fiber",
+    "aliases": [
+      "oat fiber",
+      "organic oat fiber"
+    ],
+    "what_it_is": "Ground oat hulls; mostly insoluble fiber.",
+    "why_used": "Adds fiber.",
+    "evidence_summary": "Raises fiber with few calories.",
+    "practical_guidance": "",
+    "evidence_level": "limited",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
+    "sources": [
+      {
+        "id": "S29",
+        "title": "USDA — FoodData Central",
+        "url": "https://fdc.nal.usda.gov/",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "content_status": "reviewed"
+  },
+  {
+    "id": "milled-corn",
+    "name": "Milled corn",
+    "aliases": [
+      "corn",
+      "degerminated corn flour",
+      "degerminated yellow corn flour",
+      "milled corn"
+    ],
+    "what_it_is": "Refined corn with the germ removed.",
+    "why_used": "Base of most flakes.",
+    "evidence_summary": "A refined grain, so lower in fiber than whole grain.",
+    "practical_guidance": "",
+    "evidence_level": "established",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
+    "sources": [
+      {
+        "id": "S4",
+        "title": "USDA/HHS — Dietary Guidelines for Americans, 2020–2025",
+        "url": "https://www.dietaryguidelines.gov/sites/default/files/2020-12/Dietary_Guidelines_for_Americans_2020-2025.pdf",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "content_status": "reviewed"
+  },
+  {
+    "id": "whole-grain-corn",
+    "name": "Whole grain corn",
+    "aliases": [
+      "corn flour blend",
+      "whole grain corn",
+      "whole grain corn flour",
+      "whole grain yellow corn flour"
+    ],
+    "what_it_is": "Corn flour with the whole kernel kept.",
+    "why_used": "Grain base.",
+    "evidence_summary": "Counts as whole grain; sweetened cereals can still be high in sugar.",
+    "practical_guidance": "",
+    "evidence_level": "established",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
+    "sources": [
+      {
+        "id": "S4",
+        "title": "USDA/HHS — Dietary Guidelines for Americans, 2020–2025",
+        "url": "https://www.dietaryguidelines.gov/sites/default/files/2020-12/Dietary_Guidelines_for_Americans_2020-2025.pdf",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "content_status": "reviewed"
+  },
+  {
+    "id": "rice",
+    "name": "Rice",
+    "aliases": [
+      "rice",
+      "rice flour"
+    ],
+    "what_it_is": "Refined white rice.",
+    "why_used": "Light, crisp texture.",
+    "evidence_summary": "A refined grain, low in fiber.",
+    "practical_guidance": "",
+    "evidence_level": "established",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
+    "sources": [
+      {
+        "id": "S4",
+        "title": "USDA/HHS — Dietary Guidelines for Americans, 2020–2025",
+        "url": "https://www.dietaryguidelines.gov/sites/default/files/2020-12/Dietary_Guidelines_for_Americans_2020-2025.pdf",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "content_status": "reviewed"
+  },
+  {
+    "id": "corn-starch",
+    "name": "Corn starch",
+    "aliases": [
+      "corn starch",
+      "cornstarch"
+    ],
+    "what_it_is": "Refined starch from corn.",
+    "why_used": "Texture and crispness.",
+    "evidence_summary": "Functional; little nutritional effect.",
+    "practical_guidance": "",
+    "evidence_level": "not_assessed",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
+    "sources": [],
+    "content_status": "draft"
+  },
+  {
+    "id": "modified-starch",
+    "name": "Modified food starch",
+    "aliases": [
+      "food starch-modified",
+      "modified corn starch",
+      "modified food starch"
+    ],
+    "what_it_is": "Starch treated to hold texture.",
+    "why_used": "Keeps texture during processing.",
+    "evidence_summary": "A permitted additive; 'modified' doesn't mean genetically modified.",
+    "practical_guidance": "",
+    "evidence_level": "established",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
+    "sources": [
+      {
+        "id": "S23",
+        "title": "21 CFR 172.892 — Food starch-modified",
+        "url": "https://www.law.cornell.edu/cfr/text/21/172.892",
+        "accessed_at": "2026-10-16"
+      },
+      {
+        "id": "S6",
+        "title": "FDA — Types of Food Ingredients",
+        "url": "https://www.fda.gov/food/food-additives-and-gras-ingredients-information-consumers/types-food-ingredients",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "content_status": "reviewed"
+  },
+  {
+    "id": "maltodextrin",
+    "name": "Maltodextrin",
+    "aliases": [
+      "maltodextrin"
+    ],
+    "what_it_is": "Processed starch.",
+    "why_used": "Bulk and crunch.",
+    "evidence_summary": "Functional; used in small amounts.",
+    "practical_guidance": "",
+    "evidence_level": "not_assessed",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
+    "sources": [],
+    "content_status": "draft"
+  },
+  {
+    "id": "soluble-corn-fiber",
+    "name": "Soluble corn fiber",
+    "aliases": [
+      "soluble corn fiber"
+    ],
+    "what_it_is": "Added fiber made from corn.",
+    "why_used": "Raises fiber.",
+    "evidence_summary": "Adds to the fiber count.",
+    "practical_guidance": "",
+    "evidence_level": "limited",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
+    "sources": [],
+    "content_status": "draft"
+  },
+  {
+    "id": "potato",
+    "name": "Reconstituted potatoes",
+    "aliases": [
+      "potato flour",
+      "potatoes",
+      "reconstituted potatoes"
+    ],
+    "what_it_is": "Potato made from potato flour.",
+    "why_used": "Soft, moist texture.",
+    "evidence_summary": "Mainly for texture.",
+    "practical_guidance": "",
+    "evidence_level": "not_assessed",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
+    "sources": [],
+    "content_status": "draft"
+  },
+  {
+    "id": "flax",
+    "name": "Flax seed",
+    "aliases": [
+      "flax",
+      "flax seed",
+      "flax seed meal",
+      "flaxseed",
+      "organic flax"
+    ],
+    "what_it_is": "Seed with ALA omega-3 fat and fiber.",
+    "why_used": "Nutrition and texture.",
+    "evidence_summary": "One of the main plant sources of essential ALA omega-3.",
+    "practical_guidance": "",
+    "evidence_level": "established",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
+    "sources": [
+      {
+        "id": "S28",
+        "title": "NIH Office of Dietary Supplements — Omega-3 Fatty Acids",
+        "url": "https://ods.od.nih.gov/factsheets/Omega3FattyAcids-Consumer/",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "content_status": "reviewed"
+  },
+  {
+    "id": "sunflower-seeds",
+    "name": "Sunflower seeds",
+    "aliases": [
+      "organic sunflower seeds",
+      "sunflower",
+      "sunflower seeds"
+    ],
+    "what_it_is": "Seeds with unsaturated fat and vitamin E.",
+    "why_used": "Crunch and nutrition.",
+    "evidence_summary": "Mostly unsaturated fat, plus some protein.",
+    "practical_guidance": "",
+    "evidence_level": "established",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
+    "sources": [
+      {
+        "id": "S29",
+        "title": "USDA — FoodData Central",
+        "url": "https://fdc.nal.usda.gov/",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "content_status": "reviewed"
+  },
+  {
+    "id": "quinoa",
+    "name": "Quinoa",
+    "aliases": [
+      "organic tri-color quinoa",
+      "quinoa",
+      "tri-color quinoa"
+    ],
+    "what_it_is": "Whole-grain seed with protein and fiber.",
+    "why_used": "Nutrition and texture.",
+    "evidence_summary": "A small nutrition boost.",
+    "practical_guidance": "",
+    "evidence_level": "established",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
+    "sources": [
+      {
+        "id": "S29",
+        "title": "USDA — FoodData Central",
+        "url": "https://fdc.nal.usda.gov/",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "content_status": "reviewed"
+  },
+  {
+    "id": "pumpkin-seeds",
+    "name": "Pumpkin seeds",
+    "aliases": [
+      "organic pumpkin seeds",
+      "pumpkin seeds"
+    ],
+    "what_it_is": "Seeds with protein, magnesium and zinc.",
+    "why_used": "Crunch and nutrition.",
+    "evidence_summary": "A small nutrition boost.",
+    "practical_guidance": "",
+    "evidence_level": "established",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
+    "sources": [
+      {
+        "id": "S29",
+        "title": "USDA — FoodData Central",
+        "url": "https://fdc.nal.usda.gov/",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "content_status": "reviewed"
+  },
+  {
+    "id": "sesame-seeds",
+    "name": "Sesame seeds",
+    "aliases": [
+      "sesame",
+      "sesame seeds"
+    ],
+    "what_it_is": "Seeds used as a topping.",
+    "why_used": "Flavor and texture.",
+    "evidence_summary": "Sesame is a major US food allergen.",
+    "practical_guidance": "",
+    "evidence_level": "established",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
+    "sources": [
+      {
+        "id": "S10",
+        "title": "FDA — The FASTER Act: Sesame Is the Ninth Major Food Allergen",
+        "url": "https://www.fda.gov/food/food-allergies/faster-act-sesame-ninth-major-food-allergen",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "content_status": "reviewed"
+  },
+  {
+    "id": "grain-seed-mix",
+    "name": "Grain and seed mix",
+    "aliases": [
+      "21 whole grain and seed mix",
+      "grain and seed mix",
+      "organic 21 whole grain and seed mix",
+      "organic grain and seed mix"
+    ],
+    "what_it_is": "A blend of whole grains and seeds.",
+    "why_used": "Texture and nutrition.",
+    "evidence_summary": "Adds whole grain and fiber; parts are listed separately.",
+    "practical_guidance": "",
+    "evidence_level": "established",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
+    "sources": [
+      {
+        "id": "S4",
+        "title": "USDA/HHS — Dietary Guidelines for Americans, 2020–2025",
+        "url": "https://www.dietaryguidelines.gov/sites/default/files/2020-12/Dietary_Guidelines_for_Americans_2020-2025.pdf",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "content_status": "reviewed"
+  },
+  {
+    "id": "cane-sugar",
+    "name": "Sugar",
+    "aliases": [
+      "cane sugar",
+      "cane sugar syrup",
+      "organic cane sugar",
+      "sugar"
+    ],
+    "what_it_is": "Sugar from cane or beet.",
+    "why_used": "Sweetness and browning.",
+    "evidence_summary": "Counts as added sugar; the Daily Value is 50 g.",
+    "practical_guidance": "",
+    "evidence_level": "established",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
+    "sources": [
+      {
+        "id": "S1",
+        "title": "FDA — Added Sugars on the Nutrition Facts Label",
+        "url": "https://www.fda.gov/food/nutrition-facts-label/added-sugars-nutrition-facts-label",
+        "accessed_at": "2026-10-16"
+      },
+      {
+        "id": "S2",
+        "title": "FDA — Daily Value on the Nutrition and Supplement Facts Labels",
+        "url": "https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "content_status": "reviewed"
+  },
+  {
+    "id": "brown-sugar",
+    "name": "Brown sugar",
+    "aliases": [
+      "brown sugar",
+      "brown sugar syrup"
+    ],
+    "what_it_is": "Sugar with molasses.",
+    "why_used": "Sweetness and color.",
+    "evidence_summary": "Counts as added sugar.",
+    "practical_guidance": "",
+    "evidence_level": "established",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
+    "sources": [
+      {
+        "id": "S1",
+        "title": "FDA — Added Sugars on the Nutrition Facts Label",
+        "url": "https://www.fda.gov/food/nutrition-facts-label/added-sugars-nutrition-facts-label",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "content_status": "reviewed"
+  },
+  {
+    "id": "honey",
+    "name": "Honey",
+    "aliases": [
+      "honey"
+    ],
+    "what_it_is": "A sweetener made by bees.",
+    "why_used": "Sweetness and flavor.",
+    "evidence_summary": "FDA counts honey as added sugar.",
+    "practical_guidance": "",
+    "evidence_level": "established",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
+    "sources": [
+      {
+        "id": "S1",
+        "title": "FDA — Added Sugars on the Nutrition Facts Label",
+        "url": "https://www.fda.gov/food/nutrition-facts-label/added-sugars-nutrition-facts-label",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "content_status": "reviewed"
+  },
+  {
+    "id": "molasses",
+    "name": "Molasses",
+    "aliases": [
+      "molasses"
+    ],
+    "what_it_is": "A dark syrup from sugar refining.",
+    "why_used": "Flavor and color.",
+    "evidence_summary": "Counts as added sugar.",
+    "practical_guidance": "",
+    "evidence_level": "established",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
+    "sources": [
+      {
+        "id": "S1",
+        "title": "FDA — Added Sugars on the Nutrition Facts Label",
+        "url": "https://www.fda.gov/food/nutrition-facts-label/added-sugars-nutrition-facts-label",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "content_status": "reviewed"
+  },
+  {
+    "id": "corn-syrup",
+    "name": "Corn syrup",
+    "aliases": [
+      "corn syrup"
+    ],
+    "what_it_is": "A liquid sweetener from corn.",
+    "why_used": "Sweetness and binding.",
+    "evidence_summary": "Counts as added sugar.",
+    "practical_guidance": "",
+    "evidence_level": "established",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
+    "sources": [
+      {
+        "id": "S1",
+        "title": "FDA — Added Sugars on the Nutrition Facts Label",
+        "url": "https://www.fda.gov/food/nutrition-facts-label/added-sugars-nutrition-facts-label",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "content_status": "reviewed"
+  },
+  {
+    "id": "simple-sugars",
+    "name": "Fructose and dextrose",
+    "aliases": [
+      "dextrose",
+      "fructose"
+    ],
+    "what_it_is": "Simple sugars.",
+    "why_used": "Sweetness and browning.",
+    "evidence_summary": "Count as added sugar.",
+    "practical_guidance": "",
+    "evidence_level": "established",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
+    "sources": [
+      {
+        "id": "S1",
+        "title": "FDA — Added Sugars on the Nutrition Facts Label",
+        "url": "https://www.fda.gov/food/nutrition-facts-label/added-sugars-nutrition-facts-label",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "content_status": "reviewed"
+  },
+  {
+    "id": "fruit-juice",
+    "name": "Fruit juice (as sweetener)",
+    "aliases": [
+      "fruit juice",
+      "fruit juices",
+      "organic fruit juices",
+      "organic fruit juices (apple, pear, peach)",
+      "raisin juice concentrate"
+    ],
+    "what_it_is": "Fruit juice used to sweeten.",
+    "why_used": "Sweetness.",
+    "evidence_summary": "FDA counts sugar from juice concentrates as added sugar.",
+    "practical_guidance": "",
+    "evidence_level": "established",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
+    "sources": [
+      {
+        "id": "S1",
+        "title": "FDA — Added Sugars on the Nutrition Facts Label",
+        "url": "https://www.fda.gov/food/nutrition-facts-label/added-sugars-nutrition-facts-label",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "content_status": "reviewed"
+  },
+  {
+    "id": "raisins",
+    "name": "Raisins",
+    "aliases": [
+      "raisins"
+    ],
+    "what_it_is": "Whole dried grapes.",
+    "why_used": "Sweetness and chew.",
+    "evidence_summary": "Fruit's own sugar isn't counted as added sugar.",
+    "practical_guidance": "",
+    "evidence_level": "established",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
+    "sources": [
+      {
+        "id": "S1",
+        "title": "FDA — Added Sugars on the Nutrition Facts Label",
+        "url": "https://www.fda.gov/food/nutrition-facts-label/added-sugars-nutrition-facts-label",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "content_status": "reviewed"
+  },
+  {
+    "id": "soybean-oil",
+    "name": "Soybean oil",
+    "aliases": [
+      "soybean oil",
+      "vegetable oil",
+      "vegetable oil (soybean oil)"
+    ],
+    "what_it_is": "A plant oil.",
+    "why_used": "Moisture and soft texture.",
+    "evidence_summary": "Used in small amounts; check the saturated fat total.",
+    "practical_guidance": "",
+    "evidence_level": "not_assessed",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
+    "sources": [],
+    "content_status": "draft"
+  },
+  {
+    "id": "canola-oil",
+    "name": "Canola oil",
+    "aliases": [
+      "canola and/or soybean oil",
+      "canola and/or sunflower oil",
+      "canola oil",
+      "expeller pressed canola oil"
+    ],
+    "what_it_is": "A plant oil.",
+    "why_used": "Moisture and texture.",
+    "evidence_summary": "A plant source of ALA omega-3.",
+    "practical_guidance": "",
+    "evidence_level": "established",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
+    "sources": [
+      {
+        "id": "S28",
+        "title": "NIH Office of Dietary Supplements — Omega-3 Fatty Acids",
+        "url": "https://ods.od.nih.gov/factsheets/Omega3FattyAcids-Consumer/",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "content_status": "reviewed"
+  },
+  {
+    "id": "sunflower-oil",
+    "name": "Sunflower oil",
+    "aliases": [
+      "sunflower oil"
+    ],
+    "what_it_is": "A plant oil.",
+    "why_used": "Moisture and texture.",
+    "evidence_summary": "Used in small amounts.",
+    "practical_guidance": "",
+    "evidence_level": "not_assessed",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
+    "sources": [],
+    "content_status": "draft"
+  },
+  {
+    "id": "hydrogenated-oil",
+    "name": "Hydrogenated oil",
+    "aliases": [
+      "hydrogenated coconut, soybean and/or cottonseed",
+      "hydrogenated oil",
+      "vegetable oil (hydrogenated coconut, soybean and/or cottonseed)"
+    ],
+    "what_it_is": "Oil processed to be more solid.",
+    "why_used": "Shelf life and texture.",
+    "evidence_summary": "FDA removed partially hydrogenated oils' safe status in 2015.",
+    "practical_guidance": "",
+    "evidence_level": "established",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
+    "sources": [
+      {
+        "id": "S5",
+        "title": "FDA — Trans Fat",
+        "url": "https://www.fda.gov/food/food-additives-petitions/trans-fat",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "content_status": "reviewed"
+  },
+  {
+    "id": "butter",
+    "name": "Butter",
+    "aliases": [
+      "butter"
+    ],
+    "what_it_is": "Dairy fat.",
+    "why_used": "Flavor and richness.",
+    "evidence_summary": "Used in small amounts; contains milk.",
+    "practical_guidance": "",
+    "evidence_level": "established",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
+    "sources": [
+      {
+        "id": "S9",
+        "title": "FDA — Food Allergies",
+        "url": "https://www.fda.gov/food/food-labeling-nutrition/food-allergies",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "content_status": "reviewed"
+  },
+  {
+    "id": "milk",
+    "name": "Nonfat milk",
+    "aliases": [
+      "milk",
+      "nonfat milk"
+    ],
+    "what_it_is": "Milk with the fat removed.",
+    "why_used": "Softness and browning.",
+    "evidence_summary": "Milk is a major food allergen.",
+    "practical_guidance": "",
+    "evidence_level": "established",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
+    "sources": [
+      {
+        "id": "S9",
+        "title": "FDA — Food Allergies",
+        "url": "https://www.fda.gov/food/food-labeling-nutrition/food-allergies",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "content_status": "reviewed"
+  },
+  {
+    "id": "whey",
+    "name": "Whey",
+    "aliases": [
+      "whey",
+      "whey (milk)"
+    ],
+    "what_it_is": "A milk protein.",
+    "why_used": "Texture and browning.",
+    "evidence_summary": "Milk is a major food allergen.",
+    "practical_guidance": "",
+    "evidence_level": "established",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
+    "sources": [
+      {
+        "id": "S9",
+        "title": "FDA — Food Allergies",
+        "url": "https://www.fda.gov/food/food-labeling-nutrition/food-allergies",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "content_status": "reviewed"
+  },
+  {
+    "id": "gelatin",
+    "name": "Gelatin",
+    "aliases": [
+      "gelatin"
+    ],
+    "what_it_is": "Protein from animal collagen.",
+    "why_used": "Marshmallow texture.",
+    "evidence_summary": "Animal-derived, so not vegetarian.",
+    "practical_guidance": "",
+    "evidence_level": "not_assessed",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
     "sources": [],
     "content_status": "draft"
   },
   {
     "id": "salt",
     "name": "Salt",
-    "aliases": ["sodium chloride"],
-    "what_it_is": "Sodium chloride, the main dietary source of sodium.",
-    "why_used": "Adds flavor, controls yeast activity, and acts as a preservative.",
-    "evidence_summary": "Sodium content is reported in milligrams on the US label; this card does not assess any individual's sodium needs.",
-    "practical_guidance": "Compare sodium at an equal weight across products in the same category.",
+    "aliases": [
+      "salt",
+      "sea salt"
+    ],
+    "what_it_is": "Sodium chloride.",
+    "why_used": "Flavor; controls yeast.",
+    "evidence_summary": "High sodium is linked to high blood pressure; the Daily Value is 2,300 mg.",
+    "practical_guidance": "",
     "evidence_level": "established",
-    "uncertainty": "Individual sodium targets vary; this is a general description, not personal dietary advice.",
-    "reviewed_at": null,
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
+    "sources": [
+      {
+        "id": "S3",
+        "title": "FDA — Sodium in Your Diet",
+        "url": "https://www.fda.gov/food/nutrition-education-resources-materials/sodium-your-diet",
+        "accessed_at": "2026-10-16"
+      },
+      {
+        "id": "S2",
+        "title": "FDA — Daily Value on the Nutrition and Supplement Facts Labels",
+        "url": "https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "content_status": "reviewed"
+  },
+  {
+    "id": "phosphate-salts",
+    "name": "Trisodium / tripotassium phosphate",
+    "aliases": [
+      "tripotassium phosphate",
+      "trisodium phosphate"
+    ],
+    "what_it_is": "Mineral salts.",
+    "why_used": "Adjust acidity and texture.",
+    "evidence_summary": "Permitted additives used in small amounts.",
+    "practical_guidance": "",
+    "evidence_level": "established",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
+    "sources": [
+      {
+        "id": "S6",
+        "title": "FDA — Types of Food Ingredients",
+        "url": "https://www.fda.gov/food/food-additives-and-gras-ingredients-information-consumers/types-food-ingredients",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "content_status": "reviewed"
+  },
+  {
+    "id": "monocalcium-phosphate",
+    "name": "Monocalcium phosphate",
+    "aliases": [
+      "monocalcium phosphate"
+    ],
+    "what_it_is": "A mineral salt.",
+    "why_used": "Helps dough rise.",
+    "evidence_summary": "A common leavening agent.",
+    "practical_guidance": "",
+    "evidence_level": "established",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
+    "sources": [
+      {
+        "id": "S6",
+        "title": "FDA — Types of Food Ingredients",
+        "url": "https://www.fda.gov/food/food-additives-and-gras-ingredients-information-consumers/types-food-ingredients",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "content_status": "reviewed"
+  },
+  {
+    "id": "calcium-sulfate",
+    "name": "Calcium sulfate",
+    "aliases": [
+      "calcium sulfate"
+    ],
+    "what_it_is": "A mineral salt.",
+    "why_used": "Dough conditioner; adds calcium.",
+    "evidence_summary": "Generally recognized as safe.",
+    "practical_guidance": "",
+    "evidence_level": "established",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
+    "sources": [
+      {
+        "id": "S25",
+        "title": "21 CFR 184.1230 — Calcium sulfate",
+        "url": "https://www.law.cornell.edu/cfr/text/21/184.1230",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "content_status": "reviewed"
+  },
+  {
+    "id": "calcium-carbonate",
+    "name": "Calcium carbonate",
+    "aliases": [
+      "calcium carbonate"
+    ],
+    "what_it_is": "A mineral salt.",
+    "why_used": "Leavening; adds calcium.",
+    "evidence_summary": "Generally recognized as safe.",
+    "practical_guidance": "",
+    "evidence_level": "established",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
+    "sources": [
+      {
+        "id": "S26",
+        "title": "21 CFR 184.1191 — Calcium carbonate",
+        "url": "https://www.law.cornell.edu/cfr/text/21/184.1191",
+        "accessed_at": "2026-10-16"
+      },
+      {
+        "id": "S6",
+        "title": "FDA — Types of Food Ingredients",
+        "url": "https://www.fda.gov/food/food-additives-and-gras-ingredients-information-consumers/types-food-ingredients",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "content_status": "reviewed"
+  },
+  {
+    "id": "potassium-iodate",
+    "name": "Potassium iodate",
+    "aliases": [
+      "potassium iodate"
+    ],
+    "what_it_is": "A mineral salt.",
+    "why_used": "Strengthens dough.",
+    "evidence_summary": "Used in tiny amounts.",
+    "practical_guidance": "",
+    "evidence_level": "not_assessed",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
     "sources": [],
     "content_status": "draft"
   },
   {
-    "id": "whole-grain-oats",
-    "name": "Whole grain oats",
-    "aliases": ["rolled oats", "oat groats"],
-    "what_it_is": "Oats that retain the bran, germ, and endosperm of the oat kernel.",
-    "why_used": "Primary grain in many cereals; provides texture and a source of fiber.",
-    "evidence_summary": "Oats are a whole grain; whole grains contribute dietary fiber, which this card describes at the ingredient level.",
-    "practical_guidance": "When whole grain oats are the first ingredient, the product's grain base is predominantly whole grain.",
-    "evidence_level": "established",
-    "uncertainty": "The fiber contribution depends on the finished product's formulation and serving size.",
-    "reviewed_at": null,
+    "id": "yeast",
+    "name": "Yeast",
+    "aliases": [
+      "dried yeast",
+      "yeast"
+    ],
+    "what_it_is": "A living leavening agent.",
+    "why_used": "Makes dough rise.",
+    "evidence_summary": "No nutrition concern.",
+    "practical_guidance": "",
+    "evidence_level": "not_assessed",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
     "sources": [],
     "content_status": "draft"
   },
   {
-    "id": "honey",
-    "name": "Honey",
-    "aliases": [],
-    "what_it_is": "A sweetener produced by bees, composed mainly of fructose and glucose.",
-    "why_used": "Adds sweetness and flavor.",
-    "evidence_summary": "When added to a product, honey contributes to the added sugar total on the US label.",
-    "practical_guidance": "Honey is still an added sugar for labeling purposes; compare the added sugar line at equal weight.",
-    "evidence_level": "established",
-    "uncertainty": "Marketing terms such as 'natural' do not change how added sugar is counted on the label.",
-    "reviewed_at": null,
+    "id": "enzymes",
+    "name": "Enzymes",
+    "aliases": [
+      "enzyme",
+      "enzymes"
+    ],
+    "what_it_is": "Natural proteins that speed up baking reactions.",
+    "why_used": "Rise and softness.",
+    "evidence_summary": "Mostly broken down in baking.",
+    "practical_guidance": "",
+    "evidence_level": "not_assessed",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
     "sources": [],
     "content_status": "draft"
   },
   {
-    "id": "milled-corn",
-    "name": "Milled corn",
-    "aliases": ["corn", "degerminated corn"],
-    "what_it_is": "Corn that has been milled, often with the germ removed, for use as a cereal grain base.",
-    "why_used": "Forms the flake or grain base in many breakfast cereals.",
-    "evidence_summary": "Degerminated milled corn is a refined grain and generally contributes less fiber than a whole grain base.",
-    "practical_guidance": "A refined-corn base often pairs with a lower fiber figure; check the fiber line at equal weight.",
-    "evidence_level": "established",
-    "uncertainty": "Whether the corn is whole or refined depends on the specific product and is not always stated.",
-    "reviewed_at": null,
+    "id": "vinegar",
+    "name": "Vinegar",
+    "aliases": [
+      "grain vinegar",
+      "organic grain vinegar",
+      "vinegar"
+    ],
+    "what_it_is": "A mild acid.",
+    "why_used": "Flavor and freshness.",
+    "evidence_summary": "No nutrition concern.",
+    "practical_guidance": "",
+    "evidence_level": "not_assessed",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
     "sources": [],
     "content_status": "draft"
   },
   {
-    "id": "rice",
-    "name": "Rice",
-    "aliases": ["milled rice", "white rice"],
-    "what_it_is": "Milled rice used as the main grain in many crisp cereals; usually refined (bran and germ removed).",
-    "why_used": "Gives a light, crisp texture as the grain base.",
-    "evidence_summary": "Refined milled rice is not a whole grain and generally contributes little dietary fiber.",
-    "practical_guidance": "A refined-rice base usually pairs with low fiber; check the fiber line at equal weight.",
-    "evidence_level": "established",
-    "uncertainty": "Some products use brown (whole grain) rice; the label states which.",
-    "reviewed_at": null,
+    "id": "water",
+    "name": "Water",
+    "aliases": [
+      "water"
+    ],
+    "what_it_is": "Water.",
+    "why_used": "Basic dough ingredient.",
+    "evidence_summary": "No nutrition concern.",
+    "practical_guidance": "",
+    "evidence_level": "not_assessed",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
     "sources": [],
     "content_status": "draft"
   },
   {
-    "id": "raisins",
-    "name": "Raisins",
-    "aliases": ["dried grapes"],
-    "what_it_is": "Dried grapes added to cereals for sweetness and texture.",
-    "why_used": "Add natural sweetness, chew, and some fiber.",
-    "evidence_summary": "Raisins contribute naturally occurring sugar (counted in total sugar) rather than added sugar, though many raisin cereals also add sugar separately.",
-    "practical_guidance": "Total sugar can look high partly from the fruit; check the separate added sugar line.",
+    "id": "mono-diglycerides",
+    "name": "Mono- and diglycerides",
+    "aliases": [
+      "mono and diglycerides",
+      "mono- and diglycerides",
+      "monoglycerides",
+      "monoglycerides and diglycerides"
+    ],
+    "what_it_is": "Emulsifiers made from fats.",
+    "why_used": "Keep bread soft longer.",
+    "evidence_summary": "Generally recognized as safe.",
+    "practical_guidance": "",
     "evidence_level": "established",
-    "uncertainty": "Naturally occurring and added sugars are listed separately on the US label.",
-    "reviewed_at": null,
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
+    "sources": [
+      {
+        "id": "S21",
+        "title": "21 CFR 184.1505 — Mono- and diglycerides",
+        "url": "https://www.law.cornell.edu/cfr/text/21/184.1505",
+        "accessed_at": "2026-10-16"
+      },
+      {
+        "id": "S6",
+        "title": "FDA — Types of Food Ingredients",
+        "url": "https://www.fda.gov/food/food-additives-and-gras-ingredients-information-consumers/types-food-ingredients",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "content_status": "reviewed"
+  },
+  {
+    "id": "datem",
+    "name": "DATEM",
+    "aliases": [
+      "datem"
+    ],
+    "what_it_is": "An emulsifier.",
+    "why_used": "Strengthens dough.",
+    "evidence_summary": "Generally recognized as safe.",
+    "practical_guidance": "",
+    "evidence_level": "established",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
+    "sources": [
+      {
+        "id": "S19",
+        "title": "21 CFR 184.1101 — DATEM",
+        "url": "https://www.law.cornell.edu/cfr/text/21/184.1101",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "content_status": "reviewed"
+  },
+  {
+    "id": "soy-lecithin",
+    "name": "Soy lecithin",
+    "aliases": [
+      "lecithin",
+      "soy lecithin"
+    ],
+    "what_it_is": "An emulsifier from soybeans.",
+    "why_used": "Helps ingredients mix.",
+    "evidence_summary": "Generally recognized as safe; soy is a major allergen.",
+    "practical_guidance": "",
+    "evidence_level": "established",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
+    "sources": [
+      {
+        "id": "S20",
+        "title": "21 CFR 184.1400 — Lecithin",
+        "url": "https://www.law.cornell.edu/cfr/text/21/184.1400",
+        "accessed_at": "2026-10-16"
+      },
+      {
+        "id": "S9",
+        "title": "FDA — Food Allergies",
+        "url": "https://www.fda.gov/food/food-labeling-nutrition/food-allergies",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "content_status": "reviewed"
+  },
+  {
+    "id": "ssl",
+    "name": "Sodium stearoyl lactylate",
+    "aliases": [
+      "sodium stearoyl lactylate"
+    ],
+    "what_it_is": "A dough conditioner.",
+    "why_used": "Volume and softness.",
+    "evidence_summary": "A permitted food additive.",
+    "practical_guidance": "",
+    "evidence_level": "established",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
+    "sources": [
+      {
+        "id": "S22",
+        "title": "21 CFR 172.846 — Sodium stearoyl lactylate",
+        "url": "https://www.law.cornell.edu/cfr/text/21/172.846",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "content_status": "reviewed"
+  },
+  {
+    "id": "guar-gum",
+    "name": "Guar gum",
+    "aliases": [
+      "guar gum"
+    ],
+    "what_it_is": "Thickener from guar beans.",
+    "why_used": "Holds moisture.",
+    "evidence_summary": "Generally recognized as safe.",
+    "practical_guidance": "",
+    "evidence_level": "established",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
+    "sources": [
+      {
+        "id": "S24",
+        "title": "21 CFR 184.1339 — Guar gum",
+        "url": "https://www.law.cornell.edu/cfr/text/21/184.1339",
+        "accessed_at": "2026-10-16"
+      },
+      {
+        "id": "S6",
+        "title": "FDA — Types of Food Ingredients",
+        "url": "https://www.fda.gov/food/food-additives-and-gras-ingredients-information-consumers/types-food-ingredients",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "content_status": "reviewed"
+  },
+  {
+    "id": "acerola",
+    "name": "Acerola cherry powder",
+    "aliases": [
+      "acerola cherry powder"
+    ],
+    "what_it_is": "A natural vitamin C source.",
+    "why_used": "Dough conditioner.",
+    "evidence_summary": "Functional; used in small amounts.",
+    "practical_guidance": "",
+    "evidence_level": "not_assessed",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
     "sources": [],
     "content_status": "draft"
   },
   {
-    "id": "malted-barley",
-    "name": "Malted barley flour",
-    "aliases": ["malt", "malt flavor", "barley malt"],
-    "what_it_is": "Flour from sprouted (malted) barley, used in small amounts for flavor and browning.",
-    "why_used": "Adds a mild malt flavor and supports color and texture.",
-    "evidence_summary": "Used in small quantities for flavor; not a major source of nutrients at those amounts. Contains gluten.",
-    "practical_guidance": "A flavor ingredient, not a meaningful change to the fiber or sugar comparison.",
+    "id": "calcium-propionate",
+    "name": "Calcium propionate",
+    "aliases": [
+      "calcium propionate",
+      "calcium propionate (a preservative)",
+      "calcium propionate (preservative)"
+    ],
+    "what_it_is": "A preservative.",
+    "why_used": "Prevents mold.",
+    "evidence_summary": "Generally recognized as safe.",
+    "practical_guidance": "",
     "evidence_level": "established",
-    "uncertainty": "Barley contains gluten, relevant for gluten avoidance.",
-    "reviewed_at": null,
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
+    "sources": [
+      {
+        "id": "S17",
+        "title": "21 CFR 184.1221 — Calcium propionate",
+        "url": "https://www.law.cornell.edu/cfr/text/21/184.1221",
+        "accessed_at": "2026-10-16"
+      },
+      {
+        "id": "S6",
+        "title": "FDA — Types of Food Ingredients",
+        "url": "https://www.fda.gov/food/food-additives-and-gras-ingredients-information-consumers/types-food-ingredients",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "content_status": "reviewed"
+  },
+  {
+    "id": "sorbic-acid",
+    "name": "Sorbic acid",
+    "aliases": [
+      "sorbic acid"
+    ],
+    "what_it_is": "A preservative.",
+    "why_used": "Prevents mold and yeast.",
+    "evidence_summary": "Generally recognized as safe.",
+    "practical_guidance": "",
+    "evidence_level": "established",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
+    "sources": [
+      {
+        "id": "S18",
+        "title": "21 CFR 182.3089 — Sorbic acid",
+        "url": "https://www.law.cornell.edu/cfr/text/21/182.3089",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "content_status": "reviewed"
+  },
+  {
+    "id": "bht",
+    "name": "BHT",
+    "aliases": [
+      "bht",
+      "bht added to preserve freshness",
+      "bht for freshness"
+    ],
+    "what_it_is": "An antioxidant preservative.",
+    "why_used": "Keeps fats from going rancid.",
+    "evidence_summary": "FDA-permitted; EU set a safe daily limit in 2012. Some avoid it.",
+    "practical_guidance": "",
+    "evidence_level": "mixed",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
+    "sources": [
+      {
+        "id": "S16",
+        "title": "21 CFR 172.115 — BHT",
+        "url": "https://www.law.cornell.edu/cfr/text/21/172.115",
+        "accessed_at": "2026-10-16"
+      },
+      {
+        "id": "S15",
+        "title": "EFSA (2012) — Re-evaluation of BHT (E 321)",
+        "url": "https://doi.org/10.2903/j.efsa.2012.2588",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "content_status": "reviewed"
+  },
+  {
+    "id": "tocopherols",
+    "name": "Vitamin E (mixed tocopherols)",
+    "aliases": [
+      "mixed tocopherols",
+      "tocopherols",
+      "vitamin e (mixed tocopherols)"
+    ],
+    "what_it_is": "A natural antioxidant.",
+    "why_used": "Keeps oils fresh.",
+    "evidence_summary": "FDA lists tocopherols as a preservative.",
+    "practical_guidance": "",
+    "evidence_level": "established",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
+    "sources": [
+      {
+        "id": "S6",
+        "title": "FDA — Types of Food Ingredients",
+        "url": "https://www.fda.gov/food/food-additives-and-gras-ingredients-information-consumers/types-food-ingredients",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "content_status": "reviewed"
+  },
+  {
+    "id": "citric-acid",
+    "name": "Citric acid",
+    "aliases": [
+      "citric acid"
+    ],
+    "what_it_is": "A mild acid.",
+    "why_used": "Acidity and freshness.",
+    "evidence_summary": "A common preservative.",
+    "practical_guidance": "",
+    "evidence_level": "established",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
+    "sources": [
+      {
+        "id": "S6",
+        "title": "FDA — Types of Food Ingredients",
+        "url": "https://www.fda.gov/food/food-additives-and-gras-ingredients-information-consumers/types-food-ingredients",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "content_status": "reviewed"
+  },
+  {
+    "id": "preservatives-unspecified",
+    "name": "Preservatives",
+    "aliases": [
+      "preservatives"
+    ],
+    "what_it_is": "Unnamed preservatives.",
+    "why_used": "Mold protection.",
+    "evidence_summary": "The label doesn't name them.",
+    "practical_guidance": "",
+    "evidence_level": "not_assessed",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
     "sources": [],
     "content_status": "draft"
   },
   {
-    "id": "whole-grain-corn",
-    "name": "Whole grain corn",
-    "aliases": ["whole grain corn flour", "whole grain yellow corn flour"],
-    "what_it_is": "Corn flour that retains the whole kernel, used as a whole-grain cereal base.",
-    "why_used": "Provides the grain base while keeping the bran and germ.",
-    "evidence_summary": "As a whole grain, it retains more fiber than degerminated milled corn, though a sweetened product can still be high in added sugar.",
-    "practical_guidance": "Whole grain first is a plus, but still compare the added sugar line at equal weight.",
-    "evidence_level": "established",
-    "uncertainty": "Whole-grain base does not offset a high added-sugar formulation.",
-    "reviewed_at": null,
+    "id": "synthetic-colors",
+    "name": "Artificial colors",
+    "aliases": [
+      "blue 1",
+      "red 40",
+      "yellow 5",
+      "yellow 6"
+    ],
+    "what_it_is": "Synthetic dyes.",
+    "why_used": "Appearance only.",
+    "evidence_summary": "FDA-approved; evidence on behavior is mixed. FDA plans a phase-out.",
+    "practical_guidance": "",
+    "evidence_level": "mixed",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
+    "sources": [
+      {
+        "id": "S11",
+        "title": "FDA — How Safe Are Color Additives?",
+        "url": "https://www.fda.gov/consumers/consumer-updates/how-safe-are-color-additives",
+        "accessed_at": "2026-10-16"
+      },
+      {
+        "id": "S12",
+        "title": "FDA — Color Additives and Behavioral Effects in Children",
+        "url": "https://www.fda.gov/media/131378/download",
+        "accessed_at": "2026-10-16"
+      },
+      {
+        "id": "S14",
+        "title": "EFSA (2008) — Assessment of the McCann et al. study on colours and behaviour",
+        "url": "https://doi.org/10.2903/j.efsa.2008.660",
+        "accessed_at": "2026-10-16"
+      },
+      {
+        "id": "S13",
+        "title": "HHS/FDA — Phase Out of Petroleum-Based Synthetic Dyes (2025)",
+        "url": "https://www.fda.gov/news-events/press-announcements/hhs-fda-phase-out-petroleum-based-synthetic-dyes-nations-food-supply",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "content_status": "reviewed"
+  },
+  {
+    "id": "colors-unspecified",
+    "name": "Colors",
+    "aliases": [
+      "colors"
+    ],
+    "what_it_is": "Unnamed colors.",
+    "why_used": "Appearance.",
+    "evidence_summary": "The label doesn't name them.",
+    "practical_guidance": "",
+    "evidence_level": "not_assessed",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
     "sources": [],
     "content_status": "draft"
+  },
+  {
+    "id": "caramel-color",
+    "name": "Caramel color",
+    "aliases": [
+      "caramel color"
+    ],
+    "what_it_is": "A brown coloring.",
+    "why_used": "Color.",
+    "evidence_summary": "An FDA-approved color.",
+    "practical_guidance": "",
+    "evidence_level": "established",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
+    "sources": [
+      {
+        "id": "S6",
+        "title": "FDA — Types of Food Ingredients",
+        "url": "https://www.fda.gov/food/food-additives-and-gras-ingredients-information-consumers/types-food-ingredients",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "content_status": "reviewed"
+  },
+  {
+    "id": "plant-colors",
+    "name": "Turmeric and annatto",
+    "aliases": [
+      "annatto",
+      "annatto color",
+      "turmeric",
+      "turmeric color"
+    ],
+    "what_it_is": "Plant-based colors.",
+    "why_used": "Yellow-orange color.",
+    "evidence_summary": "Annatto is an FDA-approved color.",
+    "practical_guidance": "",
+    "evidence_level": "established",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
+    "sources": [
+      {
+        "id": "S6",
+        "title": "FDA — Types of Food Ingredients",
+        "url": "https://www.fda.gov/food/food-additives-and-gras-ingredients-information-consumers/types-food-ingredients",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "content_status": "reviewed"
+  },
+  {
+    "id": "flavors",
+    "name": "Natural and artificial flavor",
+    "aliases": [
+      "artificial flavor",
+      "natural and artificial flavor",
+      "natural flavor",
+      "natural flavors"
+    ],
+    "what_it_is": "Flavorings.",
+    "why_used": "Taste.",
+    "evidence_summary": "Specific flavor compounds don't have to be named.",
+    "practical_guidance": "",
+    "evidence_level": "established",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
+    "sources": [
+      {
+        "id": "S6",
+        "title": "FDA — Types of Food Ingredients",
+        "url": "https://www.fda.gov/food/food-additives-and-gras-ingredients-information-consumers/types-food-ingredients",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "content_status": "reviewed"
+  },
+  {
+    "id": "almond-flavor",
+    "name": "Natural almond flavor",
+    "aliases": [
+      "natural almond flavor"
+    ],
+    "what_it_is": "Almond flavoring.",
+    "why_used": "Taste.",
+    "evidence_summary": "Contains almond, a tree nut allergen.",
+    "practical_guidance": "",
+    "evidence_level": "established",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
+    "sources": [
+      {
+        "id": "S9",
+        "title": "FDA — Food Allergies",
+        "url": "https://www.fda.gov/food/food-labeling-nutrition/food-allergies",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "content_status": "reviewed"
+  },
+  {
+    "id": "cinnamon",
+    "name": "Cinnamon",
+    "aliases": [
+      "cinnamon"
+    ],
+    "what_it_is": "A spice.",
+    "why_used": "Flavor.",
+    "evidence_summary": "No concern at these amounts.",
+    "practical_guidance": "",
+    "evidence_level": "not_assessed",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
+    "sources": [],
+    "content_status": "draft"
+  },
+  {
+    "id": "vitamins-minerals",
+    "name": "Added vitamins and minerals",
+    "aliases": [
+      "added vitamins and minerals",
+      "ascorbic acid",
+      "beta-carotene",
+      "ferrous sulfate",
+      "folic acid",
+      "iron",
+      "iron and zinc (mineral nutrients)",
+      "niacin",
+      "niacinamide",
+      "reduced iron",
+      "riboflavin",
+      "sodium ascorbate",
+      "thiamin",
+      "thiamin mononitrate",
+      "thiamine mononitrate",
+      "vitamin a",
+      "vitamin a (palmitate)",
+      "vitamin b1",
+      "vitamin b12",
+      "vitamin b2",
+      "vitamin b6",
+      "vitamin c",
+      "vitamin d3",
+      "vitamin e acetate",
+      "vitamins and minerals",
+      "zinc"
+    ],
+    "what_it_is": "Nutrients added back or added during processing.",
+    "why_used": "Fortification.",
+    "evidence_summary": "Helps fill nutrient gaps; not a substitute for a varied diet.",
+    "practical_guidance": "",
+    "evidence_level": "established",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-16",
+    "sources": [
+      {
+        "id": "S27",
+        "title": "NIH Office of Dietary Supplements — Vitamin and Mineral Fact Sheets",
+        "url": "https://ods.od.nih.gov/factsheets/list-VitaminsMinerals/",
+        "accessed_at": "2026-10-16"
+      },
+      {
+        "id": "S4",
+        "title": "USDA/HHS — Dietary Guidelines for Americans, 2020–2025",
+        "url": "https://www.dietaryguidelines.gov/sites/default/files/2020-12/Dietary_Guidelines_for_Americans_2020-2025.pdf",
+        "accessed_at": "2026-10-16"
+      }
+    ],
+    "content_status": "reviewed"
   }
 ]
