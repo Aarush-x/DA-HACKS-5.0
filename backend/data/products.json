@@ -23,7 +23,7 @@
       "saturated_fat_g": 0
     },
     "first_grain_is_whole": true,
-    "ingredients_text": "Whole wheat flour, water, yeast, brown sugar, wheat gluten, salt, soybean oil, vinegar, enzymes. Contains wheat, soy.",
+    "ingredients_text": "Whole wheat flour, water, yeast, brown sugar, wheat gluten, 2% or less of: salt, expeller pressed canola oil, cultured wheat flour, vinegar, flax seed meal, enzymes, acerola cherry powder. May be topped with wheat bran. Contains wheat.",
     "ingredient_refs": [
       {
         "id": "whole-grain-wheat",
@@ -43,6 +43,12 @@
         "id": "src-natures-own",
         "title": "Nature's Own 100% Whole Wheat Bread — nutrition label (MyFoodDiary)",
         "url": "https://www.myfooddiary.com/foods/649503/natures-own-100-percent-whole-wheat-bread",
+        "accessed_at": "2026-10-16"
+      },
+      {
+        "id": "src-off-0072250037129",
+        "title": "Open Food Facts — ingredient list",
+        "url": "https://world.openfoodfacts.org/product/0072250037129",
         "accessed_at": "2026-10-16"
       }
     ],
@@ -123,7 +129,7 @@
       "saturated_fat_g": 0
     },
     "first_grain_is_whole": false,
-    "ingredients_text": "Enriched bleached flour, water, sugar, yeast, soybean oil, salt, dough conditioners, preservatives. Contains wheat, soy, sesame.",
+    "ingredients_text": "Enriched wheat flour [flour, malted barley flour, reduced iron, niacin, thiamin mononitrate (vitamin B1), riboflavin (vitamin B2), folic acid], water, sugar, yeast, soybean oil, salt, wheat gluten, calcium propionate (preservative), monoglycerides, DATEM, calcium sulfate, soy lecithin, citric acid, grain vinegar, potassium iodate, monocalcium phosphate. Contains wheat, soy.",
     "ingredient_refs": [
       {
         "id": "enriched-flour",
@@ -143,6 +149,12 @@
         "id": "src-sara-lee",
         "title": "Sara Lee Classic White Bread — SmartLabel",
         "url": "https://smartlabel.labelinsight.com/product/6085863/nutrition",
+        "accessed_at": "2026-10-16"
+      },
+      {
+        "id": "src-off-0072945601338",
+        "title": "Open Food Facts — ingredient list",
+        "url": "https://world.openfoodfacts.org/product/0072945601338",
         "accessed_at": "2026-10-16"
       }
     ],
@@ -443,7 +455,7 @@
       "saturated_fat_g": 0
     },
     "first_grain_is_whole": false,
-    "ingredients_text": "Enriched wheat flour, water, sugar, yeast, soybean oil, salt, malted barley flour, whey, soy lecithin, wheat gluten. Contains wheat, milk, soy.",
+    "ingredients_text": "Enriched wheat flour (flour, niacin, reduced iron, thiamine mononitrate, riboflavin, folic acid), water, sugar, yeast, contains 2% or less of: soybean oil, salt, monoglycerides, calcium propionate and sorbic acid to extend freshness, malted barley flour, whey (milk), soy lecithin, DATEM, wheat gluten. Contains wheat, milk, soy.",
     "ingredient_refs": [
       {
         "id": "enriched-flour",
@@ -463,6 +475,12 @@
         "id": "src-pf",
         "title": "Pepperidge Farm Farmhouse Hearty White — retailer label (Stop & Shop)",
         "url": "https://stopandshop.com/groceries/bread-bakery/sandwich-bread/pepperidge-farm-farmhouse-hearty-white-bread-sliced-24-oz-pkg.html",
+        "accessed_at": "2026-10-16"
+      },
+      {
+        "id": "src-off-0014100070832",
+        "title": "Open Food Facts — ingredient list",
+        "url": "https://world.openfoodfacts.org/product/0014100070832",
         "accessed_at": "2026-10-16"
       }
     ],
@@ -551,7 +569,7 @@
       "saturated_fat_g": 0
     },
     "first_grain_is_whole": true,
-    "ingredients_text": "Whole wheat flour, water, bulgur wheat, sugar, soybean oil, wheat gluten, honey, yeast, cultured wheat flour, salt, soy lecithin, vinegar, natural flavors, citric acid. Contains wheat, soy, milk.",
+    "ingredients_text": "Whole wheat flour, water, sugar, wheat gluten, raisin juice concentrate, soybean oil, yeast, cultured wheat flour, molasses, salt, soy lecithin, grain vinegar, citric acid. Contains wheat, soy, milk.",
     "ingredient_refs": [
       {
         "id": "whole-grain-wheat",
@@ -575,6 +593,12 @@
         "id": "src-oroweat",
         "title": "Oroweat/Brownberry Whole Grains 100% Whole Wheat — SmartLabel",
         "url": "https://smartlabel.labelinsight.com/product/5031793/nutrition",
+        "accessed_at": "2026-10-16"
+      },
+      {
+        "id": "src-off-0073130001322",
+        "title": "Open Food Facts — ingredient list",
+        "url": "https://world.openfoodfacts.org/product/0073130001322",
         "accessed_at": "2026-10-16"
       }
     ],
@@ -607,7 +631,7 @@
       "saturated_fat_g": 0
     },
     "first_grain_is_whole": false,
-    "ingredients_text": "Unbleached enriched wheat flour, nonfat milk, reconstituted potatoes (potato flour), yeast, sugar, cane sugar syrup, wheat gluten, sunflower oil, salt, butter, dough conditioners, sesame seeds. Contains wheat, milk, soy, sesame.",
+    "ingredients_text": "Unbleached enriched wheat flour (flour, ferrous sulfate, niacin, thiamin, riboflavin, folic acid), nonfat milk, reconstituted potatoes (from potato flour), yeast, sugar, wheat gluten, sunflower oil, contains 2% or less of each of the following: salt, butter, dough conditioners (sodium stearoyl lactylate, mono- and diglycerides), monocalcium phosphate, calcium propionate (a preservative), guar gum, ascorbic acid, DATEM, calcium sulfate, enzymes, turmeric color, annatto color, sesame seeds. Contains wheat, milk, soy, sesame.",
     "ingredient_refs": [
       {
         "id": "enriched-flour",
@@ -627,6 +651,12 @@
         "id": "src-martins",
         "title": "Martin's Potato Bread — retailer label (Giant Food)",
         "url": "https://giantfoodstores.com/groceries/bread-bakery/martins-potato-sliced-bread-18-oz-pkg.html",
+        "accessed_at": "2026-10-16"
+      },
+      {
+        "id": "src-off-0075185007007",
+        "title": "Open Food Facts — ingredient list",
+        "url": "https://world.openfoodfacts.org/product/0075185007007",
         "accessed_at": "2026-10-16"
       }
     ],
@@ -711,7 +741,7 @@
       "saturated_fat_g": 0
     },
     "first_grain_is_whole": true,
-    "ingredients_text": "Whole grain oats, sugar, corn starch, honey, brown sugar syrup, salt, tripotassium phosphate, canola and/or sunflower oil, natural almond flavor, vitamin E, plus added vitamins and minerals. Contains almond ingredients.",
+    "ingredients_text": "Whole grain oats, sugar, corn starch, honey, brown sugar syrup, salt, tripotassium phosphate, canola and/or sunflower oil, natural almond flavor, vitamin E (mixed tocopherols), calcium carbonate, vitamin C (sodium ascorbate), iron and zinc (mineral nutrients), niacinamide, vitamin B6 (pyridoxine hydrochloride), vitamin B1 (thiamin mononitrate), vitamin A (palmitate), vitamin B2 (riboflavin), folic acid, vitamin B12, vitamin D3. Contains almond ingredients.",
     "ingredient_refs": [
       {
         "id": "whole-grain-oats",
@@ -735,6 +765,12 @@
         "id": "src-hnc",
         "title": "Honey Nut Cheerios — Cheerios.com",
         "url": "https://cheerios.com/products/honey-nut-cheerios",
+        "accessed_at": "2026-10-16"
+      },
+      {
+        "id": "src-off-0016000124950",
+        "title": "Open Food Facts — ingredient list",
+        "url": "https://world.openfoodfacts.org/product/0016000124950",
         "accessed_at": "2026-10-16"
       }
     ],
@@ -875,7 +911,7 @@
       "saturated_fat_g": 0
     },
     "first_grain_is_whole": false,
-    "ingredients_text": "Rice, wheat gluten, sugar, defatted wheat germ, salt, malt flavor, and added vitamins and minerals. Contains wheat.",
+    "ingredients_text": "Rice, wheat gluten, sugar, defatted wheat germ, contains 2% or less of salt, whey, malt flavor, BHT for freshness. Vitamins and minerals: reduced iron, vitamin C (ascorbic acid), niacinamide, vitamin E acetate, beta-carotene, folic acid, vitamin B6 (pyridoxine hydrochloride), vitamin B1 (thiamin hydrochloride), vitamin B2 (riboflavin), vitamin D3, vitamin B12. Contains wheat, milk.",
     "ingredient_refs": [
       {
         "id": "rice",
@@ -895,6 +931,12 @@
         "id": "src-specialk",
         "title": "Kellogg's Special K Original — SmartLabel",
         "url": "https://smartlabel.kelloggs.com/Product/Index/038000992001",
+        "accessed_at": "2026-10-16"
+      },
+      {
+        "id": "src-off-0038000016219",
+        "title": "Open Food Facts — ingredient list",
+        "url": "https://world.openfoodfacts.org/product/0038000016219",
         "accessed_at": "2026-10-16"
       }
     ],
@@ -1039,7 +1081,7 @@
       "saturated_fat_g": 0
     },
     "first_grain_is_whole": true,
-    "ingredients_text": "Whole grain wheat, sugar, rice flour, canola and/or sunflower oil, fructose, maltodextrin, dextrose, salt, cinnamon, trisodium phosphate, soy lecithin, caramel color. Contains wheat, soy.",
+    "ingredients_text": "Whole grain wheat, sugar, rice flour, canola oil, fructose, maltodextrin, dextrose, salt, cinnamon, trisodium phosphate, soy lecithin, caramel color, BHT added to preserve freshness. Vitamins and minerals: calcium carbonate, iron and zinc (mineral nutrients), vitamin C (sodium ascorbate), niacinamide, vitamin B6 (pyridoxine hydrochloride), vitamin B2 (riboflavin), vitamin B1 (thiamin mononitrate), vitamin A (palmitate), folic acid, vitamin B12, vitamin D3. Contains wheat, soy.",
     "ingredient_refs": [
       {
         "id": "whole-grain-wheat",
@@ -1063,6 +1105,12 @@
         "id": "src-ctc",
         "title": "Cinnamon Toast Crunch — retailer label (Giant Food)",
         "url": "https://giantfoodstores.com/groceries/product/cinnamon-toast-crunch-cinnamon-cereal-large-size-16-8-oz-box/17675",
+        "accessed_at": "2026-10-16"
+      },
+      {
+        "id": "src-off-0016000122543",
+        "title": "Open Food Facts — ingredient list",
+        "url": "https://world.openfoodfacts.org/product/0016000122543",
         "accessed_at": "2026-10-16"
       }
     ],
@@ -1095,7 +1143,7 @@
       "saturated_fat_g": 0.5
     },
     "first_grain_is_whole": true,
-    "ingredients_text": "Whole grain corn flour, sugar, wheat flour, whole grain oat flour, modified food starch, vegetable oil, salt, natural flavor, colors, and added vitamins and minerals. Contains wheat.",
+    "ingredients_text": "Corn flour blend (whole grain yellow corn flour, degerminated yellow corn flour), sugar, wheat flour, whole grain oat flour, modified food starch, vegetable oil (hydrogenated coconut, soybean and/or cottonseed), oat fiber, maltodextrin, salt, soluble corn fiber, natural flavor, red 40, yellow 5, blue 1, yellow 6, vitamin C (ascorbic acid), reduced iron, niacinamide, vitamin B6 (pyridoxine hydrochloride), vitamin B2 (riboflavin), vitamin B1 (thiamin hydrochloride), folic acid, vitamin D3, vitamin B12, BHT. Contains wheat.",
     "ingredient_refs": [
       {
         "id": "whole-grain-corn",
@@ -1115,6 +1163,12 @@
         "id": "src-frootloops",
         "title": "Kellogg's Froot Loops — SmartLabel",
         "url": "https://smartlabel.kelloggs.com/Product/Index/038000017919",
+        "accessed_at": "2026-10-16"
+      },
+      {
+        "id": "src-off-0041192100338",
+        "title": "Open Food Facts — ingredient list",
+        "url": "https://world.openfoodfacts.org/product/0041192100338",
         "accessed_at": "2026-10-16"
       }
     ],
