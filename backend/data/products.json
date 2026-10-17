@@ -14,6 +14,7 @@
     "label_source_id": "src-natures-own",
     "serving_g": 26,
     "nutrition_per_serving": {
+      "calories_kcal": 60,
       "fiber_g": 2,
       "protein_g": 4,
       "added_sugar_g": 0.5,
@@ -65,6 +66,7 @@
     "label_source_id": "src-daves",
     "serving_g": 42,
     "nutrition_per_serving": {
+      "calories_kcal": 90,
       "fiber_g": 4,
       "protein_g": 5,
       "added_sugar_g": 1,
@@ -112,6 +114,7 @@
     "label_source_id": "src-sara-lee",
     "serving_g": 57,
     "nutrition_per_serving": {
+      "calories_kcal": 150,
       "fiber_g": 2,
       "protein_g": 4,
       "added_sugar_g": 2,
@@ -163,6 +166,7 @@
     "label_source_id": "src-wonder",
     "serving_g": 57,
     "nutrition_per_serving": {
+      "calories_kcal": 140,
       "fiber_g": 3,
       "protein_g": 5,
       "added_sugar_g": 5,
@@ -214,6 +218,7 @@
     "label_source_id": "src-arnold",
     "serving_g": 43,
     "nutrition_per_serving": {
+      "calories_kcal": 110,
       "fiber_g": 3,
       "protein_g": 4,
       "added_sugar_g": 2,
@@ -269,6 +274,7 @@
     "label_source_id": "src-daves21",
     "serving_g": 45,
     "nutrition_per_serving": {
+      "calories_kcal": 110,
       "fiber_g": 4,
       "protein_g": 6,
       "added_sugar_g": 4,
@@ -316,6 +322,7 @@
     "label_source_id": "src-natures-honey",
     "serving_g": 31,
     "nutrition_per_serving": {
+      "calories_kcal": 70,
       "fiber_g": 1,
       "protein_g": 3,
       "added_sugar_g": 2,
@@ -371,6 +378,7 @@
     "label_source_id": "src-gv",
     "serving_g": 26,
     "nutrition_per_serving": {
+      "calories_kcal": 70,
       "fiber_g": 0,
       "protein_g": 2,
       "added_sugar_g": 1,
@@ -426,6 +434,7 @@
     "label_source_id": "src-pf",
     "serving_g": 49,
     "nutrition_per_serving": {
+      "calories_kcal": 130,
       "fiber_g": 1,
       "protein_g": 4,
       "added_sugar_g": 4,
@@ -477,6 +486,7 @@
     "label_source_id": "src-sl-wg",
     "serving_g": 57,
     "nutrition_per_serving": {
+      "calories_kcal": 140,
       "fiber_g": 3,
       "protein_g": 5,
       "added_sugar_g": 2,
@@ -532,6 +542,7 @@
     "label_source_id": "src-oroweat",
     "serving_g": 43,
     "nutrition_per_serving": {
+      "calories_kcal": 110,
       "fiber_g": 3,
       "protein_g": 4,
       "added_sugar_g": 3,
@@ -587,6 +598,7 @@
     "label_source_id": "src-martins",
     "serving_g": 32,
     "nutrition_per_serving": {
+      "calories_kcal": 90,
       "fiber_g": 1,
       "protein_g": 3,
       "added_sugar_g": 2,
@@ -638,6 +650,7 @@
     "label_source_id": "src-cheerios",
     "serving_g": 39,
     "nutrition_per_serving": {
+      "calories_kcal": 140,
       "fiber_g": 4,
       "protein_g": 5,
       "added_sugar_g": 1,
@@ -689,6 +702,7 @@
     "label_source_id": "src-hnc",
     "serving_g": 37,
     "nutrition_per_serving": {
+      "calories_kcal": 140,
       "fiber_g": 3,
       "protein_g": 3,
       "added_sugar_g": 12,
@@ -744,6 +758,7 @@
     "label_source_id": "src-frosted",
     "serving_g": 37,
     "nutrition_per_serving": {
+      "calories_kcal": 130,
       "fiber_g": 1,
       "protein_g": 2,
       "added_sugar_g": 12,
@@ -795,6 +810,7 @@
     "label_source_id": "src-cornflakes",
     "serving_g": 42,
     "nutrition_per_serving": {
+      "calories_kcal": 150,
       "fiber_g": 1,
       "protein_g": 3,
       "added_sugar_g": 4,
@@ -850,6 +866,7 @@
     "label_source_id": "src-specialk",
     "serving_g": 39,
     "nutrition_per_serving": {
+      "calories_kcal": 150,
       "fiber_g": 0,
       "protein_g": 7,
       "added_sugar_g": 4,
@@ -901,6 +918,7 @@
     "label_source_id": "src-raisinbran",
     "serving_g": 59,
     "nutrition_per_serving": {
+      "calories_kcal": 190,
       "fiber_g": 7,
       "protein_g": 5,
       "added_sugar_g": 9,
@@ -956,6 +974,7 @@
     "label_source_id": "src-hbo",
     "serving_g": 41,
     "nutrition_per_serving": {
+      "calories_kcal": 160,
       "fiber_g": 2,
       "protein_g": 3,
       "added_sugar_g": 8,
@@ -1011,6 +1030,7 @@
     "label_source_id": "src-ctc",
     "serving_g": 31,
     "nutrition_per_serving": {
+      "calories_kcal": 130,
       "fiber_g": 2,
       "protein_g": 2,
       "added_sugar_g": 8,
@@ -1066,6 +1086,7 @@
     "label_source_id": "src-frootloops",
     "serving_g": 39,
     "nutrition_per_serving": {
+      "calories_kcal": 150,
       "fiber_g": 2,
       "protein_g": 2,
       "added_sugar_g": 12,
@@ -1117,6 +1138,7 @@
     "label_source_id": "src-ricekrispies",
     "serving_g": 40,
     "nutrition_per_serving": {
+      "calories_kcal": 150,
       "fiber_g": 0,
       "protein_g": 3,
       "added_sugar_g": 4,
@@ -1172,6 +1194,7 @@
     "label_source_id": "src-luckycharms",
     "serving_g": 36,
     "nutrition_per_serving": {
+      "calories_kcal": 140,
       "fiber_g": 2,
       "protein_g": 3,
       "added_sugar_g": 12,
@@ -1223,6 +1246,7 @@
     "label_source_id": "src-grapenuts",
     "serving_g": 58,
     "nutrition_per_serving": {
+      "calories_kcal": 200,
       "fiber_g": 7,
       "protein_g": 6,
       "added_sugar_g": 0,

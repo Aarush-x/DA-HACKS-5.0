@@ -7,6 +7,7 @@ only renders the result.
 from __future__ import annotations
 
 from typing import Optional
+from urllib.parse import quote_plus
 
 from app.errors import NotFoundError, StorageUnavailableError
 from app.schemas import (
@@ -118,6 +119,7 @@ def get_catalog(
                 ingredients_text=product.ingredients_text,
                 ingredient_refs=product.ingredient_refs,
                 sources=product.sources,
+                retailer_search_url=_walmart_search_url(product),
                 availability=_availability(product, store_id),
                 ranking=rankings[product.id],
             )
@@ -143,6 +145,17 @@ def get_catalog(
         total=len(products),
     )
     return CatalogResponse(meta=meta, products=products)
+
+
+def _walmart_search_url(product: RawProduct) -> str:
+    """A Walmart SEARCH link built from the product name (and brand when the
+    name does not already include it). A search, never a stock or price claim."""
+    name = product.name
+    if product.brand and product.brand.lower() not in name.lower():
+        query = f"{product.brand} {name}"
+    else:
+        query = name
+    return f"https://www.walmart.com/search?q={quote_plus(query)}"
 
 
 def _availability(product: RawProduct, store_id: str):
