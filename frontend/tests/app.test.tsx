@@ -143,6 +143,8 @@ describe('search-first shopper flow', () => {
     expect(within(table).getByText('Less sodium')).toBeTruthy();
     expect(within(table).queryByText(/% DV|Daily Value/)).toBeNull();
     expect(within(table).getAllByRole('button', { name: 'Remove' })).toHaveLength(2);
+    expect(within(comparison).queryByText('Main tradeoff')).toBeNull();
+    expect(within(comparison).queryByText(/Choose based on the priority that matters to you/)).toBeNull();
   });
 
   it('requests every v2 ranking priority and renders the returned order', async () => {
