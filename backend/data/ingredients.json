@@ -37,6 +37,7 @@
       "enriched bleached flour",
       "enriched flour",
       "enriched wheat flour",
+      "enriched wheat flour [flour",
       "flour",
       "unbleached enriched wheat flour",
       "wheat flour"
@@ -86,6 +87,7 @@
     "id": "wheat-bran",
     "name": "Wheat bran",
     "aliases": [
+      "may be topped with wheat bran",
       "wheat bran"
     ],
     "what_it_is": "The fiber-rich outer layer of wheat.",
@@ -138,13 +140,20 @@
     ],
     "what_it_is": "Fermented flour.",
     "why_used": "Natural mold inhibitor.",
-    "evidence_summary": "A functional ingredient used in small amounts.",
+    "evidence_summary": "Lowers dough pH to slow mold; a 'clean label' alternative.",
     "practical_guidance": "",
-    "evidence_level": "not_assessed",
+    "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
     "reviewed_at": "2026-10-17",
-    "sources": [],
-    "content_status": "draft"
+    "sources": [
+      {
+        "id": "ASB-cultured-wheat",
+        "title": "American Society of Baking — Cultured Wheat",
+        "url": "https://asbe.org/article/cultured-wheat",
+        "accessed_at": "2026-10-17"
+      }
+    ],
+    "content_status": "reviewed"
   },
   {
     "id": "defatted-wheat-germ",
@@ -233,13 +242,20 @@
     ],
     "what_it_is": "Ground oat hulls; mostly insoluble fiber.",
     "why_used": "Adds fiber.",
-    "evidence_summary": "Raises fiber with few calories.",
+    "evidence_summary": "FDA sets which added fibers count on the fiber line.",
     "practical_guidance": "",
-    "evidence_level": "not_assessed",
+    "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
     "reviewed_at": "2026-10-17",
-    "sources": [],
-    "content_status": "draft"
+    "sources": [
+      {
+        "id": "FDA-fiber",
+        "title": "FDA — Questions and Answers on Dietary Fiber",
+        "url": "https://www.fda.gov/food/nutrition-food-labeling-and-critical-foods/questions-and-answers-dietary-fiber",
+        "accessed_at": "2026-10-17"
+      }
+    ],
+    "content_status": "reviewed"
   },
   {
     "id": "milled-corn",
@@ -326,13 +342,20 @@
     ],
     "what_it_is": "Refined starch from corn.",
     "why_used": "Texture and crispness.",
-    "evidence_summary": "Functional; little nutritional effect.",
+    "evidence_summary": "Mostly carbohydrate, with no fiber.",
     "practical_guidance": "",
-    "evidence_level": "not_assessed",
+    "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
     "reviewed_at": "2026-10-17",
-    "sources": [],
-    "content_status": "draft"
+    "sources": [
+      {
+        "id": "FDC-cornstarch",
+        "title": "USDA FoodData Central — Cornstarch",
+        "url": "https://fdc.nal.usda.gov/food-details/169698/nutrients",
+        "accessed_at": "2026-10-17"
+      }
+    ],
+    "content_status": "reviewed"
   },
   {
     "id": "modified-starch",
@@ -355,12 +378,6 @@
         "title": "21 CFR 172.892 — Food starch-modified",
         "url": "https://www.law.cornell.edu/cfr/text/21/172.892",
         "accessed_at": "2026-10-17"
-      },
-      {
-        "id": "S6",
-        "title": "FDA — Types of Food Ingredients",
-        "url": "https://www.fda.gov/food/food-additives-and-gras-ingredients-information-consumers/types-food-ingredients",
-        "accessed_at": "2026-10-17"
       }
     ],
     "content_status": "reviewed"
@@ -373,13 +390,20 @@
     ],
     "what_it_is": "Processed starch.",
     "why_used": "Bulk and crunch.",
-    "evidence_summary": "Functional; used in small amounts.",
+    "evidence_summary": "Generally recognized as safe.",
     "practical_guidance": "",
-    "evidence_level": "not_assessed",
+    "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
     "reviewed_at": "2026-10-17",
-    "sources": [],
-    "content_status": "draft"
+    "sources": [
+      {
+        "id": "CFR-maltodextrin",
+        "title": "21 CFR 184.1444 — Maltodextrin",
+        "url": "https://www.law.cornell.edu/cfr/text/21/184.1444",
+        "accessed_at": "2026-10-17"
+      }
+    ],
+    "content_status": "reviewed"
   },
   {
     "id": "soluble-corn-fiber",
@@ -389,18 +413,26 @@
     ],
     "what_it_is": "Added fiber made from corn.",
     "why_used": "Raises fiber.",
-    "evidence_summary": "Adds to the fiber count.",
+    "evidence_summary": "FDA sets which added fibers count on the fiber line.",
     "practical_guidance": "",
     "evidence_level": "limited",
     "uncertainty": "The label doesn't list how much is in the product.",
     "reviewed_at": "2026-10-17",
-    "sources": [],
-    "content_status": "draft"
+    "sources": [
+      {
+        "id": "FDA-fiber",
+        "title": "FDA — Questions and Answers on Dietary Fiber",
+        "url": "https://www.fda.gov/food/nutrition-food-labeling-and-critical-foods/questions-and-answers-dietary-fiber",
+        "accessed_at": "2026-10-17"
+      }
+    ],
+    "content_status": "reviewed"
   },
   {
     "id": "potato",
     "name": "Reconstituted potatoes",
     "aliases": [
+      "from potato flour",
       "potato flour",
       "potatoes",
       "reconstituted potatoes"
@@ -409,11 +441,18 @@
     "why_used": "Soft, moist texture.",
     "evidence_summary": "Mainly for texture.",
     "practical_guidance": "",
-    "evidence_level": "not_assessed",
+    "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
     "reviewed_at": "2026-10-17",
-    "sources": [],
-    "content_status": "draft"
+    "sources": [
+      {
+        "id": "FDC-potato-flour",
+        "title": "USDA FoodData Central — Potato flour",
+        "url": "https://fdc.nal.usda.gov/food-details/168446/nutrients",
+        "accessed_at": "2026-10-17"
+      }
+    ],
+    "content_status": "reviewed"
   },
   {
     "id": "flax",
@@ -787,13 +826,20 @@
     ],
     "what_it_is": "A plant oil.",
     "why_used": "Moisture and soft texture.",
-    "evidence_summary": "Used in small amounts; check the saturated fat total.",
+    "evidence_summary": "Mostly unsaturated fat; used in small amounts.",
     "practical_guidance": "",
-    "evidence_level": "not_assessed",
+    "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
     "reviewed_at": "2026-10-17",
-    "sources": [],
-    "content_status": "draft"
+    "sources": [
+      {
+        "id": "FDC-soy-oil",
+        "title": "USDA FoodData Central — Oil, soybean, salad or cooking",
+        "url": "https://fdc.nal.usda.gov/food-details/171411/nutrients",
+        "accessed_at": "2026-10-17"
+      }
+    ],
+    "content_status": "reviewed"
   },
   {
     "id": "canola-oil",
@@ -829,20 +875,29 @@
     ],
     "what_it_is": "A plant oil.",
     "why_used": "Moisture and texture.",
-    "evidence_summary": "Used in small amounts.",
+    "evidence_summary": "Mostly unsaturated fat; used in small amounts.",
     "practical_guidance": "",
-    "evidence_level": "not_assessed",
+    "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
     "reviewed_at": "2026-10-17",
-    "sources": [],
-    "content_status": "draft"
+    "sources": [
+      {
+        "id": "FDC-sunflower-oil",
+        "title": "USDA FoodData Central — Oil, sunflower",
+        "url": "https://fdc.nal.usda.gov/food-details/1750349/nutrients",
+        "accessed_at": "2026-10-17"
+      }
+    ],
+    "content_status": "reviewed"
   },
   {
     "id": "hydrogenated-oil",
     "name": "Hydrogenated oil",
     "aliases": [
+      "hydrogenated coconut",
       "hydrogenated coconut, soybean and/or cottonseed",
       "hydrogenated oil",
+      "soybean and/or cottonseed",
       "vegetable oil (hydrogenated coconut, soybean and/or cottonseed)"
     ],
     "what_it_is": "Oil processed to be more solid.",
@@ -943,16 +998,24 @@
     "why_used": "Marshmallow texture.",
     "evidence_summary": "Animal-derived, so not vegetarian.",
     "practical_guidance": "",
-    "evidence_level": "not_assessed",
+    "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
     "reviewed_at": "2026-10-17",
-    "sources": [],
-    "content_status": "draft"
+    "sources": [
+      {
+        "id": "FDC-gelatin",
+        "title": "USDA FoodData Central — Gelatins, dry powder, unsweetened",
+        "url": "https://fdc.nal.usda.gov/food-details/169599/nutrients",
+        "accessed_at": "2026-10-17"
+      }
+    ],
+    "content_status": "reviewed"
   },
   {
     "id": "salt",
     "name": "Salt",
     "aliases": [
+      "2% or less of: salt",
       "salt",
       "sea salt"
     ],
@@ -995,9 +1058,9 @@
     "reviewed_at": "2026-10-17",
     "sources": [
       {
-        "id": "S6",
-        "title": "FDA — Types of Food Ingredients",
-        "url": "https://www.fda.gov/food/food-additives-and-gras-ingredients-information-consumers/types-food-ingredients",
+        "id": "CFR-sodium-phosphate",
+        "title": "21 CFR 182.1778 — Sodium phosphate",
+        "url": "https://www.law.cornell.edu/cfr/text/21/182.1778",
         "accessed_at": "2026-10-17"
       }
     ],
@@ -1018,9 +1081,9 @@
     "reviewed_at": "2026-10-17",
     "sources": [
       {
-        "id": "S6",
-        "title": "FDA — Types of Food Ingredients",
-        "url": "https://www.fda.gov/food/food-additives-and-gras-ingredients-information-consumers/types-food-ingredients",
+        "id": "CFR-calcium-phosphate",
+        "title": "21 CFR 182.1217 — Calcium phosphate",
+        "url": "https://www.law.cornell.edu/cfr/text/21/182.1217",
         "accessed_at": "2026-10-17"
       }
     ],
@@ -1053,7 +1116,8 @@
     "id": "calcium-carbonate",
     "name": "Calcium carbonate",
     "aliases": [
-      "calcium carbonate"
+      "calcium carbonate",
+      "vitamins and minerals: calcium carbonate"
     ],
     "what_it_is": "A mineral salt.",
     "why_used": "Leavening; adds calcium.",
@@ -1068,12 +1132,6 @@
         "title": "21 CFR 184.1191 — Calcium carbonate",
         "url": "https://www.law.cornell.edu/cfr/text/21/184.1191",
         "accessed_at": "2026-10-17"
-      },
-      {
-        "id": "S6",
-        "title": "FDA — Types of Food Ingredients",
-        "url": "https://www.fda.gov/food/food-additives-and-gras-ingredients-information-consumers/types-food-ingredients",
-        "accessed_at": "2026-10-17"
       }
     ],
     "content_status": "reviewed"
@@ -1086,13 +1144,20 @@
     ],
     "what_it_is": "A mineral salt.",
     "why_used": "Strengthens dough.",
-    "evidence_summary": "Used in tiny amounts.",
+    "evidence_summary": "A dough conditioner permitted in bread in tiny amounts.",
     "practical_guidance": "",
-    "evidence_level": "not_assessed",
+    "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
     "reviewed_at": "2026-10-17",
-    "sources": [],
-    "content_status": "draft"
+    "sources": [
+      {
+        "id": "CFR-bread",
+        "title": "21 CFR 136.110 — Bread, rolls, and buns (permitted dough conditioners incl. potassium iodate)",
+        "url": "https://www.law.cornell.edu/cfr/text/21/136.110",
+        "accessed_at": "2026-10-17"
+      }
+    ],
+    "content_status": "reviewed"
   },
   {
     "id": "yeast",
@@ -1105,11 +1170,18 @@
     "why_used": "Makes dough rise.",
     "evidence_summary": "No nutrition concern.",
     "practical_guidance": "",
-    "evidence_level": "not_assessed",
+    "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
     "reviewed_at": "2026-10-17",
-    "sources": [],
-    "content_status": "draft"
+    "sources": [
+      {
+        "id": "FDC-yeast",
+        "title": "USDA FoodData Central — Leavening agents, yeast, baker's, active dry",
+        "url": "https://fdc.nal.usda.gov/food-details/175043/nutrients",
+        "accessed_at": "2026-10-17"
+      }
+    ],
+    "content_status": "reviewed"
   },
   {
     "id": "enzymes",
@@ -1120,13 +1192,20 @@
     ],
     "what_it_is": "Natural proteins that speed up baking reactions.",
     "why_used": "Rise and softness.",
-    "evidence_summary": "Mostly broken down in baking.",
+    "evidence_summary": "FDA lists enzymes approved for use in food.",
     "practical_guidance": "",
-    "evidence_level": "not_assessed",
+    "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
     "reviewed_at": "2026-10-17",
-    "sources": [],
-    "content_status": "draft"
+    "sources": [
+      {
+        "id": "FDA-enzymes",
+        "title": "FDA — Enzyme Preparations Used in Food",
+        "url": "https://www.fda.gov/food/generally-recognized-safe-gras/enzyme-preparations-used-food-partial-list",
+        "accessed_at": "2026-10-17"
+      }
+    ],
+    "content_status": "reviewed"
   },
   {
     "id": "vinegar",
@@ -1140,11 +1219,18 @@
     "why_used": "Flavor and freshness.",
     "evidence_summary": "No nutrition concern.",
     "practical_guidance": "",
-    "evidence_level": "not_assessed",
+    "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
     "reviewed_at": "2026-10-17",
-    "sources": [],
-    "content_status": "draft"
+    "sources": [
+      {
+        "id": "FDC-vinegar",
+        "title": "USDA FoodData Central — Vinegar, distilled",
+        "url": "https://fdc.nal.usda.gov/food-details/172237/nutrients",
+        "accessed_at": "2026-10-17"
+      }
+    ],
+    "content_status": "reviewed"
   },
   {
     "id": "water",
@@ -1156,11 +1242,18 @@
     "why_used": "Basic dough ingredient.",
     "evidence_summary": "No nutrition concern.",
     "practical_guidance": "",
-    "evidence_level": "not_assessed",
+    "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
     "reviewed_at": "2026-10-17",
-    "sources": [],
-    "content_status": "draft"
+    "sources": [
+      {
+        "id": "FDC-water",
+        "title": "USDA FoodData Central — Beverages, water, tap, drinking",
+        "url": "https://fdc.nal.usda.gov/food-details/173647/nutrients",
+        "accessed_at": "2026-10-17"
+      }
+    ],
+    "content_status": "reviewed"
   },
   {
     "id": "mono-diglycerides",
@@ -1183,12 +1276,6 @@
         "id": "S21",
         "title": "21 CFR 184.1505 — Mono- and diglycerides",
         "url": "https://www.law.cornell.edu/cfr/text/21/184.1505",
-        "accessed_at": "2026-10-17"
-      },
-      {
-        "id": "S6",
-        "title": "FDA — Types of Food Ingredients",
-        "url": "https://www.fda.gov/food/food-additives-and-gras-ingredients-information-consumers/types-food-ingredients",
         "accessed_at": "2026-10-17"
       }
     ],
@@ -1289,12 +1376,6 @@
         "title": "21 CFR 184.1339 — Guar gum",
         "url": "https://www.law.cornell.edu/cfr/text/21/184.1339",
         "accessed_at": "2026-10-17"
-      },
-      {
-        "id": "S6",
-        "title": "FDA — Types of Food Ingredients",
-        "url": "https://www.fda.gov/food/food-additives-and-gras-ingredients-information-consumers/types-food-ingredients",
-        "accessed_at": "2026-10-17"
       }
     ],
     "content_status": "reviewed"
@@ -1307,13 +1388,20 @@
     ],
     "what_it_is": "A natural vitamin C source.",
     "why_used": "Dough conditioner.",
-    "evidence_summary": "Functional; used in small amounts.",
+    "evidence_summary": "Naturally very high in vitamin C.",
     "practical_guidance": "",
-    "evidence_level": "not_assessed",
+    "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
     "reviewed_at": "2026-10-17",
-    "sources": [],
-    "content_status": "draft"
+    "sources": [
+      {
+        "id": "FDC-acerola",
+        "title": "USDA FoodData Central — Acerola (West Indian cherry), raw",
+        "url": "https://fdc.nal.usda.gov/food-details/171686/nutrients",
+        "accessed_at": "2026-10-17"
+      }
+    ],
+    "content_status": "reviewed"
   },
   {
     "id": "calcium-propionate",
@@ -1335,12 +1423,6 @@
         "id": "S17",
         "title": "21 CFR 184.1221 — Calcium propionate",
         "url": "https://www.law.cornell.edu/cfr/text/21/184.1221",
-        "accessed_at": "2026-10-17"
-      },
-      {
-        "id": "S6",
-        "title": "FDA — Types of Food Ingredients",
-        "url": "https://www.fda.gov/food/food-additives-and-gras-ingredients-information-consumers/types-food-ingredients",
         "accessed_at": "2026-10-17"
       }
     ],
@@ -1406,20 +1488,21 @@
     "aliases": [
       "mixed tocopherols",
       "tocopherols",
-      "vitamin e (mixed tocopherols)"
+      "vitamin e (mixed tocopherols)",
+      "vitamin e added to preserve freshness"
     ],
     "what_it_is": "A natural antioxidant.",
     "why_used": "Keeps oils fresh.",
-    "evidence_summary": "FDA lists tocopherols as a preservative.",
+    "evidence_summary": "Generally recognized as safe.",
     "practical_guidance": "",
     "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
     "reviewed_at": "2026-10-17",
     "sources": [
       {
-        "id": "S6",
-        "title": "FDA — Types of Food Ingredients",
-        "url": "https://www.fda.gov/food/food-additives-and-gras-ingredients-information-consumers/types-food-ingredients",
+        "id": "CFR-tocopherols",
+        "title": "21 CFR 182.3890 — Tocopherols",
+        "url": "https://www.law.cornell.edu/cfr/text/21/182.3890",
         "accessed_at": "2026-10-17"
       }
     ],
@@ -1433,16 +1516,16 @@
     ],
     "what_it_is": "A mild acid.",
     "why_used": "Acidity and freshness.",
-    "evidence_summary": "A common preservative.",
+    "evidence_summary": "Generally recognized as safe.",
     "practical_guidance": "",
     "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
     "reviewed_at": "2026-10-17",
     "sources": [
       {
-        "id": "S6",
-        "title": "FDA — Types of Food Ingredients",
-        "url": "https://www.fda.gov/food/food-additives-and-gras-ingredients-information-consumers/types-food-ingredients",
+        "id": "CFR-citric-acid",
+        "title": "21 CFR 184.1033 — Citric acid",
+        "url": "https://www.law.cornell.edu/cfr/text/21/184.1033",
         "accessed_at": "2026-10-17"
       }
     ],
@@ -1452,17 +1535,25 @@
     "id": "preservatives-unspecified",
     "name": "Preservatives",
     "aliases": [
+      "preservative",
       "preservatives"
     ],
     "what_it_is": "Unnamed preservatives.",
     "why_used": "Mold protection.",
-    "evidence_summary": "The label doesn't name them.",
+    "evidence_summary": "Labels should name chemical preservatives; this one doesn't.",
     "practical_guidance": "",
-    "evidence_level": "not_assessed",
+    "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
     "reviewed_at": "2026-10-17",
-    "sources": [],
-    "content_status": "draft"
+    "sources": [
+      {
+        "id": "CFR-labeling",
+        "title": "21 CFR 101.22 — Labeling of flavorings, colorings and chemical preservatives",
+        "url": "https://www.law.cornell.edu/cfr/text/21/101.22",
+        "accessed_at": "2026-10-17"
+      }
+    ],
+    "content_status": "reviewed"
   },
   {
     "id": "synthetic-colors",
@@ -1518,11 +1609,24 @@
     "why_used": "Appearance.",
     "evidence_summary": "The label doesn't name them.",
     "practical_guidance": "",
-    "evidence_level": "not_assessed",
+    "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
     "reviewed_at": "2026-10-17",
-    "sources": [],
-    "content_status": "draft"
+    "sources": [
+      {
+        "id": "CFR-labeling",
+        "title": "21 CFR 101.22 — Labeling of flavorings, colorings and chemical preservatives",
+        "url": "https://www.law.cornell.edu/cfr/text/21/101.22",
+        "accessed_at": "2026-10-17"
+      },
+      {
+        "id": "S11",
+        "title": "FDA — How Safe Are Color Additives?",
+        "url": "https://www.fda.gov/consumers/consumer-updates/how-safe-are-color-additives",
+        "accessed_at": "2026-10-17"
+      }
+    ],
+    "content_status": "reviewed"
   },
   {
     "id": "caramel-color",
@@ -1539,9 +1643,9 @@
     "reviewed_at": "2026-10-17",
     "sources": [
       {
-        "id": "S6",
-        "title": "FDA — Types of Food Ingredients",
-        "url": "https://www.fda.gov/food/food-additives-and-gras-ingredients-information-consumers/types-food-ingredients",
+        "id": "CFR-caramel",
+        "title": "21 CFR 73.85 — Caramel (color)",
+        "url": "https://www.law.cornell.edu/cfr/text/21/73.85",
         "accessed_at": "2026-10-17"
       }
     ],
@@ -1565,9 +1669,15 @@
     "reviewed_at": "2026-10-17",
     "sources": [
       {
-        "id": "S6",
-        "title": "FDA — Types of Food Ingredients",
-        "url": "https://www.fda.gov/food/food-additives-and-gras-ingredients-information-consumers/types-food-ingredients",
+        "id": "CFR-turmeric",
+        "title": "21 CFR 73.600 — Turmeric (color)",
+        "url": "https://www.law.cornell.edu/cfr/text/21/73.600",
+        "accessed_at": "2026-10-17"
+      },
+      {
+        "id": "CFR-annatto",
+        "title": "21 CFR 73.30 — Annatto extract",
+        "url": "https://www.law.cornell.edu/cfr/text/21/73.30",
         "accessed_at": "2026-10-17"
       }
     ],
@@ -1591,9 +1701,9 @@
     "reviewed_at": "2026-10-17",
     "sources": [
       {
-        "id": "S6",
-        "title": "FDA — Types of Food Ingredients",
-        "url": "https://www.fda.gov/food/food-additives-and-gras-ingredients-information-consumers/types-food-ingredients",
+        "id": "CFR-labeling",
+        "title": "21 CFR 101.22 — Labeling of flavorings, colorings and chemical preservatives",
+        "url": "https://www.law.cornell.edu/cfr/text/21/101.22",
         "accessed_at": "2026-10-17"
       }
     ],
@@ -1632,18 +1742,29 @@
     "why_used": "Flavor.",
     "evidence_summary": "No concern at these amounts.",
     "practical_guidance": "",
-    "evidence_level": "not_assessed",
+    "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
     "reviewed_at": "2026-10-17",
-    "sources": [],
-    "content_status": "draft"
+    "sources": [
+      {
+        "id": "FDC-cinnamon",
+        "title": "USDA FoodData Central — Spices, cinnamon, ground",
+        "url": "https://fdc.nal.usda.gov/food-details/171320/nutrients",
+        "accessed_at": "2026-10-17"
+      }
+    ],
+    "content_status": "reviewed"
   },
   {
     "id": "vitamins-minerals",
     "name": "Added vitamins and minerals",
     "aliases": [
       "added vitamins and minerals",
+      "and added vitamins and minerals",
+      "iron and zinc",
       "iron and zinc (mineral nutrients)",
+      "mineral nutrients",
+      "plus added vitamins and minerals",
       "vitamins and minerals"
     ],
     "what_it_is": "Nutrients added back or added during processing.",
@@ -1726,6 +1847,7 @@
       "thiamin hydrochloride",
       "thiamin mononitrate",
       "thiamine mononitrate",
+      "thiamine mononitrate [vitamin b1]",
       "vitamin b1"
     ],
     "what_it_is": "A B vitamin that helps turn food into energy.",
@@ -1750,6 +1872,7 @@
     "name": "Riboflavin (vitamin B2)",
     "aliases": [
       "riboflavin",
+      "riboflavin [vitamin b2]",
       "vitamin b2"
     ],
     "what_it_is": "A B vitamin used in energy metabolism.",
@@ -1822,7 +1945,8 @@
     "name": "Folic acid",
     "aliases": [
       "folate",
-      "folic acid"
+      "folic acid",
+      "folic acid]"
     ],
     "what_it_is": "The added form of folate, a B vitamin for new cells.",
     "why_used": "Fortification.",
@@ -1899,6 +2023,7 @@
     "name": "Vitamin A",
     "aliases": [
       "beta-carotene",
+      "palmitate",
       "vitamin a",
       "vitamin a (palmitate)",
       "vitamin a palmitate"
