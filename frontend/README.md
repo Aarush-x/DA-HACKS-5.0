@@ -1,4 +1,4 @@
-# ShelfSense frontend
+# barelabel frontend
 
 F1 mock-backed React/Vite/TypeScript app. Aarush owns this folder; Marc owns the separate backend. No backend or deployment is included here.
 
