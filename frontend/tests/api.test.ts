@@ -42,8 +42,9 @@ describe('fixture adapter', () => {
     await expect(mockApi.getProducts({ store_id: '' })).rejects.toMatchObject({ status: 422 });
     await expect(mockApi.getProducts({ store_id: 'other' })).rejects.toMatchObject({ status: 404 });
     await expect(mockApi.getProducts({ store_id: 'demo-store-a', q: 'x'.repeat(101) })).rejects.toMatchObject({ status: 422 });
-    await expect(mockApi.getIngredient('missing')).rejects.toMatchObject({ status: 404 });
-    expect((await mockApi.getIngredient('sample-grain')).sources).toEqual([]);
+    expect((await mockApi.getIngredients()).ingredients).toEqual([
+      expect.objectContaining({ id: 'sample-grain', sources: [] }),
+    ]);
   });
 });
 describe('HTTP boundary', () => {
@@ -57,6 +58,15 @@ describe('HTTP boundary', () => {
     const fetcher = vi.fn().mockResolvedValue(new Response(JSON.stringify(catalog)));
     await httpApi('https://api.test/', fetcher).getProducts({ store_id: 'demo-store-a', q: 'a & b', priority: 'fiber' });
     expect(fetcher.mock.calls[0][0]).toBe('https://api.test/api/v1/products?store_id=demo-store-a&q=a+%26+b&priority=fiber');
+  });
+  it('fetches and caches the ingredient collection', async () => {
+    const ingredients = await mockApi.getIngredients();
+    const fetcher = vi.fn().mockResolvedValue(new Response(JSON.stringify(ingredients)));
+    const api = httpApi('https://api.test/', fetcher);
+    await api.getIngredients();
+    await api.getIngredients();
+    expect(fetcher).toHaveBeenCalledTimes(1);
+    expect(fetcher).toHaveBeenCalledWith('https://api.test/api/v1/ingredients', expect.objectContaining({ signal: expect.any(AbortSignal) }));
   });
   it('rejects a successful response that violates the shared shape', async () => {
     const fetcher = vi.fn().mockResolvedValue(new Response(JSON.stringify({ products: [] })));

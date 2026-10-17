@@ -1,7 +1,11 @@
 import { describe, expect, it } from 'vitest';
-import { getProductIngredients } from '../src/lib/ingredients';
+import { getProductIngredients, normalizeIngredientName } from '../src/lib/ingredients';
 
 describe('ingredient guide', () => {
+  it('normalizes case, spacing, and the organic label for glossary matching', () => {
+    expect(normalizeIngredientName('  Organic   Whole Wheat Flour ')).toBe('whole wheat flour');
+  });
+
   it('expands nested lists and excludes allergen statements', () => {
     const ingredients = getProductIngredients('Organic whole wheat (organic whole wheat flour, organic cracked whole wheat), water, organic fruit juices (apple, pear), salt. Contains wheat, soy.');
     const names = ingredients.map(ingredient => ingredient.name);

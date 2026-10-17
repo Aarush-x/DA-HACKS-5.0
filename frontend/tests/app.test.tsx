@@ -74,8 +74,23 @@ describe('search-first shopper flow', () => {
   });
 
   it('opens ingredients and product sources in the evidence drawer', async () => {
+    const getIngredients = vi.fn(async () => ({ ingredients: [
+      {
+        id: 'whole-oats', name: 'Oats', aliases: ['organic whole grain oats'],
+        what_it_is: 'The intact oat grain, including its bran and germ.', why_used: '',
+        evidence_summary: 'Whole grains are associated with higher dietary fiber intake.', practical_guidance: '',
+        evidence_level: 'established' as const, uncertainty: '', reviewed_at: '2026-10-16', content_status: 'reviewed' as const,
+        sources: [{ id: 'oats-source', title: 'Whole grain guidance', url: 'https://www.example.org/whole-grains', accessed_at: '2026-10-16' }],
+      },
+      {
+        id: 'water', name: 'Water', aliases: [], what_it_is: 'Water used in the dough.', why_used: '',
+        evidence_summary: 'No separate evidence claim is provided.', practical_guidance: '', evidence_level: 'not_assessed' as const,
+        uncertainty: '', reviewed_at: null, sources: [], content_status: 'draft' as const,
+      },
+    ] }));
     const api = {
       ...mockApi,
+      getIngredients,
       async getProducts(query: Parameters<Api['getProducts']>[0], signal?: AbortSignal) {
         const response = await mockApi.getProducts(query, signal);
         response.products[0].ingredients_text = 'Whole grain oats, water, sugar, salt. Contains wheat.';
@@ -99,6 +114,7 @@ describe('search-first shopper flow', () => {
     expect(walmart.getAttribute('href')).toMatch(/^https:\/\/www\.walmart\.com\/search\?/);
     expect(walmart.getAttribute('target')).toBe('_blank');
     const dialog = await screen.findByRole('dialog');
+    await waitFor(() => expect(getIngredients).toHaveBeenCalledTimes(1));
     expect(within(dialog).getByRole('heading', { name: 'Sample Fiber Loaf' })).toBeTruthy();
     expect(within(dialog).getByRole('heading', { name: 'Product sources' })).toBeTruthy();
     const productSource = within(dialog).getByRole('link', { name: 'Sample product label' });
@@ -106,6 +122,20 @@ describe('search-first shopper flow', () => {
     for (const category of ['Good choice', 'Neutral', 'Limit']) expect(within(dialog).getAllByText(category).length).toBeGreaterThan(0);
     for (const ingredient of ['Whole grain oats', 'water', 'sugar', 'salt']) expect(within(dialog).getByRole('button', { name: ingredient })).toBeTruthy();
     expect(within(dialog).queryByText('wheat')).toBeNull();
+    expect(within(dialog).getByText('The intact oat grain, including its bran and germ.')).toBeTruthy();
+    expect(within(dialog).getByText('Whole grains are associated with higher dietary fiber intake.')).toBeTruthy();
+    const sourceToggle = within(dialog).getByRole('button', { name: 'Sources (1)' });
+    expect(sourceToggle.getAttribute('aria-expanded')).toBe('false');
+    expect(within(dialog).queryByRole('link', { name: 'Whole grain guidance' })).toBeNull();
+    await user.click(sourceToggle);
+    const ingredientSource = within(dialog).getByRole('link', { name: 'Whole grain guidance' });
+    expect(ingredientSource.getAttribute('href')).toBe('https://www.example.org/whole-grains');
+    expect(ingredientSource.getAttribute('target')).toBe('_blank');
+    expect(within(dialog).getByText('example.org')).toBeTruthy();
+    expect(within(dialog).getByText('Evidence: Established')).toBeTruthy();
+    await user.click(within(dialog).getByRole('button', { name: 'water' }));
+    expect(within(dialog).getByText('Water used in the dough.')).toBeTruthy();
+    expect(within(dialog).queryByRole('button', { name: /Sources \(/ })).toBeNull();
     await user.click(within(dialog).getByRole('button', { name: 'sugar' }));
     expect(within(dialog).getByText(/Adds sweetness or added sugar/)).toBeTruthy();
     expect(within(dialog).queryByText('Potential benefits and tradeoffs')).toBeNull();
