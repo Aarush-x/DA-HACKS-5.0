@@ -1,21 +1,117 @@
-# ShelfSense — DA Hacks 5.0
+# barelabel
 
-Shared planning baseline only; neither application is scaffolded or deployed.
+Compare grocery products by what matters to you, at the same weight.
 
-Read [the handoff](GROCERY_MVP_CODEX_HANDOFF.md), [shared rules](AGENTS.md), and [API contract](contracts/API_CONTRACT.md). [Fixtures](contracts/fixtures/README.md) contain fictional sample data, not verified food labels. Store availability is always simulated; no Walmart affiliation is implied.
+barelabel lets shoppers search bread and cereal, pick a priority (balanced, more fiber, less sodium, high protein, low calorie, low sugar, or low saturated fat), and see products ranked side by side at an equal weight. Every ranking comes with plain reasons, every ingredient has a short sourced explanation, and data quality is always visible.
 
-## Team workflow
+Built for DA Hacks 5.0 by Aarush and Marc.
 
-Confirm this baseline together before splitting work. Aarush uses Codex on `frontend/aarush-mvp` for F1 → F2 → F3; Marc uses Claude on `backend/marc-mvp` for B1 → B2. Marc also reads CLAUDE.md. Create owner branches from the shared main baseline in each person's checkout. Submit small PRs; Aarush coordinates I1 after merging. Marc prepares Render (D1); Aarush prepares Vercel (D2). Deployment is a separate authorized step. See handoff section 3 for checked commit/push policy.
+**Live site:** https://barelabel.vercel.app
+**API:** https://shelfsense-api-oxkg.onrender.com (docs at `/docs`)
 
-Repository: https://github.com/Aarush-x/DA-HACKS-5.0.git. Aarush works in the existing DA hacks folder; never create a nested clone. Marc uses his own checkout. Assistants share committed files, not chat memory.
+## Features
 
-## Planned local layout
+- **Search and filter** 24 real US products (12 bread, 12 cereal) across two demo stores.
+- **Seven priority modes** that actually re-rank results, so the recommendation changes with your goal.
+- **Equal-weight comparison** at 50 g for bread and 40 g for cereal, with calories, protein, fiber, sugars, saturated fat, and sodium, plus %DV context from FDA Daily Values.
+- **Transparent ranking** with reasons and tradeoffs, never a single "percent healthy" score.
+- **Ingredient explanations** for 70 ingredients, each with a one line summary, an evidence level, and links to sources such as the FDA, NIH, USDA, and EFSA.
+- **Honest data labels** showing whether a product label is verified, unverified, or sample data.
+- **Search on Walmart** link for each product.
 
-- `frontend/`: React + Vite + TypeScript, GSAP; localhost:5173; Vercel root frontend.
-- `backend/`: FastAPI + Pydantic; localhost:8000; Render root backend. Begin with committed seed data; Postgres optional.
-- `contracts/`: shared API and fixed development fixtures. Runtime apps must bundle their own needed assets inside their deployment root.
+## Tech stack
 
-No install/start commands exist yet. Default frontend development will use explicit mock mode. API mode uses an origin-only VITE_API_BASE_URL and never silently falls back. Marc's localhost is not reachable as Aarush's localhost; run the pulled backend locally or use an explicitly supplied reachable origin.
+**Frontend**
+- React 19 with TypeScript
+- Vite 7
+- GSAP with `@gsap/react` for restrained motion
+- Vitest and Testing Library for tests
+- Hosted on Vercel
 
-Scope: two categories, six products, equal-weight comparisons, priority tradeoffs, ingredient explanations. Final real labels require manual verification by Marc. No secrets in VITE_* or Git.
+**Backend**
+- Python 3.12
+- FastAPI and Uvicorn
+- Pydantic v2 and pydantic-settings
+- pytest for tests
+- Hosted on Render
+
+**Data**
+- Seed catalog stored as JSON in `backend/data/` (products, stores, ingredients)
+- Product data sourced from manufacturer pages, SmartLabel, and Open Food Facts
+- Ingredient explanations sourced from FDA, USDA Dietary Guidelines, NIH, the Code of Federal Regulations, and EFSA
+
+## How it works
+
+```
+Browser  ->  React app (Vercel)  ->  FastAPI (Render)  ->  seed JSON catalog
+                                         |
+                                         +-- normalize nutrients to equal weight
+                                         +-- rank within each category by priority
+                                         +-- return products, reasons, and sources
+```
+
+The backend owns all nutrition math and ranking. The frontend only displays what the API returns. Both sides follow the shared API contract in `contracts/API_CONTRACT.md`.
+
+## Project structure
+
+```
+frontend/     React app (UI, API client, mock data, tests)
+backend/      FastAPI service (ranking, normalization, seed data, tests)
+contracts/    Shared API contract and example fixtures
+docs/         Ingredient glossary with sources
+```
+
+## Run locally
+
+**Backend** (http://localhost:8000)
+
+```bash
+cd backend
+python3.12 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+uvicorn app.main:app --reload --port 8000
+```
+
+**Frontend** (http://localhost:5173)
+
+```bash
+cd frontend
+npm ci
+cp .env.example .env
+npm run dev
+```
+
+Set `VITE_DATA_MODE=api` in `frontend/.env` to use the local backend, or keep `mock` to use bundled sample data.
+
+## Tests
+
+```bash
+cd backend && source .venv/bin/activate && pytest -q
+```
+
+```bash
+cd frontend && npm test
+```
+
+## API overview
+
+| Endpoint | Purpose |
+|---|---|
+| `GET /healthz` | Health check |
+| `GET /api/v1/stores` | The two demo stores |
+| `GET /api/v1/products?store_id=...&category=...&q=...&priority=...` | Ranked products for a store and priority |
+| `GET /api/v1/ingredients` | All ingredient explanations |
+| `GET /api/v1/ingredients/{id}` | One ingredient explanation |
+
+## Data notes
+
+- Store availability is simulated. barelabel does not show live stock or prices, and no affiliation with Walmart is implied.
+- Product labels are marked `unverified` until checked against the physical package. Labels can change when a product is reformulated.
+- Missing values are shown as "Not provided", never as zero.
+- Rankings reflect the selected priority, not a medical or universal health rating.
+
+## Team
+
+- **Aarush:** frontend, design, and Vercel deployment
+- **Marc:** backend, data, ranking, and Render deployment
