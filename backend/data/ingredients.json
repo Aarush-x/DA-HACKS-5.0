@@ -19,13 +19,13 @@
     "practical_guidance": "",
     "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [
       {
-        "id": "S4",
-        "title": "USDA/HHS — Dietary Guidelines for Americans, 2020–2025",
-        "url": "https://www.dietaryguidelines.gov/sites/default/files/2020-12/Dietary_Guidelines_for_Americans_2020-2025.pdf",
-        "accessed_at": "2026-10-16"
+        "id": "DGA45",
+        "title": "Dietary Guidelines for Americans 2020–2025, p. 45: Grains",
+        "url": "https://www.dietaryguidelines.gov/sites/default/files/2020-12/Dietary_Guidelines_for_Americans_2020-2025.pdf#page=45",
+        "accessed_at": "2026-10-17"
       }
     ],
     "content_status": "reviewed"
@@ -47,13 +47,13 @@
     "practical_guidance": "",
     "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [
       {
-        "id": "S4",
-        "title": "USDA/HHS — Dietary Guidelines for Americans, 2020–2025",
-        "url": "https://www.dietaryguidelines.gov/sites/default/files/2020-12/Dietary_Guidelines_for_Americans_2020-2025.pdf",
-        "accessed_at": "2026-10-16"
+        "id": "DGA45",
+        "title": "Dietary Guidelines for Americans 2020–2025, p. 45: Grains",
+        "url": "https://www.dietaryguidelines.gov/sites/default/files/2020-12/Dietary_Guidelines_for_Americans_2020-2025.pdf#page=45",
+        "accessed_at": "2026-10-17"
       }
     ],
     "content_status": "reviewed"
@@ -71,13 +71,13 @@
     "practical_guidance": "",
     "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [
       {
-        "id": "S4",
-        "title": "USDA/HHS — Dietary Guidelines for Americans, 2020–2025",
-        "url": "https://www.dietaryguidelines.gov/sites/default/files/2020-12/Dietary_Guidelines_for_Americans_2020-2025.pdf",
-        "accessed_at": "2026-10-16"
+        "id": "DGA45",
+        "title": "Dietary Guidelines for Americans 2020–2025, p. 45: Grains",
+        "url": "https://www.dietaryguidelines.gov/sites/default/files/2020-12/Dietary_Guidelines_for_Americans_2020-2025.pdf#page=45",
+        "accessed_at": "2026-10-17"
       }
     ],
     "content_status": "reviewed"
@@ -94,13 +94,13 @@
     "practical_guidance": "",
     "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [
       {
-        "id": "S29",
-        "title": "USDA — FoodData Central",
-        "url": "https://fdc.nal.usda.gov/",
-        "accessed_at": "2026-10-16"
+        "id": "FDC-wheat-bran",
+        "title": "USDA FoodData Central — Wheat bran, crude",
+        "url": "https://fdc.nal.usda.gov/food-details/169722/nutrients",
+        "accessed_at": "2026-10-17"
       }
     ],
     "content_status": "reviewed"
@@ -118,13 +118,13 @@
     "practical_guidance": "",
     "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [
       {
         "id": "S8",
         "title": "NIH NIDDK — Celiac Disease",
         "url": "https://www.niddk.nih.gov/health-information/digestive-diseases/celiac-disease",
-        "accessed_at": "2026-10-16"
+        "accessed_at": "2026-10-17"
       }
     ],
     "content_status": "reviewed"
@@ -142,7 +142,7 @@
     "practical_guidance": "",
     "evidence_level": "not_assessed",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [],
     "content_status": "draft"
   },
@@ -159,13 +159,13 @@
     "practical_guidance": "",
     "evidence_level": "limited",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [
       {
-        "id": "S29",
-        "title": "USDA — FoodData Central",
-        "url": "https://fdc.nal.usda.gov/",
-        "accessed_at": "2026-10-16"
+        "id": "FDC-wheat-germ",
+        "title": "USDA FoodData Central — Wheat germ, crude",
+        "url": "https://fdc.nal.usda.gov/food-details/168892/nutrients",
+        "accessed_at": "2026-10-17"
       }
     ],
     "content_status": "reviewed"
@@ -185,13 +185,13 @@
     "practical_guidance": "",
     "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [
       {
         "id": "S8",
         "title": "NIH NIDDK — Celiac Disease",
         "url": "https://www.niddk.nih.gov/health-information/digestive-diseases/celiac-disease",
-        "accessed_at": "2026-10-16"
+        "accessed_at": "2026-10-17"
       }
     ],
     "content_status": "reviewed"
@@ -213,13 +213,13 @@
     "practical_guidance": "",
     "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [
       {
         "id": "S7",
         "title": "21 CFR 101.81 — Soluble fiber and risk of coronary heart disease",
         "url": "https://www.law.cornell.edu/cfr/text/21/101.81",
-        "accessed_at": "2026-10-16"
+        "accessed_at": "2026-10-17"
       }
     ],
     "content_status": "reviewed"
@@ -235,18 +235,11 @@
     "why_used": "Adds fiber.",
     "evidence_summary": "Raises fiber with few calories.",
     "practical_guidance": "",
-    "evidence_level": "limited",
+    "evidence_level": "not_assessed",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
-    "sources": [
-      {
-        "id": "S29",
-        "title": "USDA — FoodData Central",
-        "url": "https://fdc.nal.usda.gov/",
-        "accessed_at": "2026-10-16"
-      }
-    ],
-    "content_status": "reviewed"
+    "reviewed_at": "2026-10-17",
+    "sources": [],
+    "content_status": "draft"
   },
   {
     "id": "milled-corn",
@@ -263,13 +256,13 @@
     "practical_guidance": "",
     "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [
       {
-        "id": "S4",
-        "title": "USDA/HHS — Dietary Guidelines for Americans, 2020–2025",
-        "url": "https://www.dietaryguidelines.gov/sites/default/files/2020-12/Dietary_Guidelines_for_Americans_2020-2025.pdf",
-        "accessed_at": "2026-10-16"
+        "id": "DGA45",
+        "title": "Dietary Guidelines for Americans 2020–2025, p. 45: Grains",
+        "url": "https://www.dietaryguidelines.gov/sites/default/files/2020-12/Dietary_Guidelines_for_Americans_2020-2025.pdf#page=45",
+        "accessed_at": "2026-10-17"
       }
     ],
     "content_status": "reviewed"
@@ -289,13 +282,13 @@
     "practical_guidance": "",
     "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [
       {
-        "id": "S4",
-        "title": "USDA/HHS — Dietary Guidelines for Americans, 2020–2025",
-        "url": "https://www.dietaryguidelines.gov/sites/default/files/2020-12/Dietary_Guidelines_for_Americans_2020-2025.pdf",
-        "accessed_at": "2026-10-16"
+        "id": "DGA45",
+        "title": "Dietary Guidelines for Americans 2020–2025, p. 45: Grains",
+        "url": "https://www.dietaryguidelines.gov/sites/default/files/2020-12/Dietary_Guidelines_for_Americans_2020-2025.pdf#page=45",
+        "accessed_at": "2026-10-17"
       }
     ],
     "content_status": "reviewed"
@@ -313,13 +306,13 @@
     "practical_guidance": "",
     "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [
       {
-        "id": "S4",
-        "title": "USDA/HHS — Dietary Guidelines for Americans, 2020–2025",
-        "url": "https://www.dietaryguidelines.gov/sites/default/files/2020-12/Dietary_Guidelines_for_Americans_2020-2025.pdf",
-        "accessed_at": "2026-10-16"
+        "id": "DGA45",
+        "title": "Dietary Guidelines for Americans 2020–2025, p. 45: Grains",
+        "url": "https://www.dietaryguidelines.gov/sites/default/files/2020-12/Dietary_Guidelines_for_Americans_2020-2025.pdf#page=45",
+        "accessed_at": "2026-10-17"
       }
     ],
     "content_status": "reviewed"
@@ -337,7 +330,7 @@
     "practical_guidance": "",
     "evidence_level": "not_assessed",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [],
     "content_status": "draft"
   },
@@ -355,19 +348,19 @@
     "practical_guidance": "",
     "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [
       {
         "id": "S23",
         "title": "21 CFR 172.892 — Food starch-modified",
         "url": "https://www.law.cornell.edu/cfr/text/21/172.892",
-        "accessed_at": "2026-10-16"
+        "accessed_at": "2026-10-17"
       },
       {
         "id": "S6",
         "title": "FDA — Types of Food Ingredients",
         "url": "https://www.fda.gov/food/food-additives-and-gras-ingredients-information-consumers/types-food-ingredients",
-        "accessed_at": "2026-10-16"
+        "accessed_at": "2026-10-17"
       }
     ],
     "content_status": "reviewed"
@@ -384,7 +377,7 @@
     "practical_guidance": "",
     "evidence_level": "not_assessed",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [],
     "content_status": "draft"
   },
@@ -400,7 +393,7 @@
     "practical_guidance": "",
     "evidence_level": "limited",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [],
     "content_status": "draft"
   },
@@ -418,7 +411,7 @@
     "practical_guidance": "",
     "evidence_level": "not_assessed",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [],
     "content_status": "draft"
   },
@@ -438,13 +431,19 @@
     "practical_guidance": "",
     "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [
       {
         "id": "S28",
         "title": "NIH Office of Dietary Supplements — Omega-3 Fatty Acids",
         "url": "https://ods.od.nih.gov/factsheets/Omega3FattyAcids-Consumer/",
-        "accessed_at": "2026-10-16"
+        "accessed_at": "2026-10-17"
+      },
+      {
+        "id": "FDC-flax",
+        "title": "USDA FoodData Central — Seeds, flaxseed",
+        "url": "https://fdc.nal.usda.gov/food-details/169414/nutrients",
+        "accessed_at": "2026-10-17"
       }
     ],
     "content_status": "reviewed"
@@ -463,13 +462,13 @@
     "practical_guidance": "",
     "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [
       {
-        "id": "S29",
-        "title": "USDA — FoodData Central",
-        "url": "https://fdc.nal.usda.gov/",
-        "accessed_at": "2026-10-16"
+        "id": "FDC-sunflower",
+        "title": "USDA FoodData Central — Sunflower seed kernels, dried",
+        "url": "https://fdc.nal.usda.gov/food-details/170562/nutrients",
+        "accessed_at": "2026-10-17"
       }
     ],
     "content_status": "reviewed"
@@ -488,13 +487,13 @@
     "practical_guidance": "",
     "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [
       {
-        "id": "S29",
-        "title": "USDA — FoodData Central",
-        "url": "https://fdc.nal.usda.gov/",
-        "accessed_at": "2026-10-16"
+        "id": "FDC-quinoa",
+        "title": "USDA FoodData Central — Quinoa, uncooked",
+        "url": "https://fdc.nal.usda.gov/food-details/168874/nutrients",
+        "accessed_at": "2026-10-17"
       }
     ],
     "content_status": "reviewed"
@@ -512,13 +511,13 @@
     "practical_guidance": "",
     "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [
       {
-        "id": "S29",
-        "title": "USDA — FoodData Central",
-        "url": "https://fdc.nal.usda.gov/",
-        "accessed_at": "2026-10-16"
+        "id": "FDC-pumpkin",
+        "title": "USDA FoodData Central — Pumpkin and squash seed kernels, dried",
+        "url": "https://fdc.nal.usda.gov/food-details/170556/nutrients",
+        "accessed_at": "2026-10-17"
       }
     ],
     "content_status": "reviewed"
@@ -536,13 +535,13 @@
     "practical_guidance": "",
     "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [
       {
         "id": "S10",
         "title": "FDA — The FASTER Act: Sesame Is the Ninth Major Food Allergen",
         "url": "https://www.fda.gov/food/food-allergies/faster-act-sesame-ninth-major-food-allergen",
-        "accessed_at": "2026-10-16"
+        "accessed_at": "2026-10-17"
       }
     ],
     "content_status": "reviewed"
@@ -562,13 +561,13 @@
     "practical_guidance": "",
     "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [
       {
-        "id": "S4",
-        "title": "USDA/HHS — Dietary Guidelines for Americans, 2020–2025",
-        "url": "https://www.dietaryguidelines.gov/sites/default/files/2020-12/Dietary_Guidelines_for_Americans_2020-2025.pdf",
-        "accessed_at": "2026-10-16"
+        "id": "DGA45",
+        "title": "Dietary Guidelines for Americans 2020–2025, p. 45: Grains",
+        "url": "https://www.dietaryguidelines.gov/sites/default/files/2020-12/Dietary_Guidelines_for_Americans_2020-2025.pdf#page=45",
+        "accessed_at": "2026-10-17"
       }
     ],
     "content_status": "reviewed"
@@ -588,19 +587,19 @@
     "practical_guidance": "",
     "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [
       {
         "id": "S1",
         "title": "FDA — Added Sugars on the Nutrition Facts Label",
         "url": "https://www.fda.gov/food/nutrition-facts-label/added-sugars-nutrition-facts-label",
-        "accessed_at": "2026-10-16"
+        "accessed_at": "2026-10-17"
       },
       {
         "id": "S2",
         "title": "FDA — Daily Value on the Nutrition and Supplement Facts Labels",
         "url": "https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels",
-        "accessed_at": "2026-10-16"
+        "accessed_at": "2026-10-17"
       }
     ],
     "content_status": "reviewed"
@@ -618,13 +617,13 @@
     "practical_guidance": "",
     "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [
       {
         "id": "S1",
         "title": "FDA — Added Sugars on the Nutrition Facts Label",
         "url": "https://www.fda.gov/food/nutrition-facts-label/added-sugars-nutrition-facts-label",
-        "accessed_at": "2026-10-16"
+        "accessed_at": "2026-10-17"
       }
     ],
     "content_status": "reviewed"
@@ -641,13 +640,13 @@
     "practical_guidance": "",
     "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [
       {
         "id": "S1",
         "title": "FDA — Added Sugars on the Nutrition Facts Label",
         "url": "https://www.fda.gov/food/nutrition-facts-label/added-sugars-nutrition-facts-label",
-        "accessed_at": "2026-10-16"
+        "accessed_at": "2026-10-17"
       }
     ],
     "content_status": "reviewed"
@@ -664,13 +663,13 @@
     "practical_guidance": "",
     "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [
       {
         "id": "S1",
         "title": "FDA — Added Sugars on the Nutrition Facts Label",
         "url": "https://www.fda.gov/food/nutrition-facts-label/added-sugars-nutrition-facts-label",
-        "accessed_at": "2026-10-16"
+        "accessed_at": "2026-10-17"
       }
     ],
     "content_status": "reviewed"
@@ -687,13 +686,13 @@
     "practical_guidance": "",
     "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [
       {
         "id": "S1",
         "title": "FDA — Added Sugars on the Nutrition Facts Label",
         "url": "https://www.fda.gov/food/nutrition-facts-label/added-sugars-nutrition-facts-label",
-        "accessed_at": "2026-10-16"
+        "accessed_at": "2026-10-17"
       }
     ],
     "content_status": "reviewed"
@@ -711,13 +710,13 @@
     "practical_guidance": "",
     "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [
       {
         "id": "S1",
         "title": "FDA — Added Sugars on the Nutrition Facts Label",
         "url": "https://www.fda.gov/food/nutrition-facts-label/added-sugars-nutrition-facts-label",
-        "accessed_at": "2026-10-16"
+        "accessed_at": "2026-10-17"
       }
     ],
     "content_status": "reviewed"
@@ -738,13 +737,13 @@
     "practical_guidance": "",
     "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [
       {
         "id": "S1",
         "title": "FDA — Added Sugars on the Nutrition Facts Label",
         "url": "https://www.fda.gov/food/nutrition-facts-label/added-sugars-nutrition-facts-label",
-        "accessed_at": "2026-10-16"
+        "accessed_at": "2026-10-17"
       }
     ],
     "content_status": "reviewed"
@@ -761,13 +760,19 @@
     "practical_guidance": "",
     "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [
       {
         "id": "S1",
         "title": "FDA — Added Sugars on the Nutrition Facts Label",
         "url": "https://www.fda.gov/food/nutrition-facts-label/added-sugars-nutrition-facts-label",
-        "accessed_at": "2026-10-16"
+        "accessed_at": "2026-10-17"
+      },
+      {
+        "id": "FDC-raisins",
+        "title": "USDA FoodData Central — Raisins, dark, seedless",
+        "url": "https://fdc.nal.usda.gov/food-details/2758980/nutrients",
+        "accessed_at": "2026-10-17"
       }
     ],
     "content_status": "reviewed"
@@ -786,7 +791,7 @@
     "practical_guidance": "",
     "evidence_level": "not_assessed",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [],
     "content_status": "draft"
   },
@@ -805,13 +810,13 @@
     "practical_guidance": "",
     "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [
       {
         "id": "S28",
         "title": "NIH Office of Dietary Supplements — Omega-3 Fatty Acids",
         "url": "https://ods.od.nih.gov/factsheets/Omega3FattyAcids-Consumer/",
-        "accessed_at": "2026-10-16"
+        "accessed_at": "2026-10-17"
       }
     ],
     "content_status": "reviewed"
@@ -828,7 +833,7 @@
     "practical_guidance": "",
     "evidence_level": "not_assessed",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [],
     "content_status": "draft"
   },
@@ -846,13 +851,13 @@
     "practical_guidance": "",
     "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [
       {
         "id": "S5",
         "title": "FDA — Trans Fat",
         "url": "https://www.fda.gov/food/food-additives-petitions/trans-fat",
-        "accessed_at": "2026-10-16"
+        "accessed_at": "2026-10-17"
       }
     ],
     "content_status": "reviewed"
@@ -869,13 +874,13 @@
     "practical_guidance": "",
     "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [
       {
         "id": "S9",
         "title": "FDA — Food Allergies",
         "url": "https://www.fda.gov/food/food-labeling-nutrition/food-allergies",
-        "accessed_at": "2026-10-16"
+        "accessed_at": "2026-10-17"
       }
     ],
     "content_status": "reviewed"
@@ -893,13 +898,13 @@
     "practical_guidance": "",
     "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [
       {
         "id": "S9",
         "title": "FDA — Food Allergies",
         "url": "https://www.fda.gov/food/food-labeling-nutrition/food-allergies",
-        "accessed_at": "2026-10-16"
+        "accessed_at": "2026-10-17"
       }
     ],
     "content_status": "reviewed"
@@ -917,13 +922,13 @@
     "practical_guidance": "",
     "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [
       {
         "id": "S9",
         "title": "FDA — Food Allergies",
         "url": "https://www.fda.gov/food/food-labeling-nutrition/food-allergies",
-        "accessed_at": "2026-10-16"
+        "accessed_at": "2026-10-17"
       }
     ],
     "content_status": "reviewed"
@@ -940,7 +945,7 @@
     "practical_guidance": "",
     "evidence_level": "not_assessed",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [],
     "content_status": "draft"
   },
@@ -957,19 +962,19 @@
     "practical_guidance": "",
     "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [
       {
         "id": "S3",
         "title": "FDA — Sodium in Your Diet",
         "url": "https://www.fda.gov/food/nutrition-education-resources-materials/sodium-your-diet",
-        "accessed_at": "2026-10-16"
+        "accessed_at": "2026-10-17"
       },
       {
         "id": "S2",
         "title": "FDA — Daily Value on the Nutrition and Supplement Facts Labels",
         "url": "https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels",
-        "accessed_at": "2026-10-16"
+        "accessed_at": "2026-10-17"
       }
     ],
     "content_status": "reviewed"
@@ -987,13 +992,13 @@
     "practical_guidance": "",
     "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [
       {
         "id": "S6",
         "title": "FDA — Types of Food Ingredients",
         "url": "https://www.fda.gov/food/food-additives-and-gras-ingredients-information-consumers/types-food-ingredients",
-        "accessed_at": "2026-10-16"
+        "accessed_at": "2026-10-17"
       }
     ],
     "content_status": "reviewed"
@@ -1010,13 +1015,13 @@
     "practical_guidance": "",
     "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [
       {
         "id": "S6",
         "title": "FDA — Types of Food Ingredients",
         "url": "https://www.fda.gov/food/food-additives-and-gras-ingredients-information-consumers/types-food-ingredients",
-        "accessed_at": "2026-10-16"
+        "accessed_at": "2026-10-17"
       }
     ],
     "content_status": "reviewed"
@@ -1033,13 +1038,13 @@
     "practical_guidance": "",
     "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [
       {
         "id": "S25",
         "title": "21 CFR 184.1230 — Calcium sulfate",
         "url": "https://www.law.cornell.edu/cfr/text/21/184.1230",
-        "accessed_at": "2026-10-16"
+        "accessed_at": "2026-10-17"
       }
     ],
     "content_status": "reviewed"
@@ -1056,19 +1061,19 @@
     "practical_guidance": "",
     "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [
       {
         "id": "S26",
         "title": "21 CFR 184.1191 — Calcium carbonate",
         "url": "https://www.law.cornell.edu/cfr/text/21/184.1191",
-        "accessed_at": "2026-10-16"
+        "accessed_at": "2026-10-17"
       },
       {
         "id": "S6",
         "title": "FDA — Types of Food Ingredients",
         "url": "https://www.fda.gov/food/food-additives-and-gras-ingredients-information-consumers/types-food-ingredients",
-        "accessed_at": "2026-10-16"
+        "accessed_at": "2026-10-17"
       }
     ],
     "content_status": "reviewed"
@@ -1085,7 +1090,7 @@
     "practical_guidance": "",
     "evidence_level": "not_assessed",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [],
     "content_status": "draft"
   },
@@ -1102,7 +1107,7 @@
     "practical_guidance": "",
     "evidence_level": "not_assessed",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [],
     "content_status": "draft"
   },
@@ -1119,7 +1124,7 @@
     "practical_guidance": "",
     "evidence_level": "not_assessed",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [],
     "content_status": "draft"
   },
@@ -1137,7 +1142,7 @@
     "practical_guidance": "",
     "evidence_level": "not_assessed",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [],
     "content_status": "draft"
   },
@@ -1153,7 +1158,7 @@
     "practical_guidance": "",
     "evidence_level": "not_assessed",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [],
     "content_status": "draft"
   },
@@ -1172,19 +1177,19 @@
     "practical_guidance": "",
     "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [
       {
         "id": "S21",
         "title": "21 CFR 184.1505 — Mono- and diglycerides",
         "url": "https://www.law.cornell.edu/cfr/text/21/184.1505",
-        "accessed_at": "2026-10-16"
+        "accessed_at": "2026-10-17"
       },
       {
         "id": "S6",
         "title": "FDA — Types of Food Ingredients",
         "url": "https://www.fda.gov/food/food-additives-and-gras-ingredients-information-consumers/types-food-ingredients",
-        "accessed_at": "2026-10-16"
+        "accessed_at": "2026-10-17"
       }
     ],
     "content_status": "reviewed"
@@ -1201,13 +1206,13 @@
     "practical_guidance": "",
     "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [
       {
         "id": "S19",
         "title": "21 CFR 184.1101 — DATEM",
         "url": "https://www.law.cornell.edu/cfr/text/21/184.1101",
-        "accessed_at": "2026-10-16"
+        "accessed_at": "2026-10-17"
       }
     ],
     "content_status": "reviewed"
@@ -1225,19 +1230,19 @@
     "practical_guidance": "",
     "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [
       {
         "id": "S20",
         "title": "21 CFR 184.1400 — Lecithin",
         "url": "https://www.law.cornell.edu/cfr/text/21/184.1400",
-        "accessed_at": "2026-10-16"
+        "accessed_at": "2026-10-17"
       },
       {
         "id": "S9",
         "title": "FDA — Food Allergies",
         "url": "https://www.fda.gov/food/food-labeling-nutrition/food-allergies",
-        "accessed_at": "2026-10-16"
+        "accessed_at": "2026-10-17"
       }
     ],
     "content_status": "reviewed"
@@ -1254,13 +1259,13 @@
     "practical_guidance": "",
     "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [
       {
         "id": "S22",
         "title": "21 CFR 172.846 — Sodium stearoyl lactylate",
         "url": "https://www.law.cornell.edu/cfr/text/21/172.846",
-        "accessed_at": "2026-10-16"
+        "accessed_at": "2026-10-17"
       }
     ],
     "content_status": "reviewed"
@@ -1277,19 +1282,19 @@
     "practical_guidance": "",
     "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [
       {
         "id": "S24",
         "title": "21 CFR 184.1339 — Guar gum",
         "url": "https://www.law.cornell.edu/cfr/text/21/184.1339",
-        "accessed_at": "2026-10-16"
+        "accessed_at": "2026-10-17"
       },
       {
         "id": "S6",
         "title": "FDA — Types of Food Ingredients",
         "url": "https://www.fda.gov/food/food-additives-and-gras-ingredients-information-consumers/types-food-ingredients",
-        "accessed_at": "2026-10-16"
+        "accessed_at": "2026-10-17"
       }
     ],
     "content_status": "reviewed"
@@ -1306,7 +1311,7 @@
     "practical_guidance": "",
     "evidence_level": "not_assessed",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [],
     "content_status": "draft"
   },
@@ -1324,19 +1329,19 @@
     "practical_guidance": "",
     "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [
       {
         "id": "S17",
         "title": "21 CFR 184.1221 — Calcium propionate",
         "url": "https://www.law.cornell.edu/cfr/text/21/184.1221",
-        "accessed_at": "2026-10-16"
+        "accessed_at": "2026-10-17"
       },
       {
         "id": "S6",
         "title": "FDA — Types of Food Ingredients",
         "url": "https://www.fda.gov/food/food-additives-and-gras-ingredients-information-consumers/types-food-ingredients",
-        "accessed_at": "2026-10-16"
+        "accessed_at": "2026-10-17"
       }
     ],
     "content_status": "reviewed"
@@ -1353,13 +1358,13 @@
     "practical_guidance": "",
     "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [
       {
         "id": "S18",
         "title": "21 CFR 182.3089 — Sorbic acid",
         "url": "https://www.law.cornell.edu/cfr/text/21/182.3089",
-        "accessed_at": "2026-10-16"
+        "accessed_at": "2026-10-17"
       }
     ],
     "content_status": "reviewed"
@@ -1378,19 +1383,19 @@
     "practical_guidance": "",
     "evidence_level": "mixed",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [
       {
         "id": "S16",
         "title": "21 CFR 172.115 — BHT",
         "url": "https://www.law.cornell.edu/cfr/text/21/172.115",
-        "accessed_at": "2026-10-16"
+        "accessed_at": "2026-10-17"
       },
       {
         "id": "S15",
         "title": "EFSA (2012) — Re-evaluation of BHT (E 321)",
         "url": "https://doi.org/10.2903/j.efsa.2012.2588",
-        "accessed_at": "2026-10-16"
+        "accessed_at": "2026-10-17"
       }
     ],
     "content_status": "reviewed"
@@ -1409,13 +1414,13 @@
     "practical_guidance": "",
     "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [
       {
         "id": "S6",
         "title": "FDA — Types of Food Ingredients",
         "url": "https://www.fda.gov/food/food-additives-and-gras-ingredients-information-consumers/types-food-ingredients",
-        "accessed_at": "2026-10-16"
+        "accessed_at": "2026-10-17"
       }
     ],
     "content_status": "reviewed"
@@ -1432,13 +1437,13 @@
     "practical_guidance": "",
     "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [
       {
         "id": "S6",
         "title": "FDA — Types of Food Ingredients",
         "url": "https://www.fda.gov/food/food-additives-and-gras-ingredients-information-consumers/types-food-ingredients",
-        "accessed_at": "2026-10-16"
+        "accessed_at": "2026-10-17"
       }
     ],
     "content_status": "reviewed"
@@ -1455,7 +1460,7 @@
     "practical_guidance": "",
     "evidence_level": "not_assessed",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [],
     "content_status": "draft"
   },
@@ -1474,31 +1479,31 @@
     "practical_guidance": "",
     "evidence_level": "mixed",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [
       {
         "id": "S11",
         "title": "FDA — How Safe Are Color Additives?",
         "url": "https://www.fda.gov/consumers/consumer-updates/how-safe-are-color-additives",
-        "accessed_at": "2026-10-16"
+        "accessed_at": "2026-10-17"
       },
       {
         "id": "S12",
         "title": "FDA — Color Additives and Behavioral Effects in Children",
         "url": "https://www.fda.gov/media/131378/download",
-        "accessed_at": "2026-10-16"
+        "accessed_at": "2026-10-17"
       },
       {
         "id": "S14",
         "title": "EFSA (2008) — Assessment of the McCann et al. study on colours and behaviour",
         "url": "https://doi.org/10.2903/j.efsa.2008.660",
-        "accessed_at": "2026-10-16"
+        "accessed_at": "2026-10-17"
       },
       {
         "id": "S13",
         "title": "HHS/FDA — Phase Out of Petroleum-Based Synthetic Dyes (2025)",
         "url": "https://www.fda.gov/news-events/press-announcements/hhs-fda-phase-out-petroleum-based-synthetic-dyes-nations-food-supply",
-        "accessed_at": "2026-10-16"
+        "accessed_at": "2026-10-17"
       }
     ],
     "content_status": "reviewed"
@@ -1515,7 +1520,7 @@
     "practical_guidance": "",
     "evidence_level": "not_assessed",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [],
     "content_status": "draft"
   },
@@ -1531,13 +1536,13 @@
     "practical_guidance": "",
     "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [
       {
         "id": "S6",
         "title": "FDA — Types of Food Ingredients",
         "url": "https://www.fda.gov/food/food-additives-and-gras-ingredients-information-consumers/types-food-ingredients",
-        "accessed_at": "2026-10-16"
+        "accessed_at": "2026-10-17"
       }
     ],
     "content_status": "reviewed"
@@ -1557,13 +1562,13 @@
     "practical_guidance": "",
     "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [
       {
         "id": "S6",
         "title": "FDA — Types of Food Ingredients",
         "url": "https://www.fda.gov/food/food-additives-and-gras-ingredients-information-consumers/types-food-ingredients",
-        "accessed_at": "2026-10-16"
+        "accessed_at": "2026-10-17"
       }
     ],
     "content_status": "reviewed"
@@ -1583,13 +1588,13 @@
     "practical_guidance": "",
     "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [
       {
         "id": "S6",
         "title": "FDA — Types of Food Ingredients",
         "url": "https://www.fda.gov/food/food-additives-and-gras-ingredients-information-consumers/types-food-ingredients",
-        "accessed_at": "2026-10-16"
+        "accessed_at": "2026-10-17"
       }
     ],
     "content_status": "reviewed"
@@ -1606,13 +1611,13 @@
     "practical_guidance": "",
     "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [
       {
         "id": "S9",
         "title": "FDA — Food Allergies",
         "url": "https://www.fda.gov/food/food-labeling-nutrition/food-allergies",
-        "accessed_at": "2026-10-16"
+        "accessed_at": "2026-10-17"
       }
     ],
     "content_status": "reviewed"
@@ -1629,7 +1634,7 @@
     "practical_guidance": "",
     "evidence_level": "not_assessed",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [],
     "content_status": "draft"
   },
@@ -1638,31 +1643,8 @@
     "name": "Added vitamins and minerals",
     "aliases": [
       "added vitamins and minerals",
-      "ascorbic acid",
-      "beta-carotene",
-      "ferrous sulfate",
-      "folic acid",
-      "iron",
       "iron and zinc (mineral nutrients)",
-      "niacin",
-      "niacinamide",
-      "reduced iron",
-      "riboflavin",
-      "sodium ascorbate",
-      "thiamin",
-      "thiamin mononitrate",
-      "thiamine mononitrate",
-      "vitamin a",
-      "vitamin a (palmitate)",
-      "vitamin b1",
-      "vitamin b12",
-      "vitamin b2",
-      "vitamin b6",
-      "vitamin c",
-      "vitamin d3",
-      "vitamin e acetate",
-      "vitamins and minerals",
-      "zinc"
+      "vitamins and minerals"
     ],
     "what_it_is": "Nutrients added back or added during processing.",
     "why_used": "Fortification.",
@@ -1670,19 +1652,321 @@
     "practical_guidance": "",
     "evidence_level": "established",
     "uncertainty": "The label doesn't list how much is in the product.",
-    "reviewed_at": "2026-10-16",
+    "reviewed_at": "2026-10-17",
     "sources": [
       {
         "id": "S27",
         "title": "NIH Office of Dietary Supplements — Vitamin and Mineral Fact Sheets",
         "url": "https://ods.od.nih.gov/factsheets/list-VitaminsMinerals/",
-        "accessed_at": "2026-10-16"
+        "accessed_at": "2026-10-17"
       },
       {
-        "id": "S4",
-        "title": "USDA/HHS — Dietary Guidelines for Americans, 2020–2025",
-        "url": "https://www.dietaryguidelines.gov/sites/default/files/2020-12/Dietary_Guidelines_for_Americans_2020-2025.pdf",
-        "accessed_at": "2026-10-16"
+        "id": "DGA45",
+        "title": "Dietary Guidelines for Americans 2020–2025, p. 45: Grains",
+        "url": "https://www.dietaryguidelines.gov/sites/default/files/2020-12/Dietary_Guidelines_for_Americans_2020-2025.pdf#page=45",
+        "accessed_at": "2026-10-17"
+      }
+    ],
+    "content_status": "reviewed"
+  },
+  {
+    "id": "iron",
+    "name": "Iron",
+    "aliases": [
+      "ferrous sulfate",
+      "iron",
+      "reduced iron"
+    ],
+    "what_it_is": "A mineral that helps make hemoglobin, which carries oxygen.",
+    "why_used": "Fortification.",
+    "evidence_summary": "Iron-fortified cereals and breads are a common source.",
+    "practical_guidance": "",
+    "evidence_level": "established",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-17",
+    "sources": [
+      {
+        "id": "ODS-Iron",
+        "title": "NIH Office of Dietary Supplements — Iron Fact Sheet",
+        "url": "https://ods.od.nih.gov/factsheets/Iron-Consumer/",
+        "accessed_at": "2026-10-17"
+      }
+    ],
+    "content_status": "reviewed"
+  },
+  {
+    "id": "zinc",
+    "name": "Zinc",
+    "aliases": [
+      "zinc",
+      "zinc oxide"
+    ],
+    "what_it_is": "A mineral the body needs in small amounts.",
+    "why_used": "Fortification.",
+    "evidence_summary": "Adults should stay under 40 mg a day from all sources.",
+    "practical_guidance": "",
+    "evidence_level": "established",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-17",
+    "sources": [
+      {
+        "id": "ODS-Zinc",
+        "title": "NIH Office of Dietary Supplements — Zinc Fact Sheet",
+        "url": "https://ods.od.nih.gov/factsheets/Zinc-Consumer/",
+        "accessed_at": "2026-10-17"
+      }
+    ],
+    "content_status": "reviewed"
+  },
+  {
+    "id": "thiamin",
+    "name": "Thiamin (vitamin B1)",
+    "aliases": [
+      "thiamin",
+      "thiamin hydrochloride",
+      "thiamin mononitrate",
+      "thiamine mononitrate",
+      "vitamin b1"
+    ],
+    "what_it_is": "A B vitamin that helps turn food into energy.",
+    "why_used": "Fortification.",
+    "evidence_summary": "Thiamin from food hasn't been shown to cause harm.",
+    "practical_guidance": "",
+    "evidence_level": "established",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-17",
+    "sources": [
+      {
+        "id": "ODS-Thiamin",
+        "title": "NIH Office of Dietary Supplements — Thiamin Fact Sheet",
+        "url": "https://ods.od.nih.gov/factsheets/Thiamin-Consumer/",
+        "accessed_at": "2026-10-17"
+      }
+    ],
+    "content_status": "reviewed"
+  },
+  {
+    "id": "riboflavin",
+    "name": "Riboflavin (vitamin B2)",
+    "aliases": [
+      "riboflavin",
+      "vitamin b2"
+    ],
+    "what_it_is": "A B vitamin used in energy metabolism.",
+    "why_used": "Fortification.",
+    "evidence_summary": "Most people in the US already get enough.",
+    "practical_guidance": "",
+    "evidence_level": "established",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-17",
+    "sources": [
+      {
+        "id": "ODS-Riboflavin",
+        "title": "NIH Office of Dietary Supplements — Riboflavin Fact Sheet",
+        "url": "https://ods.od.nih.gov/factsheets/Riboflavin-Consumer/",
+        "accessed_at": "2026-10-17"
+      }
+    ],
+    "content_status": "reviewed"
+  },
+  {
+    "id": "niacin",
+    "name": "Niacin (vitamin B3)",
+    "aliases": [
+      "niacin",
+      "niacinamide"
+    ],
+    "what_it_is": "A B vitamin used in energy metabolism.",
+    "why_used": "Fortification.",
+    "evidence_summary": "Only high supplement doses cause side effects like flushing.",
+    "practical_guidance": "",
+    "evidence_level": "established",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-17",
+    "sources": [
+      {
+        "id": "ODS-Niacin",
+        "title": "NIH Office of Dietary Supplements — Niacin Fact Sheet",
+        "url": "https://ods.od.nih.gov/factsheets/Niacin-Consumer/",
+        "accessed_at": "2026-10-17"
+      }
+    ],
+    "content_status": "reviewed"
+  },
+  {
+    "id": "vitamin-b6",
+    "name": "Vitamin B6",
+    "aliases": [
+      "pyridoxine hydrochloride",
+      "vitamin b6"
+    ],
+    "what_it_is": "A B vitamin for metabolism and the nervous system.",
+    "why_used": "Fortification.",
+    "evidence_summary": "Only very high supplement doses are harmful.",
+    "practical_guidance": "",
+    "evidence_level": "established",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-17",
+    "sources": [
+      {
+        "id": "ODS-VitaminB6",
+        "title": "NIH Office of Dietary Supplements — Vitamin B6 Fact Sheet",
+        "url": "https://ods.od.nih.gov/factsheets/VitaminB6-Consumer/",
+        "accessed_at": "2026-10-17"
+      }
+    ],
+    "content_status": "reviewed"
+  },
+  {
+    "id": "folic-acid",
+    "name": "Folic acid",
+    "aliases": [
+      "folate",
+      "folic acid"
+    ],
+    "what_it_is": "The added form of folate, a B vitamin for new cells.",
+    "why_used": "Fortification.",
+    "evidence_summary": "Guidelines recommend some folic-acid-fortified grains.",
+    "practical_guidance": "",
+    "evidence_level": "established",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-17",
+    "sources": [
+      {
+        "id": "ODS-Folate",
+        "title": "NIH Office of Dietary Supplements — Folate Fact Sheet",
+        "url": "https://ods.od.nih.gov/factsheets/Folate-Consumer/",
+        "accessed_at": "2026-10-17"
+      },
+      {
+        "id": "DGA45",
+        "title": "Dietary Guidelines for Americans 2020–2025, p. 45: Grains",
+        "url": "https://www.dietaryguidelines.gov/sites/default/files/2020-12/Dietary_Guidelines_for_Americans_2020-2025.pdf#page=45",
+        "accessed_at": "2026-10-17"
+      }
+    ],
+    "content_status": "reviewed"
+  },
+  {
+    "id": "vitamin-b12",
+    "name": "Vitamin B12",
+    "aliases": [
+      "vitamin b12"
+    ],
+    "what_it_is": "Supports healthy nerve and blood cells.",
+    "why_used": "Fortification.",
+    "evidence_summary": "Fortified foods help older adults, who absorb B12 poorly.",
+    "practical_guidance": "",
+    "evidence_level": "established",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-17",
+    "sources": [
+      {
+        "id": "ODS-VitaminB12",
+        "title": "NIH Office of Dietary Supplements — Vitamin B12 Fact Sheet",
+        "url": "https://ods.od.nih.gov/factsheets/VitaminB12-Consumer/",
+        "accessed_at": "2026-10-17"
+      }
+    ],
+    "content_status": "reviewed"
+  },
+  {
+    "id": "vitamin-d",
+    "name": "Vitamin D",
+    "aliases": [
+      "vitamin d",
+      "vitamin d3"
+    ],
+    "what_it_is": "Helps the body build and keep strong bones.",
+    "why_used": "Fortification.",
+    "evidence_summary": "Adults need 15 to 20 mcg a day.",
+    "practical_guidance": "",
+    "evidence_level": "established",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-17",
+    "sources": [
+      {
+        "id": "ODS-VitaminD",
+        "title": "NIH Office of Dietary Supplements — Vitamin D Fact Sheet",
+        "url": "https://ods.od.nih.gov/factsheets/VitaminD-Consumer/",
+        "accessed_at": "2026-10-17"
+      }
+    ],
+    "content_status": "reviewed"
+  },
+  {
+    "id": "vitamin-a",
+    "name": "Vitamin A",
+    "aliases": [
+      "beta-carotene",
+      "vitamin a",
+      "vitamin a (palmitate)",
+      "vitamin a palmitate"
+    ],
+    "what_it_is": "Supports vision and the immune system.",
+    "why_used": "Fortification.",
+    "evidence_summary": "Added to raise the product's vitamin A.",
+    "practical_guidance": "",
+    "evidence_level": "established",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-17",
+    "sources": [
+      {
+        "id": "ODS-VitaminA",
+        "title": "NIH Office of Dietary Supplements — Vitamin A Fact Sheet",
+        "url": "https://ods.od.nih.gov/factsheets/VitaminA-Consumer/",
+        "accessed_at": "2026-10-17"
+      }
+    ],
+    "content_status": "reviewed"
+  },
+  {
+    "id": "vitamin-c",
+    "name": "Vitamin C",
+    "aliases": [
+      "ascorbic acid",
+      "sodium ascorbate",
+      "vitamin c",
+      "vitamin c (ascorbic acid)",
+      "vitamin c (sodium ascorbate)"
+    ],
+    "what_it_is": "An antioxidant needed for immune function.",
+    "why_used": "Fortification or freshness.",
+    "evidence_summary": "Adults need 75 to 120 mg a day.",
+    "practical_guidance": "",
+    "evidence_level": "established",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-17",
+    "sources": [
+      {
+        "id": "ODS-VitaminC",
+        "title": "NIH Office of Dietary Supplements — Vitamin C Fact Sheet",
+        "url": "https://ods.od.nih.gov/factsheets/VitaminC-Consumer/",
+        "accessed_at": "2026-10-17"
+      }
+    ],
+    "content_status": "reviewed"
+  },
+  {
+    "id": "vitamin-e",
+    "name": "Vitamin E",
+    "aliases": [
+      "vitamin e",
+      "vitamin e acetate"
+    ],
+    "what_it_is": "An antioxidant that supports the immune system.",
+    "why_used": "Fortification.",
+    "evidence_summary": "Adds vitamin E.",
+    "practical_guidance": "",
+    "evidence_level": "established",
+    "uncertainty": "The label doesn't list how much is in the product.",
+    "reviewed_at": "2026-10-17",
+    "sources": [
+      {
+        "id": "ODS-VitaminE",
+        "title": "NIH Office of Dietary Supplements — Vitamin E Fact Sheet",
+        "url": "https://ods.od.nih.gov/factsheets/VitaminE-Consumer/",
+        "accessed_at": "2026-10-17"
       }
     ],
     "content_status": "reviewed"
