@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import type { Api } from './lib/api';
+import { getProductIngredients, type IngredientRating } from './lib/ingredients';
 import type { CatalogResponse, IngredientResponse, Nutrients, Priority, Product, StoresResponse } from './types';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
@@ -30,28 +31,19 @@ function Sources({ sources }: { sources: IngredientResponse['sources'] | Product
   })}</ul>;
 }
 
-function IngredientDrawer({ product, initialId, api, close, opener }: { product: Product; initialId: string; api: Api; close: () => void; opener: HTMLElement | null }) {
+function IngredientDrawer({ product, close, opener }: { product: Product; close: () => void; opener: HTMLElement | null }) {
   const dialog = useRef<HTMLDialogElement>(null);
-  const [ingredientId, setIngredientId] = useState(initialId);
-  const [data, setData] = useState<IngredientResponse>();
-  const [error, setError] = useState('');
-  const [retry, setRetry] = useState(0);
+  const ingredients = useMemo(() => getProductIngredients(product.ingredients_text), [product.ingredients_text]);
+  const [ingredientId, setIngredientId] = useState(ingredients[0]?.id ?? '');
   const closing = useRef(false);
+  const selectedIngredient = ingredients.find(ingredient => ingredient.id === ingredientId);
+  const ratings: IngredientRating[] = ['good', 'neutral', 'limit'];
 
   useEffect(() => {
     const element = dialog.current;
     element?.showModal();
     return () => { element?.close(); opener?.focus({ preventScroll: true }); };
   }, [opener]);
-
-  useEffect(() => {
-    if (!ingredientId) return;
-    const controller = new AbortController(); setData(undefined); setError('');
-    api.getIngredient(ingredientId, controller.signal)
-      .then(result => { if (!controller.signal.aborted) setData(result); })
-      .catch(reason => { if (!controller.signal.aborted) setError(message(reason)); });
-    return () => controller.abort();
-  }, [ingredientId, api, retry]);
 
   const { contextSafe } = useGSAP(() => {
     const media = gsap.matchMedia();
@@ -67,41 +59,29 @@ function IngredientDrawer({ product, initialId, api, close, opener }: { product:
   return <dialog ref={dialog} className="drawer" aria-labelledby="ingredient-title" onCancel={event => { event.preventDefault(); dismiss(); }}>
     <div className="drawer-head"><p>Ingredients</p><button className="icon-button" onClick={dismiss} aria-label="Close ingredients">×</button></div>
     <h2 id="ingredient-title">{product.name}</h2>
-    <section className="full-ingredients" aria-labelledby="full-list-title"><h3 id="full-list-title">Full ingredient list</h3><p>{product.ingredients_text ?? 'The full ingredient list was not provided.'}</p></section>
+    {ingredients.length > 0 ? <>
+      <p className="ingredient-guidance">A simple guide based on the ingredient’s usual role. Tap any ingredient to see why.</p>
+      <div className="ingredient-groups">{ratings.map(rating => {
+        const items = ingredients.filter(ingredient => ingredient.rating === rating);
+        if (!items.length) return null;
+        return <section className={`ingredient-group ${rating}`} key={rating} aria-labelledby={`rating-${rating}`}><div className="ingredient-group-heading"><h3 id={`rating-${rating}`}>{items[0].ratingLabel}</h3><span>{items.length}</span></div><div className="ingredient-tabs">{items.map(ingredient => <button className={`ingredient-chip ${rating}`} key={ingredient.id} aria-pressed={ingredientId === ingredient.id} onClick={() => setIngredientId(ingredient.id)}>{ingredient.name}</button>)}</div></section>;
+      })}</div>
+      {selectedIngredient && <section className="ingredient-quick-detail" aria-live="polite"><div><h3>{selectedIngredient.name}</h3><span className={`rating-badge ${selectedIngredient.rating}`}>{selectedIngredient.ratingLabel}</span></div><p>{selectedIngredient.reason}</p></section>}
+    </> : <p className="empty-copy">The ingredient list was not provided for this product.</p>}
     <section className="product-sources" aria-labelledby="product-sources-title"><h3 id="product-sources-title">Product sources</h3><Sources sources={product.sources}/></section>
-    {product.ingredient_refs.length > 0 ? <>
-      <h3>Ingredient explanations</h3>
-      <p className="ingredient-guidance">Ingredients are not universally good or bad. Review the potential benefits, tradeoffs, and evidence for each highlighted ingredient.</p>
-      <div className="ingredient-tabs" role="group" aria-label="Choose an ingredient">{product.ingredient_refs.map(ref => <button key={ref.id} aria-pressed={ingredientId === ref.id} onClick={() => setIngredientId(ref.id)}>{ref.label}</button>)}</div>
-      <div className="ingredient-detail" aria-live="polite">
-        {!data && !error && <p role="status">Loading explanation…</p>}
-        {error && <div role="alert"><p>{error}</p><button onClick={() => setRetry(value => value + 1)}>Retry explanation</button></div>}
-        {data && <>
-          <div className="ingredient-detail-heading"><h3>{data.name}</h3><span>{data.evidence_level.replaceAll('_', ' ')} evidence</span></div>
-          <dl className="explanation-list">
-            <div><dt>What it is</dt><dd>{data.what_it_is}</dd></div><div><dt>Why it is used</dt><dd>{data.why_used}</dd></div>
-            <div><dt>Potential benefits and tradeoffs</dt><dd>{data.evidence_summary}</dd></div><div><dt>What to consider</dt><dd>{data.practical_guidance}</dd></div>
-            <div><dt>Limits and uncertainty</dt><dd>{data.uncertainty}</dd></div>
-          </dl>
-          <h3>Ingredient references</h3><Sources sources={data.sources}/>
-        </>}
-      </div>
-    </> : <p className="empty-copy">Detailed ingredient explanations are not available for this product.</p>}
   </dialog>;
 }
 
-function ProductCard({ product, selected, disabled, toggle, ingredient }: { product: Product; selected: boolean; disabled: boolean; toggle: () => void; ingredient: (id: string, opener: HTMLElement) => void }) {
+function ProductCard({ product, selected, disabled, toggle, ingredient }: { product: Product; selected: boolean; disabled: boolean; toggle: () => void; ingredient: (opener: HTMLElement) => void }) {
   const [brokenImage, setBrokenImage] = useState(false);
-  const featuredReasons = product.ranking.reasons.filter(reason => reason.kind !== 'note').slice(0, 2);
+  const ingredientCount = getProductIngredients(product.ingredients_text).length;
   const imageUrl = safeUrl(product.image_url);
   const retailerUrl = walmartUrl(product.retailer_search_url);
   return <article className={`product-card ${selected ? 'selected' : ''}`} aria-label={product.name}>
     <div className="card-top"><span>{product.ranking.rank === null ? '—' : String(product.ranking.rank).padStart(2, '0')}</span><span>{product.category === 'bread' ? 'Bread' : 'Dry cereal'}</span></div>
     {imageUrl && !brokenImage && <figure><img src={imageUrl} alt={product.name} onError={() => setBrokenImage(true)}/>{product.image_credit && <figcaption>{product.image_credit}</figcaption>}</figure>}
-    <div className="card-heading"><p className="brand">{product.brand}</p><h3>{product.name}</h3>{product.ranking.rank === 1 && <p className="recommendation">Recommended for this priority</p>}{product.ranking.status === 'insufficient_data' && <p className="recommendation">Missing data for this priority</p>}</div>
+    <div className="card-heading"><p className="brand">{product.brand}</p><h3>{product.name}</h3>{ingredientCount > 0 && <button className="ingredient-count-button" aria-label={`View ${ingredientCount} ingredients for ${product.name}`} onClick={event => ingredient(event.currentTarget)}>{ingredientCount} ingredients <span aria-hidden="true">→</span></button>}{product.ranking.rank === 1 && <p className="recommendation">Recommended for this priority</p>}{product.ranking.status === 'insufficient_data' && <p className="recommendation">Missing data for this priority</p>}</div>
     <div className="card-metrics"><p className="portion">Equal-weight view · per {product.reference_g} g{product.category === 'cereal' ? ' dry cereal' : ''}</p><dl className="nutrients">{metrics.map(([key, label, unit]) => <div key={key}><dt>{label}</dt><dd>{amount(product.nutrition_per_reference[key], unit)}</dd></div>)}</dl></div>
-    <div className="card-explanation">{featuredReasons.map((reason, index) => <p key={index} className={reason.kind}>{reason.kind === 'tradeoff' ? 'Tradeoff: ' : ''}{reason.text}</p>)}{product.ranking.missing_fields.length > 0 && <p className="muted">Not provided: {product.ranking.missing_fields.map(key => key.replaceAll('_', ' ')).join(', ')}</p>}</div>
-    <button className="ingredients-button" onClick={event => ingredient(product.ingredient_refs[0]?.id ?? '', event.currentTarget)}><span>Ingredients and sources</span><span aria-hidden="true">→</span></button>
     <div className="card-actions"><button className={selected ? 'primary' : ''} aria-pressed={selected} disabled={disabled} onClick={toggle}>{selected ? 'Selected' : 'Compare'}</button>{retailerUrl ? <a className="retailer-link" href={retailerUrl} target="_blank" rel="noreferrer" aria-label={`Search for ${product.name} on Walmart`}>Search on Walmart</a> : <span className="retailer-unavailable">Walmart search unavailable</span>}</div>
   </article>;
 }
@@ -141,7 +121,7 @@ export function App({ api, mode }: { api: Api; mode: 'mock' | 'api' }) {
   const [retryProducts, setRetryProducts] = useState(0);
   const [retryStores, setRetryStores] = useState(0);
   const [selected, setSelected] = useState<string[]>([]);
-  const [ingredientSelection, setIngredientSelection] = useState<{ product: Product; id: string }>();
+  const [ingredientSelection, setIngredientSelection] = useState<{ product: Product }>();
   const ingredientOpener = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
@@ -179,7 +159,7 @@ export function App({ api, mode }: { api: Api; mode: 'mock' | 'api' }) {
     if (ids.length >= 2 || chosen.some(item => item.category !== product.category)) return ids;
     return [...ids, product.id];
   });
-  const openIngredient = (product: Product, id: string, opener: HTMLElement) => { ingredientOpener.current = opener; setIngredientSelection({ product, id }); };
+  const openIngredient = (product: Product, opener: HTMLElement) => { ingredientOpener.current = opener; setIngredientSelection({ product }); };
   const goToComparison = () => { const heading = document.getElementById('compare-title'); heading?.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' }); heading?.focus({ preventScroll: true }); };
 
   return <div ref={root}>
@@ -193,7 +173,7 @@ export function App({ api, mode }: { api: Api; mode: 'mock' | 'api' }) {
           {loading && !catalog && <div className="loading-state" role="status"><span aria-hidden="true"></span><h3>Finding your options…</h3><p>Checking the catalog for your selected store.</p></div>}
           {error && <div className="empty-state" role="alert"><h3>We couldn’t load these results.</h3><p>{error}</p><button onClick={() => setRetryProducts(value => value + 1)}>Retry search</button></div>}
           {!loading && !error && catalog?.products.length === 0 && <div className="empty-state"><h3>No products found.</h3><p>The current catalog is limited to a small selection of bread and cereal. Try another search.</p><button onClick={() => document.getElementById('search-results')?.focus()}>Edit search</button></div>}
-          <div className="product-grid" inert={loading}>{catalog?.products.map(product => { const chosen = compared[0]; const disabled = !selected.includes(product.id) && (selected.length >= 2 || Boolean(chosen && chosen.category !== product.category)); return <ProductCard key={product.id} product={product} selected={selected.includes(product.id)} disabled={disabled} toggle={() => toggle(product)} ingredient={(id, opener) => openIngredient(product, id, opener)}/>; })}</div>
+          <div className="product-grid" inert={loading}>{catalog?.products.map(product => { const chosen = compared[0]; const disabled = !selected.includes(product.id) && (selected.length >= 2 || Boolean(chosen && chosen.category !== product.category)); return <ProductCard key={product.id} product={product} selected={selected.includes(product.id)} disabled={disabled} toggle={() => toggle(product)} ingredient={opener => openIngredient(product, opener)}/>; })}</div>
         </section>
         {compared.length === 2 && catalog && <section className="comparison" aria-labelledby="compare-title"><div className="comparison-heading"><div><p className="kicker">Equal-weight comparison</p><h2 id="compare-title" tabIndex={-1}>Compare products</h2></div><button onClick={() => setSelected([])}>Clear both</button></div><p>Per {compared[0].reference_g} g{compared[0].category === 'cereal' ? ' dry cereal, without milk' : ''}. %DV uses general FDA Daily Values for a 2,000 calorie diet as neutral context, not personal or medical advice.</p><div className="table-wrap"><table><caption className="sr-only">Nutrition comparison at equal weight with general FDA Daily Value context</caption><thead><tr><th scope="col">Metric</th>{compared.map(product => <th scope="col" key={product.id}><span>{product.name}</span><button onClick={() => toggle(product)}>Remove</button></th>)}</tr></thead><tbody>{metrics.map(([key, label, unit]) => <tr key={key}><th scope="row">{label}</th>{compared.map((product, index) => { const value = product.nutrition_per_reference[key]; const other = compared[index === 0 ? 1 : 0].nutrition_per_reference[key]; const difference = comparisonLabel(key, value, other); return <td key={product.id}><strong>{amount(value, unit)}</strong><small>{dailyValue(value, key, catalog.meta.fda_daily_values)}</small>{difference && <span className="difference">{difference}</span>}</td>; })}</tr>)}</tbody></table></div><div className="tradeoff-summary"><strong>Main tradeoff</strong><p>{compared.flatMap(product => product.ranking.reasons).find(reason => reason.kind === 'tradeoff')?.text ?? 'These products differ across the listed nutrients. Choose based on the priority that matters to you.'}</p></div></section>}
         <p className="ranking-note">Rankings reflect your selected priority, not a universal health rating.</p>
@@ -201,6 +181,6 @@ export function App({ api, mode }: { api: Api; mode: 'mock' | 'api' }) {
     </main>
     <footer className="site-footer"><div><span className="footer-mark">barelabel.</span><details id="about-data"><summary>About the data</summary><div><p>Store availability is simulated and does not represent live Walmart inventory. Product information may be unverified or incomplete.</p><p>{mode === 'mock' ? 'This build uses fictional sample product data.' : catalog?.meta.contains_synthetic_labels ? 'This API response includes synthetic labels.' : 'This build uses the demo API.'} barelabel is not affiliated with Walmart.</p></div></details></div></footer>
     {compared.length > 0 && submitted !== null && !loading && <aside className="selection-tray" aria-label="Selected products"><div className="tray-slots">{[0, 1].map(index => <div key={index} className={compared[index] ? 'filled' : ''}><span>{index + 1}</span>{compared[index] ? <><strong>{compared[index].name}</strong><button onClick={() => toggle(compared[index])} aria-label={`Remove ${compared[index].name}`}>×</button></> : <em>Select one more product</em>}</div>)}</div>{compared.length === 2 && <button className="primary" onClick={goToComparison}>Compare products</button>}</aside>}
-    {ingredientSelection && <IngredientDrawer key={`${ingredientSelection.product.id}:${ingredientSelection.id}`} product={ingredientSelection.product} initialId={ingredientSelection.id} api={api} opener={ingredientOpener.current} close={() => setIngredientSelection(undefined)}/>}
+    {ingredientSelection && <IngredientDrawer key={ingredientSelection.product.id} product={ingredientSelection.product} opener={ingredientOpener.current} close={() => setIngredientSelection(undefined)}/>}
   </div>;
 }
