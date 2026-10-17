@@ -38,6 +38,7 @@
         "enriched bleached flour",
         "enriched flour",
         "enriched wheat flour",
+        "enriched wheat flour [flour",
         "flour",
         "unbleached enriched wheat flour",
         "wheat flour"
@@ -87,6 +88,7 @@
       "id": "wheat-bran",
       "name": "Wheat bran",
       "aliases": [
+        "may be topped with wheat bran",
         "wheat bran"
       ],
       "what_it_is": "The fiber-rich outer layer of wheat.",
@@ -402,6 +404,7 @@
       "id": "potato",
       "name": "Reconstituted potatoes",
       "aliases": [
+        "from potato flour",
         "potato flour",
         "potatoes",
         "reconstituted potatoes"
@@ -842,8 +845,10 @@
       "id": "hydrogenated-oil",
       "name": "Hydrogenated oil",
       "aliases": [
+        "hydrogenated coconut",
         "hydrogenated coconut, soybean and/or cottonseed",
         "hydrogenated oil",
+        "soybean and/or cottonseed",
         "vegetable oil (hydrogenated coconut, soybean and/or cottonseed)"
       ],
       "what_it_is": "Oil processed to be more solid.",
@@ -954,6 +959,7 @@
       "id": "salt",
       "name": "Salt",
       "aliases": [
+        "2% or less of: salt",
         "salt",
         "sea salt"
       ],
@@ -1054,7 +1060,8 @@
       "id": "calcium-carbonate",
       "name": "Calcium carbonate",
       "aliases": [
-        "calcium carbonate"
+        "calcium carbonate",
+        "vitamins and minerals: calcium carbonate"
       ],
       "what_it_is": "A mineral salt.",
       "why_used": "Leavening; adds calcium.",
@@ -1407,7 +1414,8 @@
       "aliases": [
         "mixed tocopherols",
         "tocopherols",
-        "vitamin e (mixed tocopherols)"
+        "vitamin e (mixed tocopherols)",
+        "vitamin e added to preserve freshness"
       ],
       "what_it_is": "A natural antioxidant.",
       "why_used": "Keeps oils fresh.",
@@ -1453,6 +1461,7 @@
       "id": "preservatives-unspecified",
       "name": "Preservatives",
       "aliases": [
+        "preservative",
         "preservatives"
       ],
       "what_it_is": "Unnamed preservatives.",
@@ -1644,7 +1653,11 @@
       "name": "Added vitamins and minerals",
       "aliases": [
         "added vitamins and minerals",
+        "and added vitamins and minerals",
+        "iron and zinc",
         "iron and zinc (mineral nutrients)",
+        "mineral nutrients",
+        "plus added vitamins and minerals",
         "vitamins and minerals"
       ],
       "what_it_is": "Nutrients added back or added during processing.",
@@ -1727,6 +1740,7 @@
         "thiamin hydrochloride",
         "thiamin mononitrate",
         "thiamine mononitrate",
+        "thiamine mononitrate [vitamin b1]",
         "vitamin b1"
       ],
       "what_it_is": "A B vitamin that helps turn food into energy.",
@@ -1751,6 +1765,7 @@
       "name": "Riboflavin (vitamin B2)",
       "aliases": [
         "riboflavin",
+        "riboflavin [vitamin b2]",
         "vitamin b2"
       ],
       "what_it_is": "A B vitamin used in energy metabolism.",
@@ -1823,7 +1838,8 @@
       "name": "Folic acid",
       "aliases": [
         "folate",
-        "folic acid"
+        "folic acid",
+        "folic acid]"
       ],
       "what_it_is": "The added form of folate, a B vitamin for new cells.",
       "why_used": "Fortification.",
@@ -1900,6 +1916,7 @@
       "name": "Vitamin A",
       "aliases": [
         "beta-carotene",
+        "palmitate",
         "vitamin a",
         "vitamin a (palmitate)",
         "vitamin a palmitate"
