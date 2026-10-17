@@ -13,6 +13,7 @@ Agree on this before either application is built. Prompt 0 turns this section in
 | `GET /healthz` | Basic service liveness; no credentials or sensitive configuration |
 | `GET /api/v1/stores` | Return the two demo branches |
 | `GET /api/v1/products` | Filter the catalog for a store/category/query and return backend-ranked products |
+| `GET /api/v1/ingredients` | v2: return every ingredient explanation as `{ ingredients: IngredientResponse[] }`, so clients can match ingredient names against `name`/`aliases` locally |
 | `GET /api/v1/ingredients/{ingredient_id}` | Return an ingredient explanation |
 
 No compare endpoint is necessary. Each product response includes the metrics needed to compare two rows. The frontend can subtract corresponding values for display; it must not create a second authoritative health-ranking algorithm.
@@ -142,6 +143,13 @@ type IngredientResponse = {
   reviewed_at: string | null;
   sources: Source[];
   content_status: "reviewed" | "draft" | "synthetic";
+};
+
+// v2: GET /api/v1/ingredients. `aliases` are lowercase label spellings; each
+// alias maps to exactly one entry. `what_it_is` and `evidence_summary` are
+// short (one line each) for compact display.
+type IngredientListResponse = {
+  ingredients: IngredientResponse[];
 };
 
 type ErrorResponse = {

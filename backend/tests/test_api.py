@@ -249,3 +249,36 @@ def test_ingredient_not_found_is_404_envelope():
     resp = client.get("/api/v1/ingredients/does-not-exist")
     assert resp.status_code == 404
     _assert_envelope(resp.json())
+
+
+# --------------------------------------------------------------------------- #
+# Ingredient glossary list
+# --------------------------------------------------------------------------- #
+def test_ingredient_list_shape():
+    resp = client.get("/api/v1/ingredients")
+    assert resp.status_code == 200
+    items = resp.json()["ingredients"]
+    assert len(items) >= 60
+    for item in items:
+        assert item["what_it_is"] and item["evidence_summary"]
+        assert item["evidence_level"] in {"established", "limited", "mixed", "not_assessed"}
+        if item["content_status"] == "reviewed":
+            assert item["sources"], f"{item['id']} marked reviewed without sources"
+
+
+def test_ingredient_aliases_are_unique():
+    items = client.get("/api/v1/ingredients").json()["ingredients"]
+    seen = {}
+    for item in items:
+        for alias in item["aliases"]:
+            assert alias == alias.lower()
+            assert alias not in seen, f"{alias!r} in {seen.get(alias)} and {item['id']}"
+            seen[alias] = item["id"]
+
+
+def test_every_product_ingredient_ref_resolves():
+    ids = {i["id"] for i in client.get("/api/v1/ingredients").json()["ingredients"]}
+    products = client.get("/api/v1/products", params={"store_id": "demo-store-a"}).json()["products"]
+    for p in products:
+        for ref in p["ingredient_refs"]:
+            assert ref["id"] in ids, f"{p['id']} -> {ref['id']} has no explanation"
