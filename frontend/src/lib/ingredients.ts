@@ -8,6 +8,10 @@ export type IngredientGuide = {
   reason: string;
 };
 
+export function normalizeIngredientName(value: string) {
+  return value.toLowerCase().replace(/\borganic\b/g, ' ').trim().replace(/\s+/g, ' ');
+}
+
 const ratingLabels: Record<IngredientRating, IngredientGuide['ratingLabel']> = {
   good: 'Good choice',
   neutral: 'Neutral',

@@ -1,4 +1,4 @@
-import type { CatalogResponse, Category, Priority, StoresResponse, IngredientResponse } from '../types';
+import type { CatalogResponse, Category, Priority, StoresResponse, IngredientListResponse, IngredientResponse } from '../types';
 import balanced from '../mocks/products-balanced.json';
 import fiber from '../mocks/products-fiber.json';
 import sodium from '../mocks/products-sodium.json';
@@ -7,13 +7,13 @@ import lowCalorie from '../mocks/products-low-calorie.json';
 import lowSugar from '../mocks/products-low-sugar.json';
 import lowSatFat from '../mocks/products-low-sat-fat.json';
 import stores from '../mocks/stores.json';
-import ingredient from '../mocks/ingredient.json';
+import ingredients from '../mocks/ingredients.json';
 
 export type Query = { store_id: string; category?: Category; q?: string; priority?: Priority };
 export interface Api {
   getStores(signal?: AbortSignal): Promise<StoresResponse>;
   getProducts(query: Query, signal?: AbortSignal): Promise<CatalogResponse>;
-  getIngredient(id: string, signal?: AbortSignal): Promise<IngredientResponse>;
+  getIngredients(signal?: AbortSignal): Promise<IngredientListResponse>;
 }
 export class ApiError extends Error {
   constructor(public status: number, message: string, public code = 'request_failed', public requestId = '') { super(message); }
@@ -47,6 +47,11 @@ function parseIngredient(value: unknown): IngredientResponse {
   if (!isRecord(value) || !isString(value.id) || !isString(value.name) || !Array.isArray(value.aliases) || !value.aliases.every(isString) || !isString(value.what_it_is) || !isString(value.why_used) || !isString(value.evidence_summary) || !isString(value.practical_guidance) || !['established', 'limited', 'mixed', 'not_assessed'].includes(String(value.evidence_level)) || !isString(value.uncertainty) || !isNullableString(value.reviewed_at) || !hasSources(value.sources) || !['reviewed', 'draft', 'synthetic'].includes(String(value.content_status))) invalidResponse();
   return value as unknown as IngredientResponse;
 }
+function parseIngredients(value: unknown): IngredientListResponse {
+  if (!isRecord(value) || !Array.isArray(value.ingredients)) return invalidResponse();
+  value.ingredients.forEach(parseIngredient);
+  return value as unknown as IngredientListResponse;
+}
 const fail = (status: number, message: string) => { throw new ApiError(status, message, status === 404 ? 'not_found' : 'validation_error', 'fixture-request'); };
 export const mockApi: Api = {
   async getStores(signal) { signal?.throwIfAborted(); return structuredClone(stores) as StoresResponse; },
@@ -72,7 +77,7 @@ export const mockApi: Api = {
     data.meta.store_id = query.store_id; data.meta.total = data.products.length;
     return data;
   },
-  async getIngredient(id, signal) { signal?.throwIfAborted(); if (id !== ingredient.id) fail(404, 'Ingredient explanation unavailable. This does not imply danger.'); return structuredClone(ingredient) as IngredientResponse; },
+  async getIngredients(signal) { signal?.throwIfAborted(); return structuredClone(ingredients) as IngredientListResponse; },
 };
 export function originOnly(value: string) {
   let url: URL;
@@ -82,6 +87,7 @@ export function originOnly(value: string) {
 }
 export function httpApi(origin: string, fetcher: typeof fetch = fetch, timeoutMs = 30000): Api {
   const base = originOnly(origin);
+  let ingredientRequest: Promise<IngredientListResponse> | undefined;
   async function get<T>(path: string, parse: (value: unknown) => T, signal?: AbortSignal): Promise<T> {
     const controller = new AbortController();
     const abort = () => controller.abort(signal?.reason);
@@ -103,7 +109,11 @@ export function httpApi(origin: string, fetcher: typeof fetch = fetch, timeoutMs
   return {
     getStores: signal => get('/stores', parseStores, signal),
     getProducts: (query, signal) => { const params = new URLSearchParams(); Object.entries(query).forEach(([key, value]) => { if (value !== undefined) params.set(key, value); }); return get(`/products?${params}`, parseCatalog, signal); },
-    getIngredient: (id, signal) => get(`/ingredients/${encodeURIComponent(id)}`, parseIngredient, signal),
+    getIngredients: signal => {
+      signal?.throwIfAborted();
+      ingredientRequest ??= get('/ingredients', parseIngredients).catch(error => { ingredientRequest = undefined; throw error; });
+      return ingredientRequest;
+    },
   };
 }
 export function configure(mode = 'mock', origin = 'http://localhost:8000') {

@@ -3,7 +3,7 @@ import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import type { Api } from './lib/api';
-import { getProductIngredients, type IngredientRating } from './lib/ingredients';
+import { getProductIngredients, normalizeIngredientName, type IngredientRating } from './lib/ingredients';
 import type { CatalogResponse, IngredientResponse, Nutrients, Priority, Product, StoresResponse } from './types';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
@@ -46,12 +46,34 @@ function Sources({ sources }: { sources: IngredientResponse['sources'] | Product
   })}</ul>;
 }
 
-function IngredientDrawer({ product, close, opener }: { product: Product; close: () => void; opener: HTMLElement | null }) {
+function IngredientExplanation({ fallback, explanation }: { fallback: string; explanation?: IngredientResponse }) {
+  const [expanded, setExpanded] = useState(false);
+  if (!explanation) return <p>{fallback}</p>;
+  const evidenceLevel = explanation.evidence_level.replace('_', ' ').replace(/^./, letter => letter.toUpperCase());
+  return <>
+    <p className="ingredient-what">{explanation.what_it_is}</p>
+    <p className="ingredient-evidence">{explanation.evidence_summary}</p>
+    {explanation.sources.length > 0 && <div className="ingredient-sources">
+      <button type="button" className="ingredient-sources-toggle" aria-expanded={expanded} onClick={() => setExpanded(value => !value)}>Sources ({explanation.sources.length})</button>
+      {expanded && <ul>{explanation.sources.map(source => {
+        const url = safeUrl(source.url);
+        const domain = url ? new URL(url).hostname.replace(/^www\./, '') : '';
+        return <li key={source.id}><div>{url ? <a href={url} target="_blank" rel="noreferrer">{source.title}</a> : source.title}{domain && <span>{domain}</span>}</div><p>Evidence: {evidenceLevel}</p></li>;
+      })}</ul>}
+    </div>}
+  </>;
+}
+
+function IngredientDrawer({ product, explanations, close, opener }: { product: Product; explanations: IngredientResponse[]; close: () => void; opener: HTMLElement | null }) {
   const dialog = useRef<HTMLDialogElement>(null);
   const ingredients = useMemo(() => getProductIngredients(product.ingredients_text), [product.ingredients_text]);
   const [ingredientId, setIngredientId] = useState(ingredients[0]?.id ?? '');
   const closing = useRef(false);
   const selectedIngredient = ingredients.find(ingredient => ingredient.id === ingredientId);
+  const selectedExplanation = selectedIngredient && explanations.find(explanation => {
+    const selectedName = normalizeIngredientName(selectedIngredient.name);
+    return [explanation.name, ...explanation.aliases].some(name => normalizeIngredientName(name) === selectedName);
+  });
   const ratings: IngredientRating[] = ['good', 'neutral', 'limit'];
 
   useEffect(() => {
@@ -81,7 +103,7 @@ function IngredientDrawer({ product, close, opener }: { product: Product; close:
         if (!items.length) return null;
         return <section className={`ingredient-group ${rating}`} key={rating} aria-labelledby={`rating-${rating}`}><div className="ingredient-group-heading"><h3 id={`rating-${rating}`}>{items[0].ratingLabel}</h3><span>{items.length}</span></div><div className="ingredient-tabs">{items.map(ingredient => <button className={`ingredient-chip ${rating}`} key={ingredient.id} aria-pressed={ingredientId === ingredient.id} onClick={() => setIngredientId(ingredient.id)}>{ingredient.name}</button>)}</div></section>;
       })}</div>
-      {selectedIngredient && <section className="ingredient-quick-detail" aria-live="polite"><div><h3>{selectedIngredient.name}</h3><span className={`rating-badge ${selectedIngredient.rating}`}>{selectedIngredient.ratingLabel}</span></div><p>{selectedIngredient.reason}</p></section>}
+      {selectedIngredient && <section className="ingredient-quick-detail" aria-live="polite"><div className="ingredient-quick-heading"><h3>{selectedIngredient.name}</h3><span className={`rating-badge ${selectedIngredient.rating}`}>{selectedIngredient.ratingLabel}</span></div><IngredientExplanation key={selectedIngredient.id} fallback={selectedIngredient.reason} explanation={selectedExplanation}/></section>}
     </> : <p className="empty-copy">The ingredient list was not provided for this product.</p>}
     <section className="product-sources" aria-labelledby="product-sources-title"><h3 id="product-sources-title">Product sources</h3><Sources sources={product.sources}/></section>
   </dialog>;
@@ -148,6 +170,7 @@ export function App({ api, mode }: { api: Api; mode: 'mock' | 'api' }) {
   const [retryStores, setRetryStores] = useState(0);
   const [selected, setSelected] = useState<string[]>([]);
   const [ingredientSelection, setIngredientSelection] = useState<{ product: Product }>();
+  const [ingredientExplanations, setIngredientExplanations] = useState<IngredientResponse[]>([]);
   const [comparisonVisible, setComparisonVisible] = useState(false);
   const ingredientOpener = useRef<HTMLElement | null>(null);
   const comparisonRef = useRef<HTMLElement>(null);
@@ -157,6 +180,12 @@ export function App({ api, mode }: { api: Api; mode: 'mock' | 'api' }) {
     api.getStores(controller.signal).then(result => { if (!controller.signal.aborted) setStores(result); }).catch(reason => { if (!controller.signal.aborted) setStoreError(message(reason)); });
     return () => controller.abort();
   }, [api, retryStores]);
+
+  useEffect(() => {
+    let active = true;
+    api.getIngredients().then(result => { if (active) setIngredientExplanations(result.ingredients); }).catch(() => { /* Keep concise local fallbacks when explanations are unavailable. */ });
+    return () => { active = false; };
+  }, [api]);
 
   useEffect(() => {
     if (submitted === null) return;
@@ -225,6 +254,6 @@ export function App({ api, mode }: { api: Api; mode: 'mock' | 'api' }) {
     </main>
     <footer className="site-footer"><div><span className="footer-mark">barelabel.</span><details id="about-data"><summary>About the data</summary><div><p>Store availability is simulated and does not represent live Walmart inventory. Product information may be unverified or incomplete.</p><p>{mode === 'mock' ? 'This build uses fictional sample product data.' : catalog?.meta.contains_synthetic_labels ? 'This API response includes synthetic labels.' : 'This build uses the demo API.'} barelabel is not affiliated with Walmart.</p></div></details></div></footer>
     {compared.length > 0 && submitted !== null && !loading && !comparisonVisible && <aside className="selection-tray" aria-label="Selected products"><div className="tray-slots">{[0, 1].map(index => <div key={index} className={compared[index] ? 'filled' : ''}><span>{index + 1}</span>{compared[index] ? <><strong>{compared[index].name}</strong><button onClick={() => toggle(compared[index])} aria-label={`Remove ${compared[index].name}`}>×</button></> : <em>Select one more product</em>}</div>)}</div>{compared.length === 2 && <button className="primary" onClick={goToComparison}>Compare products</button>}</aside>}
-    {ingredientSelection && <IngredientDrawer key={ingredientSelection.product.id} product={ingredientSelection.product} opener={ingredientOpener.current} close={() => setIngredientSelection(undefined)}/>}
+    {ingredientSelection && <IngredientDrawer key={ingredientSelection.product.id} product={ingredientSelection.product} explanations={ingredientExplanations} opener={ingredientOpener.current} close={() => setIngredientSelection(undefined)}/>}
   </div>;
 }

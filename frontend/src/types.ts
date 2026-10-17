@@ -102,6 +102,10 @@ export type IngredientResponse = {
   content_status: "reviewed" | "draft" | "synthetic";
 };
 
+export type IngredientListResponse = {
+  ingredients: IngredientResponse[];
+};
+
 export type ErrorResponse = {
   error: { code: string; message: string; request_id: string };
 };
