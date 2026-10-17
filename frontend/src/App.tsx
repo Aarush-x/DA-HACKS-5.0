@@ -214,10 +214,9 @@ export function App({ api, mode }: { api: Api; mode: 'mock' | 'api' }) {
         {compared.length === 2 && catalog && <section ref={comparisonRef} className="comparison" aria-labelledby="compare-title">
           <div className="comparison-heading"><div><p className="kicker">Equal-weight comparison</p><h2 id="compare-title" tabIndex={-1}>Compare products</h2></div><button onClick={() => setSelected([])}>Clear both</button></div>
           <p className="comparison-intro">Both products are shown at the same {compared[0].reference_g} g{compared[0].category === 'cereal' ? ' amount of dry cereal' : ' amount'}, so the numbers are directly comparable.</p>
-          <section className="comparison-summary" aria-labelledby="quick-read-title">
+          <section className="comparison-summary" aria-label="Quick read">
             <p className="kicker">Quick read</p>
             <div className="comparison-summary-products">{compared.map((product, index) => <div key={product.id}><span aria-hidden="true">0{index + 1}</span><strong>{product.name}</strong><p>{comparisonSummary(product, compared[index === 0 ? 1 : 0])}.</p></div>)}</div>
-            <div className="comparison-summary-footer"><h3 id="quick-read-title">The clearest differences</h3><p>Calories are not marked better or worse because people’s needs differ.</p></div>
           </section>
           <div className="table-wrap"><table><caption className="sr-only">Plain-language nutrition comparison at equal weight</caption><thead><tr><th scope="col">Nutrient</th>{compared.map(product => <th scope="col" key={product.id}><span>{product.name}</span><button onClick={() => toggle(product)}>Remove</button></th>)}</tr></thead><tbody>{metrics.map(([key, label, unit]) => <tr key={key}><th scope="row"><span>{label}</span><small>{nutrientGuidance[key]}</small></th>{compared.map((product, index) => { const value = product.nutrition_per_reference[key]; const detail = comparisonDetail(key, value, compared[index === 0 ? 1 : 0].nutrition_per_reference[key], unit); return <td key={product.id}><div className="comparison-value-line"><strong>{amount(value, unit)}</strong>{detail?.preferred && <span className="comparison-preferred">{preferredLabels[key]}</span>}</div>{detail && <span className="comparison-delta">{detail.difference}</span>}</td>; })}</tr>)}</tbody></table></div>
         </section>}

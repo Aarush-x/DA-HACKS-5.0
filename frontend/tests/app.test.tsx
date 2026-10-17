@@ -124,7 +124,9 @@ describe('search-first shopper flow', () => {
     expect(within(tray).getByRole('button', { name: 'Compare products' })).toBeTruthy();
     const comparison = screen.getByRole('heading', { name: 'Compare products' }).closest('section')!;
     expect(within(comparison).getByText(/same 50 g amount, so the numbers are directly comparable/)).toBeTruthy();
-    expect(within(comparison).getByRole('heading', { name: 'The clearest differences' })).toBeTruthy();
+    expect(within(comparison).getByRole('region', { name: 'Quick read' })).toBeTruthy();
+    expect(within(comparison).queryByText('The clearest differences')).toBeNull();
+    expect(within(comparison).queryByText(/Calories are not marked better or worse/)).toBeNull();
     expect(within(comparison).getByText(/more protein, more fiber, less total sugar, and less added sugar/i)).toBeTruthy();
     expect(within(comparison).getByText(/^less sodium\.$/i)).toBeTruthy();
     const table = screen.getByRole('table', { name: 'Plain-language nutrition comparison at equal weight' });
