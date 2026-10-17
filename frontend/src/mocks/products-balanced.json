@@ -1,0 +1,634 @@
+{
+  "meta": {
+    "api_version": "1",
+    "catalog_version": "synthetic-baseline-1",
+    "inventory_mode": "simulated",
+    "storage_mode": "fixture",
+    "contains_synthetic_labels": true,
+    "supported_categories": [
+      "bread",
+      "cereal"
+    ],
+    "reference_g_by_category": {
+      "bread": 50,
+      "cereal": 40
+    },
+    "priority": "balanced",
+    "store_id": "demo-store-a",
+    "total": 6,
+    "fda_daily_values": {
+      "calories_kcal": 2000,
+      "fiber_g": 28,
+      "protein_g": 50,
+      "added_sugar_g": 50,
+      "sodium_mg": 2300,
+      "saturated_fat_g": 20
+    }
+  },
+  "products": [
+    {
+      "id": "bread-01",
+      "name": "Sample Fiber Loaf",
+      "brand": "Fictional Sample Kitchen",
+      "category": "bread",
+      "barcode": null,
+      "package_size": null,
+      "image_url": null,
+      "image_credit": null,
+      "image_source_url": null,
+      "label_status": "synthetic",
+      "label_verified_at": null,
+      "label_source_id": null,
+      "serving_g": 50,
+      "nutrition_per_serving": {
+        "calories_kcal": 120,
+        "fiber_g": 5,
+        "protein_g": 5,
+        "added_sugar_g": 1,
+        "total_sugar_g": 2,
+        "sodium_mg": 300,
+        "saturated_fat_g": 0.5
+      },
+      "nutrition_per_100g": {
+        "calories_kcal": 240.0,
+        "fiber_g": 10.0,
+        "protein_g": 10.0,
+        "added_sugar_g": 2.0,
+        "total_sugar_g": 4.0,
+        "sodium_mg": 600.0,
+        "saturated_fat_g": 1.0
+      },
+      "reference_g": 50,
+      "nutrition_per_reference": {
+        "calories_kcal": 120.0,
+        "fiber_g": 5,
+        "protein_g": 5,
+        "added_sugar_g": 1,
+        "total_sugar_g": 2,
+        "sodium_mg": 300,
+        "saturated_fat_g": 0.5
+      },
+      "first_grain_is_whole": true,
+      "ingredients_text": "Fictional sample grain, water.",
+      "ingredient_refs": [
+        {
+          "id": "sample-grain",
+          "label": "Fictional sample grain"
+        }
+      ],
+      "sources": [],
+      "availability": {
+        "store_id": "demo-store-a",
+        "status": "in_demo_assortment",
+        "mode": "simulated"
+      },
+      "ranking": {
+        "priority": "balanced",
+        "status": "ranked",
+        "rank": 1,
+        "internal_index": 72.85636645962734,
+        "reasons": [
+          {
+            "kind": "note",
+            "text": "Synthetic example: 5 g fiber and 300 mg sodium per 50 g."
+          },
+          {
+            "kind": "strength",
+            "text": "More fiber at equal weight than the other sample products in this category."
+          },
+          {
+            "kind": "tradeoff",
+            "text": "More sodium at equal weight than the other sample products in this category."
+          }
+        ],
+        "missing_fields": [],
+        "components": [
+          {
+            "key": "F",
+            "contribution": 26.78571428571429
+          },
+          {
+            "key": "P",
+            "contribution": 5.0
+          },
+          {
+            "key": "W",
+            "contribution": 10
+          },
+          {
+            "key": "A",
+            "contribution": 18.0
+          },
+          {
+            "key": "N",
+            "contribution": 8.695652173913043
+          },
+          {
+            "key": "S",
+            "contribution": 4.375
+          }
+        ]
+      },
+      "retailer_search_url": "https://www.walmart.com/search?q=Fictional+Sample+Kitchen+Sample+Fiber+Loaf"
+    },
+    {
+      "id": "bread-02",
+      "name": "Sample Gentle Loaf",
+      "brand": "Fictional Sample Kitchen",
+      "category": "bread",
+      "barcode": null,
+      "package_size": null,
+      "image_url": null,
+      "image_credit": null,
+      "image_source_url": null,
+      "label_status": "synthetic",
+      "label_verified_at": null,
+      "label_source_id": null,
+      "serving_g": 50,
+      "nutrition_per_serving": {
+        "calories_kcal": 120,
+        "fiber_g": 2,
+        "protein_g": 4,
+        "added_sugar_g": 2,
+        "total_sugar_g": 3,
+        "sodium_mg": 100,
+        "saturated_fat_g": 0.5
+      },
+      "nutrition_per_100g": {
+        "calories_kcal": 240.0,
+        "fiber_g": 4.0,
+        "protein_g": 8.0,
+        "added_sugar_g": 4.0,
+        "total_sugar_g": 6.0,
+        "sodium_mg": 200.0,
+        "saturated_fat_g": 1.0
+      },
+      "reference_g": 50,
+      "nutrition_per_reference": {
+        "calories_kcal": 120.0,
+        "fiber_g": 2,
+        "protein_g": 4,
+        "added_sugar_g": 2,
+        "total_sugar_g": 3,
+        "sodium_mg": 100,
+        "saturated_fat_g": 0.5
+      },
+      "first_grain_is_whole": true,
+      "ingredients_text": "Fictional sample grain, water.",
+      "ingredient_refs": [
+        {
+          "id": "sample-grain",
+          "label": "Fictional sample grain"
+        }
+      ],
+      "sources": [],
+      "availability": {
+        "store_id": "demo-store-a",
+        "status": "in_demo_assortment",
+        "mode": "simulated"
+      },
+      "ranking": {
+        "priority": "balanced",
+        "status": "ranked",
+        "rank": 2,
+        "internal_index": 64.65450310559007,
+        "reasons": [
+          {
+            "kind": "note",
+            "text": "Synthetic example: 2 g fiber and 100 mg sodium per 50 g."
+          }
+        ],
+        "missing_fields": [],
+        "components": [
+          {
+            "key": "F",
+            "contribution": 10.714285714285715
+          },
+          {
+            "key": "P",
+            "contribution": 4.0
+          },
+          {
+            "key": "W",
+            "contribution": 10
+          },
+          {
+            "key": "A",
+            "contribution": 16.0
+          },
+          {
+            "key": "N",
+            "contribution": 19.565217391304348
+          },
+          {
+            "key": "S",
+            "contribution": 4.375
+          }
+        ]
+      },
+      "retailer_search_url": "https://www.walmart.com/search?q=Fictional+Sample+Kitchen+Sample+Gentle+Loaf"
+    },
+    {
+      "id": "bread-03",
+      "name": "Sample Plain Loaf",
+      "brand": "Fictional Sample Kitchen",
+      "category": "bread",
+      "barcode": null,
+      "package_size": null,
+      "image_url": null,
+      "image_credit": null,
+      "image_source_url": null,
+      "label_status": "synthetic",
+      "label_verified_at": null,
+      "label_source_id": null,
+      "serving_g": 50,
+      "nutrition_per_serving": {
+        "calories_kcal": 120,
+        "fiber_g": 1,
+        "protein_g": 3,
+        "added_sugar_g": 3,
+        "total_sugar_g": 4,
+        "sodium_mg": 180,
+        "saturated_fat_g": 1
+      },
+      "nutrition_per_100g": {
+        "calories_kcal": 240.0,
+        "fiber_g": 2.0,
+        "protein_g": 6.0,
+        "added_sugar_g": 6.0,
+        "total_sugar_g": 8.0,
+        "sodium_mg": 360.0,
+        "saturated_fat_g": 2.0
+      },
+      "reference_g": 50,
+      "nutrition_per_reference": {
+        "calories_kcal": 120.0,
+        "fiber_g": 1,
+        "protein_g": 3,
+        "added_sugar_g": 3,
+        "total_sugar_g": 4,
+        "sodium_mg": 180,
+        "saturated_fat_g": 1
+      },
+      "first_grain_is_whole": false,
+      "ingredients_text": "Fictional sample grain, water.",
+      "ingredient_refs": [
+        {
+          "id": "sample-grain",
+          "label": "Fictional sample grain"
+        }
+      ],
+      "sources": [],
+      "availability": {
+        "store_id": "demo-store-a",
+        "status": "in_demo_assortment",
+        "mode": "simulated"
+      },
+      "ranking": {
+        "priority": "balanced",
+        "status": "ranked",
+        "rank": 3,
+        "internal_index": 41.32453416149069,
+        "reasons": [
+          {
+            "kind": "note",
+            "text": "Synthetic example: 1 g fiber and 180 mg sodium per 50 g."
+          }
+        ],
+        "missing_fields": [],
+        "components": [
+          {
+            "key": "F",
+            "contribution": 5.357142857142858
+          },
+          {
+            "key": "P",
+            "contribution": 3.0
+          },
+          {
+            "key": "W",
+            "contribution": 0
+          },
+          {
+            "key": "A",
+            "contribution": 14.0
+          },
+          {
+            "key": "N",
+            "contribution": 15.217391304347828
+          },
+          {
+            "key": "S",
+            "contribution": 3.75
+          }
+        ]
+      },
+      "retailer_search_url": "https://www.walmart.com/search?q=Fictional+Sample+Kitchen+Sample+Plain+Loaf"
+    },
+    {
+      "id": "cereal-01",
+      "name": "Sample Fiber Squares",
+      "brand": "Fictional Sample Kitchen",
+      "category": "cereal",
+      "barcode": null,
+      "package_size": null,
+      "image_url": null,
+      "image_credit": null,
+      "image_source_url": null,
+      "label_status": "synthetic",
+      "label_verified_at": null,
+      "label_source_id": null,
+      "serving_g": 40,
+      "nutrition_per_serving": {
+        "calories_kcal": 140,
+        "fiber_g": 6,
+        "protein_g": 4,
+        "added_sugar_g": 2,
+        "total_sugar_g": 3,
+        "sodium_mg": 200,
+        "saturated_fat_g": 0.5
+      },
+      "nutrition_per_100g": {
+        "calories_kcal": 350.0,
+        "fiber_g": 15.0,
+        "protein_g": 10.0,
+        "added_sugar_g": 5.0,
+        "total_sugar_g": 7.5,
+        "sodium_mg": 500.0,
+        "saturated_fat_g": 1.25
+      },
+      "reference_g": 40,
+      "nutrition_per_reference": {
+        "calories_kcal": 140.0,
+        "fiber_g": 6,
+        "protein_g": 4,
+        "added_sugar_g": 2,
+        "total_sugar_g": 3,
+        "sodium_mg": 200,
+        "saturated_fat_g": 0.5
+      },
+      "first_grain_is_whole": true,
+      "ingredients_text": "Fictional sample grain, water.",
+      "ingredient_refs": [
+        {
+          "id": "sample-grain",
+          "label": "Fictional sample grain"
+        }
+      ],
+      "sources": [],
+      "availability": {
+        "store_id": "demo-store-a",
+        "status": "in_demo_assortment",
+        "mode": "simulated"
+      },
+      "ranking": {
+        "priority": "balanced",
+        "status": "ranked",
+        "rank": 1,
+        "internal_index": 81.40217391304348,
+        "reasons": [
+          {
+            "kind": "note",
+            "text": "Synthetic example: 6 g fiber and 200 mg sodium per 40 g."
+          },
+          {
+            "kind": "strength",
+            "text": "More fiber at equal weight than the other sample products in this category."
+          },
+          {
+            "kind": "tradeoff",
+            "text": "More sodium at equal weight than the other sample products in this category."
+          }
+        ],
+        "missing_fields": [],
+        "components": [
+          {
+            "key": "F",
+            "contribution": 25
+          },
+          {
+            "key": "P",
+            "contribution": 4.0
+          },
+          {
+            "key": "W",
+            "contribution": 10
+          },
+          {
+            "key": "A",
+            "contribution": 28.0
+          },
+          {
+            "key": "N",
+            "contribution": 5.6521739130434785
+          },
+          {
+            "key": "S",
+            "contribution": 8.75
+          }
+        ]
+      },
+      "retailer_search_url": "https://www.walmart.com/search?q=Fictional+Sample+Kitchen+Sample+Fiber+Squares"
+    },
+    {
+      "id": "cereal-02",
+      "name": "Sample Gentle Flakes",
+      "brand": "Fictional Sample Kitchen",
+      "category": "cereal",
+      "barcode": null,
+      "package_size": null,
+      "image_url": null,
+      "image_credit": null,
+      "image_source_url": null,
+      "label_status": "synthetic",
+      "label_verified_at": null,
+      "label_source_id": null,
+      "serving_g": 40,
+      "nutrition_per_serving": {
+        "calories_kcal": 140,
+        "fiber_g": 2,
+        "protein_g": 3,
+        "added_sugar_g": 5,
+        "total_sugar_g": 6,
+        "sodium_mg": 60,
+        "saturated_fat_g": 0.5
+      },
+      "nutrition_per_100g": {
+        "calories_kcal": 350.0,
+        "fiber_g": 5.0,
+        "protein_g": 7.5,
+        "added_sugar_g": 12.5,
+        "total_sugar_g": 15.0,
+        "sodium_mg": 150.0,
+        "saturated_fat_g": 1.25
+      },
+      "reference_g": 40,
+      "nutrition_per_reference": {
+        "calories_kcal": 140.0,
+        "fiber_g": 2,
+        "protein_g": 3,
+        "added_sugar_g": 5,
+        "total_sugar_g": 6,
+        "sodium_mg": 60,
+        "saturated_fat_g": 0.5
+      },
+      "first_grain_is_whole": true,
+      "ingredients_text": "Fictional sample grain, water.",
+      "ingredient_refs": [
+        {
+          "id": "sample-grain",
+          "label": "Fictional sample grain"
+        }
+      ],
+      "sources": [],
+      "availability": {
+        "store_id": "demo-store-a",
+        "status": "in_demo_assortment",
+        "mode": "simulated"
+      },
+      "ranking": {
+        "priority": "balanced",
+        "status": "ranked",
+        "rank": 2,
+        "internal_index": 56.87422360248447,
+        "reasons": [
+          {
+            "kind": "note",
+            "text": "Synthetic example: 2 g fiber and 60 mg sodium per 40 g."
+          }
+        ],
+        "missing_fields": [],
+        "components": [
+          {
+            "key": "F",
+            "contribution": 8.928571428571429
+          },
+          {
+            "key": "P",
+            "contribution": 3.0
+          },
+          {
+            "key": "W",
+            "contribution": 10
+          },
+          {
+            "key": "A",
+            "contribution": 17.5
+          },
+          {
+            "key": "N",
+            "contribution": 8.695652173913043
+          },
+          {
+            "key": "S",
+            "contribution": 8.75
+          }
+        ]
+      },
+      "retailer_search_url": "https://www.walmart.com/search?q=Fictional+Sample+Kitchen+Sample+Gentle+Flakes"
+    },
+    {
+      "id": "cereal-03",
+      "name": "Sample Mystery Puffs",
+      "brand": "Fictional Sample Kitchen",
+      "category": "cereal",
+      "barcode": null,
+      "package_size": null,
+      "image_url": null,
+      "image_credit": null,
+      "image_source_url": null,
+      "label_status": "synthetic",
+      "label_verified_at": null,
+      "label_source_id": null,
+      "serving_g": 40,
+      "nutrition_per_serving": {
+        "calories_kcal": 140,
+        "fiber_g": 1,
+        "protein_g": 2,
+        "added_sugar_g": null,
+        "total_sugar_g": 8,
+        "sodium_mg": 120,
+        "saturated_fat_g": 0
+      },
+      "nutrition_per_100g": {
+        "calories_kcal": 350.0,
+        "fiber_g": 2.5,
+        "protein_g": 5.0,
+        "added_sugar_g": null,
+        "total_sugar_g": 20.0,
+        "sodium_mg": 300.0,
+        "saturated_fat_g": 0.0
+      },
+      "reference_g": 40,
+      "nutrition_per_reference": {
+        "calories_kcal": 140.0,
+        "fiber_g": 1,
+        "protein_g": 2,
+        "added_sugar_g": null,
+        "total_sugar_g": 8,
+        "sodium_mg": 120,
+        "saturated_fat_g": 0
+      },
+      "first_grain_is_whole": false,
+      "ingredients_text": "Fictional sample grain, water.",
+      "ingredient_refs": [
+        {
+          "id": "sample-grain",
+          "label": "Fictional sample grain"
+        }
+      ],
+      "sources": [],
+      "availability": {
+        "store_id": "demo-store-a",
+        "status": "in_demo_assortment",
+        "mode": "simulated"
+      },
+      "ranking": {
+        "priority": "balanced",
+        "status": "insufficient_data",
+        "rank": null,
+        "internal_index": null,
+        "reasons": [
+          {
+            "kind": "note",
+            "text": "Synthetic example: 1 g fiber and 120 mg sodium per 40 g."
+          },
+          {
+            "kind": "note",
+            "text": "Added sugar not provided; balanced ranking unavailable."
+          }
+        ],
+        "missing_fields": [
+          "added_sugar_g"
+        ],
+        "components": [
+          {
+            "key": "F",
+            "contribution": 4.464285714285714
+          },
+          {
+            "key": "P",
+            "contribution": 2.0
+          },
+          {
+            "key": "W",
+            "contribution": 0
+          },
+          {
+            "key": "A",
+            "contribution": null
+          },
+          {
+            "key": "N",
+            "contribution": 7.391304347826086
+          },
+          {
+            "key": "S",
+            "contribution": 10.0
+          }
+        ]
+      },
+      "retailer_search_url": "https://www.walmart.com/search?q=Fictional+Sample+Kitchen+Sample+Mystery+Puffs"
+    }
+  ]
+}
